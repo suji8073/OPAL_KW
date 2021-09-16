@@ -1,7 +1,9 @@
 package com.kw.opal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class root_list extends AppCompatActivity {
     ImageView delete;
+    Button next;
 
     ImageView circle1, circle2, circle3;
 
@@ -29,6 +32,16 @@ public class root_list extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+            }
+        });
+
+        next = findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_intent = new Intent(root_list.this, com.kw.opal.root_choice.class);
+                startActivity(start_intent);
 
             }
         });

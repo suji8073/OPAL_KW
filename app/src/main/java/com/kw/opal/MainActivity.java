@@ -16,12 +16,24 @@ public class MainActivity extends AppCompatActivity {
     TextView home2;
     Button play;
 
+    String strNickname, strProfile;
+
     boolean i, j = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView tvNickname = findViewById(R.id.tvNickname);
+        TextView tvProfile = findViewById(R.id.tvProfile);
+
+        Intent intent = getIntent();
+        strNickname = intent.getStringExtra("name");
+        strProfile = intent.getStringExtra("profile");
+
+        tvNickname.setText(strNickname);
+        tvProfile.setText(strProfile);
 
         play = findViewById(R.id.play);
 

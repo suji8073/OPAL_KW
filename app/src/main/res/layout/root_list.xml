@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".taste1">
+    tools:context=".root_list">
 
 
     <LinearLayout
@@ -87,16 +87,7 @@
             android:text="여행 경로 순서를 변경하거나 삭제할 수 있습니다.\n변경하고자 하는 일정을 클릭 한 후 원하는 순서에 추가하세요!"
             android:textColor="@color/purple_700"
             android:textSize="12dp" />
-
-
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="30dp">
-
-        </androidx.recyclerview.widget.RecyclerView>
+        
 
         <ImageView
             android:id="@+id/delete"

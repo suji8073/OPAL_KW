@@ -22,7 +22,7 @@ public class select1 extends AppCompatActivity {
         random.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(select1.this, com.kw.opal.area.class);
+                Intent start_intent = new Intent(select1.this, com.kw.opal.root_make.class);
                 startActivity(start_intent);
             }
         });
@@ -30,7 +30,7 @@ public class select1 extends AppCompatActivity {
         want.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(select1.this, com.kw.opal.area.class);
+                Intent start_intent = new Intent(select1.this, com.kw.opal.root_make.class);
                 startActivity(start_intent);
             }
         });

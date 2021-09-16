@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kakao.auth.ApiErrorCode;
 import com.kakao.auth.AuthType;
 import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
@@ -29,8 +30,7 @@ public class login extends AppCompatActivity {
 
     private Button btn_custom_login;
     private Button btn_custom_login_out;
-    private SessionCallback sessionCallback = new SessionCallback();
-    public static Activity LoginAct;
+    private SessionCallback sessionCallback;
     Session session;
     TextView login_non;
     @Override
@@ -42,13 +42,17 @@ public class login extends AppCompatActivity {
         btn_custom_login_out = (Button) findViewById(R.id.btn_custom_login_out);
         login_non = (TextView) findViewById(R.id.login_non);
 
-        session = Session.getCurrentSession();
-        session.addCallback(sessionCallback);
+        sessionCallback = new SessionCallback();
+        Session.getCurrentSession().addCallback(sessionCallback);
+
+        Session.getCurrentSession().checkAndImplicitOpen(); //자동 로그인
+
+
 
         btn_custom_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Session.getCurrentSession().open(AuthType.KAKAO_LOGIN_ALL, login.this);
+                session.open(AuthType.KAKAO_LOGIN_ALL, login.this);
 
             }
         });
@@ -77,25 +81,41 @@ public class login extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // 세션 콜백 삭제
+        Session.getCurrentSession().removeCallback(sessionCallback);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) { //카카오 로그인 액티비티에서 넘어온 경우일 때 실행
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+    }
+
     public class SessionCallback implements ISessionCallback {
 
-        // 로그인에 성공한 상태
+
         @Override
         public void onSessionOpened() {
-            requestMe();
-            //
+            //로그인 세션이 열렸을 때
 
+            requestMe();
         }
 
 
-        // 로그인에 실패한 상태
         @Override
         public void onSessionOpenFailed(KakaoException exception) {
+            // 로그인 세션이 열리지 않았을 때
             Log.e("SessionCallback :: ", "onSessionOpenFailed : " + exception.getMessage());
-            Intent intent = getIntent();
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            LoginAct.finish();
-            startActivity(intent);
+
+
         }
 
         // 사용자 정보 요청
@@ -105,15 +125,27 @@ public class login extends AppCompatActivity {
                         @Override
                         public void onSessionClosed(ErrorResult errorResult) {
                             Log.e("KAKAO_API", "세션이 닫혀 있음: " + errorResult);
+                            Toast.makeText(getApplicationContext(),"세션이 닫혔습니다. 다시 시도해 주세요: "+ errorResult.getErrorMessage(),Toast.LENGTH_SHORT).show();
+
                         }
 
                         @Override
                         public void onFailure(ErrorResult errorResult) {
+                            int result = errorResult.getErrorCode();
                             Log.e("KAKAO_API", "사용자 정보 요청 실패: " + errorResult);
+
+                            if(result == ApiErrorCode.CLIENT_ERROR_CODE) {
+                                Toast.makeText(getApplicationContext(), "네트워크 연결이 불안정합니다. 다시 시도해 주세요.", Toast.LENGTH_SHORT).show();
+                                finish();
+                            } else {
+                                Toast.makeText(getApplicationContext(),"로그인 도중 오류가 발생했습니다: "+errorResult.getErrorMessage(),Toast.LENGTH_SHORT).show();
+                            }
                         }
+
 
                         @Override
                         public void onSuccess(MeV2Response result) {
+                            //로그인에 성공했을 때
                             Log.i("KAKAO_API", "사용자 아이디: " + result.getId());
 
                             UserAccount kakaoAccount = result.getKakaoAccount();
@@ -147,32 +179,21 @@ public class login extends AppCompatActivity {
                                 } else {
                                     // 프로필 획득 불가
                                 }
-
-                                Intent start_intent = new Intent(login.this, com.kw.opal.MainActivity.class);
-                                startActivity(start_intent);
-
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                intent.putExtra("name", profile.getNickname());
+                                intent.putExtra("profile", profile.getThumbnailImageUrl());
+                                startActivity(intent);
+                                finish();
                             }
 
+
+
+
                         }
-
-
                     });
-
-
-
-
         }
 
 
-    }
-
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        // 세션 콜백 삭제
-        Session.getCurrentSession().removeCallback(sessionCallback);
     }
 
 }

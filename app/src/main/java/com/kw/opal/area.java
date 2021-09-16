@@ -75,7 +75,7 @@ public class area extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(area.this, com.kw.opal.root_make.class);
+                Intent start_intent = new Intent(area.this, com.kw.opal.select1.class);
                 startActivity(start_intent);
             }
         });
@@ -94,7 +94,7 @@ public class area extends AppCompatActivity {
             }
         }
         // 전에 체크 되지 않은 것
-        on_off[index] = 0;
+        on_off[index] = 1;
         return 1;
     }
 }
