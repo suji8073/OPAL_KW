@@ -1,0 +1,2 @@
+rootProject.name='OPAL_KW'
+include ':app'
