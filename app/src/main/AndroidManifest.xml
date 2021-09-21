@@ -17,16 +17,16 @@
             android:value="@string/kakao_app_key" />
 
 
-        <activity android:name="com.kw.opal.login" android:label="login"></activity>\        \
+        <activity android:name="com.kw.opal.login" android:label="login"></activity>
         <activity android:name="com.kw.opal.MainActivity" android:label="activity_main"></activity>
         <activity android:name="com.kw.opal.MainActivity_2" android:label="activity_main_2"></activity>
         <activity android:name="com.kw.opal.MainActivity_3" android:label="activity_main_3"></activity>
         <activity android:name="com.kw.opal.select" android:label="select"></activity>
         <activity android:name="com.kw.opal.select1" android:label="select1"></activity>
         <activity android:name="com.kw.opal.area" android:label="area"></activity>
-        <activity android:name="com.kw.opal.taste1" android:label="taste1"></activity>
-        <activity android:name="com.kw.opal.taste2" android:label="taste2"></activity>
-        <activity android:name="com.kw.opal.taste3" android:label="taste3"></activity>
+        <activity android:name="com.kw.opal.final_route_1" android:label="final_route_1"></activity>
+        <activity android:name="com.kw.opal.final_route_2" android:label="final_route_2"></activity>
+        <activity android:name="com.kw.opal.final_route_3" android:label="final_route_3"></activity>
 
 
         <activity android:name="com.kw.opal.loading" android:exported="true">
@@ -43,7 +43,6 @@
         <activity android:name="com.kw.opal.root_making_1" android:label="root_making_1" ></activity>
         <activity android:name="com.kw.opal.root_making_2" android:label="root_making_2" ></activity>
         <activity android:name="com.kw.opal.root_making_3" android:label="root_making_3" ></activity>
-        <activity android:name="com.kw.opal.root_list" android:label="root_list" ></activity>
 
     </application>
 

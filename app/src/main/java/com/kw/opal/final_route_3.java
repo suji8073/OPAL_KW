@@ -8,41 +8,31 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+public class final_route_3 extends AppCompatActivity {
 
-public class root_list extends AppCompatActivity {
-    ImageView delete;
     Button next;
-
     ImageView circle1, circle2, circle3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.root_list);
+        setContentView(R.layout.final_route_3);
 
         circle1 = findViewById(R.id.circle1);
         circle2 = findViewById(R.id.circle2);
         circle3 = findViewById(R.id.circle3);
 
-        circle1.setColorFilter(getApplication().getResources().getColor(R.color.main2));
+        circle1.setColorFilter(getApplication().getResources().getColor(R.color.gray));
         circle2.setColorFilter(getApplication().getResources().getColor(R.color.gray));
-        circle3.setColorFilter(getApplication().getResources().getColor(R.color.gray));
+        circle3.setColorFilter(getApplication().getResources().getColor(R.color.main2));
 
-        delete = findViewById(R.id.delete);
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
 
         next = findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(root_list.this, com.kw.opal.root_choice.class);
+                Intent start_intent = new Intent(final_route_3.this, root_loading.class);
                 startActivity(start_intent);
-
             }
         });
 

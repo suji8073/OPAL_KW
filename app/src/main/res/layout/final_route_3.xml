@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".root_list">
+    tools:context=".final_route_3">
 
 
     <LinearLayout
@@ -71,35 +71,91 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="여행 경로 생성"
+            android:text="최종 경로 생성"
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/main"
             android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintHorizontal_bias="0" />
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:text="여행 경로 순서를 변경하거나 삭제할 수 있습니다.\n변경하고자 하는 일정을 클릭 한 후 원하는 순서에 추가하세요!"
-            android:textColor="@color/purple_700"
-            android:textSize="12dp" />
-        
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="[ 제주, 1박 2일, 4명 ]"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18dp" />
 
-        <ImageView
-            android:id="@+id/delete"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="30dp"
+
+
+
+        <FrameLayout
+            android:id="@+id/FirstFrame"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/logo"
+                android:layout_gravity="center"/>
+
+
+            <Button
+                android:id="@+id/more"
+                android:layout_gravity="bottom|right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:layout_margin="10dp"
+                android:background="@drawable/main_btn"
+                android:text="상세 정보"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/root_1"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="13dp"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:text="1일차 : 죽녹원 - 관방제림 - 숭일식당 - 숙소(담양한옥민박)
+            \n2일차 : 금성산성 - 가마골 계곡 - 신식당" />
+
+        <TextView
+            android:id="@+id/root_2"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="right"
-            app:srcCompat="@drawable/cancel" />
+            android:gravity="right"
+            android:textSize="12dp"
+            android:textColor="#3A4CA8"
+            android:text="100km\n총 비용 : 30,000원(1인당)\n총 소요 시간 : 약 5시간" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:gravity="bottom"
             android:orientation="horizontal">

@@ -48,7 +48,7 @@ public class root_make extends AppCompatActivity {
         finish_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent finish_root = new Intent(getApplicationContext(),root_list.class);
+                Intent finish_root = new Intent(getApplicationContext(),final_route_1.class);
                 startActivity(finish_root);
             }
         });

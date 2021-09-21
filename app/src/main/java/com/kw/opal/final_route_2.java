@@ -8,15 +8,15 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class taste2 extends AppCompatActivity {
+public class final_route_2 extends AppCompatActivity {
 
     Button next;
-    ImageView circle1, circle2, circle3;
+    ImageView circle1, circle2, circle3, delete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.taste2);
+        setContentView(R.layout.final_route_2);
 
         circle1 = findViewById(R.id.circle1);
         circle2 = findViewById(R.id.circle2);
@@ -31,10 +31,19 @@ public class taste2 extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(taste2.this, com.kw.opal.taste3.class);
+                Intent start_intent = new Intent(final_route_2.this, final_route_3.class);
                 startActivity(start_intent);
             }
         });
+
+        delete = findViewById(R.id.delete);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
 
 

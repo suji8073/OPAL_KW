@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         strNickname = intent.getStringExtra("name");
         strProfile = intent.getStringExtra("profile");
+
+        if (strNickname.length() > 0){
+            Toast.makeText(getApplicationContext(), "로그인 되셨습니다!",
+                    Toast.LENGTH_LONG).show();
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "비회원으로 로그인하셨습니다!",
+                    Toast.LENGTH_LONG).show();
+        }
+
 
         tvNickname.setText(strNickname);
         tvProfile.setText(strProfile);
@@ -61,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (i == true){
                     heart_1.setImageResource(R.drawable.heart_on);
+                    Toast.makeText(getApplicationContext(), "나의 경로에 담겼습니다!",
+                            Toast.LENGTH_LONG).show();
                     heart_1.setColorFilter(getApplication().getResources().getColor(R.color.heart));
                     i = false;
                 }else {
@@ -78,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (j == true){
                     heart_2.setImageResource(R.drawable.heart_on);
+                    Toast.makeText(getApplicationContext(), "길게 출력 Hello World!", Toast.LENGTH_LONG).show();
                     heart_2.setColorFilter(getApplication().getResources().getColor(R.color.heart));
                     j = false;
                 }else {
@@ -114,9 +128,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
     }
+
 }

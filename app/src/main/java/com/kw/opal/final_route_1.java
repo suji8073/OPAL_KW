@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class taste3 extends AppCompatActivity {
+public class final_route_1 extends AppCompatActivity {
 
     Button next;
     ImageView circle1, circle2, circle3;
@@ -16,27 +16,27 @@ public class taste3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.taste3);
+        setContentView(R.layout.final_route_1);
 
         circle1 = findViewById(R.id.circle1);
         circle2 = findViewById(R.id.circle2);
         circle3 = findViewById(R.id.circle3);
 
-        circle1.setColorFilter(getApplication().getResources().getColor(R.color.gray));
+        circle1.setColorFilter(getApplication().getResources().getColor(R.color.main2));
         circle2.setColorFilter(getApplication().getResources().getColor(R.color.gray));
-        circle3.setColorFilter(getApplication().getResources().getColor(R.color.main2));
+        circle3.setColorFilter(getApplication().getResources().getColor(R.color.gray));
 
 
         next = findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(taste3.this, root_loading.class);
+                Intent start_intent = new Intent(final_route_1.this, final_route_2.class);
                 startActivity(start_intent);
             }
         });
 
-
-
     }
+
 }
+
