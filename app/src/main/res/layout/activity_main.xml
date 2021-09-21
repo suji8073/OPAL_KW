@@ -37,7 +37,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
-            android:textAlignment="textStart"
             android:textSize="20dp"
             android:textColor="@color/text"
             android:textStyle="bold"
@@ -58,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:text="오팔청춘이 추천하는 추천코스!"
                 android:textColor="#3C3C3C"
                 android:textSize="18dp"
@@ -67,20 +66,14 @@
                 android:id="@+id/tvNickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
                 android:text="추천코스!"
                 android:textColor="#3C3C3C"
                 android:textSize="10dp"
                 android:textStyle="bold" />
-            <TextView
-                android:id="@+id/tvProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:text="추천코스!"
-                android:textColor="#3C3C3C"
-                android:textSize="10dp"
-                android:textStyle="bold" />
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -117,7 +110,6 @@
                     android:layout_height="30dp"
                     android:layout_marginRight="20dp"
                     android:background="@drawable/heart"
-
                     app:srcCompat="@drawable/heart_off" />
             </LinearLayout>
 

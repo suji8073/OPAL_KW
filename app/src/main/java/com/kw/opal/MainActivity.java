@@ -11,13 +11,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
+
 public class MainActivity extends AppCompatActivity {
     LinearLayout home, place, person;
     ImageView home1, heart_1, heart_2;
     TextView home2;
     Button play;
 
-    String strNickname, strProfile;
+    String strNickname;
 
     boolean i, j = true;
 
@@ -27,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView tvNickname = findViewById(R.id.tvNickname);
-        TextView tvProfile = findViewById(R.id.tvProfile);
+        //TextView tvProfile = findViewById(R.id.tvProfile);
 
         Intent intent = getIntent();
         strNickname = intent.getStringExtra("name");
-        strProfile = intent.getStringExtra("profile");
+        //strProfile = intent.getStringExtra("profile");
 
         if (strNickname.length() > 0){
             Toast.makeText(getApplicationContext(), "로그인 되셨습니다!",
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         tvNickname.setText(strNickname);
-        tvProfile.setText(strProfile);
+        //tvProfile.setText(strProfile);
 
         play = findViewById(R.id.play);
 
@@ -91,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (j == true){
                     heart_2.setImageResource(R.drawable.heart_on);
-                    Toast.makeText(getApplicationContext(), "길게 출력 Hello World!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "나의 경로에 담겼습니다!", Toast.LENGTH_LONG).show();
                     heart_2.setColorFilter(getApplication().getResources().getColor(R.color.heart));
                     j = false;
                 }else {
@@ -127,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(start_intent);
             }
         });
+
 
     }
 
