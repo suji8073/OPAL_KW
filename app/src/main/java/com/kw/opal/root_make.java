@@ -2,10 +2,18 @@ package com.kw.opal;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Arrays;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class root_make extends AppCompatActivity {
@@ -15,13 +23,31 @@ public class root_make extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.root_make);
+        RetrofitService networkService = RetrofitHelper.create();
 
         play = findViewById(R.id.play);
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent play = new Intent(getApplicationContext(),root_making_1.class);
-                startActivity(play);
+                networkService.getList("city",1,"A0201")
+                        .enqueue(new Callback<PointList>() {
+                            @Override
+                            public void onResponse(Call<PointList> call, Response<PointList> response) {
+                                if(response.isSuccessful()){
+                                    List point = Arrays.asList(response.body().pointlist);
+                                    Intent play = new Intent(getApplicationContext(),root_making_1.class);
+                                    play.putExtra("pointlist", (Parcelable) point);
+                                    startActivity(play);
+                                }
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<PointList> call, Throwable t) {
+
+                            }
+                        });
+
             }
         });
 
