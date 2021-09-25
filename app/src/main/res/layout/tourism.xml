@@ -31,19 +31,44 @@
 
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/text_theme"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
-            android:text="관광지 선택하기"
-            android:textAlignment="textStart"
-            android:textColor="#000000"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintHorizontal_bias="0" />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/back" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/theme_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="카멜리아힐"
+                android:layout_gravity="center"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -54,41 +79,97 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:text="원하는 대표 관광지를 선택해주세요."
-            android:textColor="#525A64"
-            android:textSize="15dp" />
+            android:text="주소 : 제주특별자치도 서귀포시 안덕면 병악로 166\n홈페이지 : http://www.camelliahill.co.kr"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
 
-        <LinearLayout
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:layout_margin="10dp"
+            app:srcCompat="@drawable/logo" />
+
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/btn"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/search"
-                android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_search" />
+                android:orientation="vertical">
 
-            <EditText
-                android:layout_marginLeft="20dp"
-                android:id="@+id/areainput"
-                android:layout_width="wrap_content"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:layout_height="20dp"
-                android:ems="10"
-                android:inputType="text"
-                android:singleLine="true"
-                android:privateImeOptions="defaultInputted=korean"
-                android:text="관광지 입력" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/main_text1_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="textStart"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="이용안내" />
+
+
+                <View
+                    android:background="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/text1_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="textStart"
+                    android:textSize="10dp"
+                    android:textColor="@color/text"
+                    android:text="문의 및 안내 : 064-792-0088\n쉬는 날 : 연중무휴\n이용시간 : 동 절 기 (12월~2월) 08:30 ~ 18:00\n
+                간 절 기 (3월~5월, 9~11월) 08:30 ~ 18:30\n
+                하 절 기 (6월~8월) 08:30 ~ 19:00\n\n※ 마감 1시간 전까지 입장 가능 ※\n수목원 내부에는 별도의 조명시설이 없는 관계로 일몰시간과 날씨 상황에 따라 입장 제한\n주차시설 : 있음\n유모차 대여 여부 : 없음\n애완동물 동반 가능 여부 : 불가\n신용카드 가능 여부 : 가능" />
+
+                <TextView
+                    android:id="@+id/main_text2_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="textStart"
+                    android:textSize="12dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="상세정보" />
+
+
+                <View
+                    android:background="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/text1_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="textStart"
+                    android:textSize="10dp"
+                    android:textColor="@color/text"
+                    android:text="입 장 료 : [개 인]\n
+        성 인 (19 ~ 64세) 8,000원\n
+        청소년 (13 ~ 18세) 6,000원\n
+        어린이 (만 3세 ~ 12세) 5,000원\n
+        경로 (만 65세 이상) / 군인 6,000원\n
+        장애인 (1~3급) /국가유공자 5,000원\n" />
+            </LinearLayout>
+        </ScrollView>
 
         <LinearLayout
             android:layout_width="match_parent"

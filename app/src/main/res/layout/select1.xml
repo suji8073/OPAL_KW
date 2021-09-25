@@ -38,7 +38,6 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
             android:text="이번 여행에서\n어떤 여행지 경로를 원하시나요? "
-            android:textAlignment="textStart"
             android:textColor="#000000"
             android:textSize="18dp"
             android:textStyle="bold"

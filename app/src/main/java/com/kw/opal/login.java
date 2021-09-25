@@ -33,47 +33,28 @@ public class login extends AppCompatActivity {
     private SessionCallback sessionCallback;
     Session session;
     TextView login_non;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        btn_custom_login = (Button) findViewById(R.id.btn_custom_login);
-        btn_custom_login_out = (Button) findViewById(R.id.btn_custom_login_out);
         login_non = (TextView) findViewById(R.id.login_non);
 
         sessionCallback = new SessionCallback();
         Session.getCurrentSession().addCallback(sessionCallback);
 
-        Session.getCurrentSession().checkAndImplicitOpen(); //자동 로그인
+        //Session.getCurrentSession().checkAndImplicitOpen(); //자동 로그인
 
 
-
-        btn_custom_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                session.open(AuthType.KAKAO_LOGIN_ALL, login.this);
-
-            }
-        });
-
-        btn_custom_login_out.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UserManagement.getInstance()
-                        .requestLogout(new LogoutResponseCallback() {
-                            @Override
-                            public void onCompleteLogout() {
-                                Toast.makeText(login.this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-            }
-        });
 
         login_non.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent start_intent = new Intent(login.this, com.kw.opal.MainActivity.class);
+                start_intent.putExtra("login_check", 0);
+                start_intent.putExtra("name", "0");
                 startActivity(start_intent);
 
             }
@@ -180,8 +161,9 @@ public class login extends AppCompatActivity {
                                     // 프로필 획득 불가
                                 }
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                intent.putExtra("login_check", 1);
                                 intent.putExtra("name", profile.getNickname());
-                                intent.putExtra("profile", profile.getThumbnailImageUrl());
+                                //intent.putExtra("profile", profile.getThumbnailImageUrl());
                                 startActivity(intent);
                                 finish();
                             }

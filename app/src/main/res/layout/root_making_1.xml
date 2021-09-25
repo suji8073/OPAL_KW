@@ -103,54 +103,54 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_height="match_parent"
-                android:orientation="horizontal" >
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/one_1"
-                    android:background="@drawable/btn"
                     android:layout_width="80dp"
                     android:layout_height="25dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="전체" />
+                    android:background="@drawable/btn"
+                    android:text="전체"
+                    android:textSize="14dp" />
 
                 <Button
                     android:id="@+id/one_2"
-                    android:background="@drawable/btn"
                     android:layout_width="80dp"
                     android:layout_height="25dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="자연" />
+                    android:background="@drawable/btn"
+                    android:text="자연"
+                    android:textSize="14dp" />
 
                 <Button
                     android:id="@+id/one_3"
-                    android:background="@drawable/btn"
                     android:layout_width="80dp"
                     android:layout_height="25dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="인문" />
+                    android:background="@drawable/btn"
+                    android:text="인문"
+                    android:textSize="14dp" />
 
                 <Button
                     android:id="@+id/one_4"
-                    android:background="@drawable/btn"
                     android:layout_width="80dp"
                     android:layout_height="25dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="절" />
+                    android:background="@drawable/btn"
+                    android:text="절"
+                    android:textSize="14dp" />
 
                 <Button
                     android:id="@+id/one_5"
-                    android:background="@drawable/btn"
                     android:layout_width="80dp"
                     android:layout_height="25dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="공원" />
+                    android:background="@drawable/btn"
+                    android:text="공원"
+                    android:textSize="14dp" />
 
             </LinearLayout>
         </HorizontalScrollView>

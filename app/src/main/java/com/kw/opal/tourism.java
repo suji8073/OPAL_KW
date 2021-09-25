@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class tourism extends AppCompatActivity {
 
-    Button next;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +17,8 @@ public class tourism extends AppCompatActivity {
         setContentView(R.layout.tourism);
 
 
-        next = findViewById(R.id.next);
-        next.setOnClickListener(new View.OnClickListener() {
+        back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent start_intent = new Intent(tourism.this, tourism.class);
