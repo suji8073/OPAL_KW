@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -41,17 +42,18 @@ public class root_make extends AppCompatActivity {
                             @Override
                             public void onResponse(Call<PointList> call, Response<PointList> response) {
                                 if(response.isSuccessful()){
-                                    PointModel point = response.body().pointlist.get(0);
+                                    List point = response.body().pointlist;
+                                    ArrayList<PointModel> array = new ArrayList<>();
+                                    array.addAll(point);
+
+                                    Log.d("test",point.toString());
                                     Intent play = new Intent(getApplicationContext(),root_making_1.class);
-                                    play.putExtra("pointlist", point);
+                                    play.putExtra("pointlist", array);
                                     startActivity(play);
                                 }
-
                             }
-
                             @Override
                             public void onFailure(Call<PointList> call, Throwable t) {
-
                             }
                         });
 
