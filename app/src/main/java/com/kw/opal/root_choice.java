@@ -20,6 +20,7 @@ public class root_choice extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent start_intent = new Intent(root_choice.this, MainActivity.class);
+                start_intent.putExtra("login_check", 3);
                 startActivity(start_intent);
             }
         });

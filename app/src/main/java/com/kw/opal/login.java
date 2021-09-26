@@ -163,7 +163,8 @@ public class login extends AppCompatActivity {
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 intent.putExtra("login_check", 1);
                                 intent.putExtra("name", profile.getNickname());
-                                //intent.putExtra("profile", profile.getThumbnailImageUrl());
+                                intent.putExtra("profile", profile.getThumbnailImageUrl());
+
                                 startActivity(intent);
                                 finish();
                             }

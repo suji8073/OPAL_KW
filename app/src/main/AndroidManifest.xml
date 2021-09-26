@@ -27,6 +27,7 @@
         <activity android:name="com.kw.opal.final_route_1" android:label="final_route_1"></activity>
         <activity android:name="com.kw.opal.final_route_2" android:label="final_route_2"></activity>
         <activity android:name="com.kw.opal.final_route_3" android:label="final_route_3"></activity>
+        <activity android:name="com.kw.opal.tourism" android:label="tourism"></activity>
 
 
         <activity android:name="com.kw.opal.loading" android:exported="true">

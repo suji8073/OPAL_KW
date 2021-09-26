@@ -41,7 +41,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/back"
+                android:id="@+id/back_main"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 app:srcCompat="@drawable/back" />
@@ -75,23 +75,6 @@
             android:layout_height="1dp"
             android:background="@color/black" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:text="주소 : 제주특별자치도 서귀포시 안덕면 병악로 166\n홈페이지 : http://www.camelliahill.co.kr"
-            android:textColor="@color/black"
-            android:textSize="13dp" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="250dp"
-            android:layout_margin="10dp"
-            app:srcCompat="@drawable/logo" />
-
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -99,6 +82,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:text="주소 : 제주특별자치도 서귀포시 안덕면 병악로 166\n홈페이지 : http://www.camelliahill.co.kr"
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:layout_margin="10dp"
+                    app:srcCompat="@drawable/logo" />
+
 
                 <TextView
                     android:id="@+id/main_text1_theme"
@@ -107,7 +106,6 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="textStart"
                     android:textSize="12dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -126,7 +124,6 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="textStart"
                     android:textSize="10dp"
                     android:textColor="@color/text"
                     android:text="문의 및 안내 : 064-792-0088\n쉬는 날 : 연중무휴\n이용시간 : 동 절 기 (12월~2월) 08:30 ~ 18:00\n
@@ -140,7 +137,6 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="textStart"
                     android:textSize="12dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -153,13 +149,12 @@
                     android:layout_height="1dp" />
 
                 <TextView
-                    android:id="@+id/text1_theme"
+                    android:id="@+id/text2_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="textStart"
                     android:textSize="10dp"
                     android:textColor="@color/text"
                     android:text="입 장 료 : [개 인]\n
