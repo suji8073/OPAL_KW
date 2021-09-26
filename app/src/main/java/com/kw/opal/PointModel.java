@@ -1,9 +1,17 @@
 package com.kw.opal;
 
-public class PointModel {
+import java.io.Serializable;
+
+public class PointModel implements Serializable {
     public String addr;
     public String cat;
     public int id;
     public String image;
     public String name;
+
+    @Override
+    public String toString(){
+        String str = super.toString();
+        return "주소는 "+addr+" 이름은 "+ name+ " 나머진 아몰라";
+    }
 }
