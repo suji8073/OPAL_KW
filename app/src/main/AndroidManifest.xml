@@ -1,49 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kw.opal">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:name="com.kw.opal.GlobalApplication"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:name=".GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/network_security_config" />
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
 
-
-        <activity android:name="com.kw.opal.login" android:label="login"></activity>
-        <activity android:name="com.kw.opal.MainActivity" android:label="activity_main"></activity>
-        <activity android:name="com.kw.opal.MainActivity_2" android:label="activity_main_2"></activity>
-        <activity android:name="com.kw.opal.MainActivity_3" android:label="activity_main_3"></activity>
-        <activity android:name="com.kw.opal.select" android:label="select"></activity>
-        <activity android:name="com.kw.opal.select1" android:label="select1"></activity>
-        <activity android:name="com.kw.opal.area" android:label="area"></activity>
-        <activity android:name="com.kw.opal.final_route_1" android:label="final_route_1"></activity>
-        <activity android:name="com.kw.opal.final_route_2" android:label="final_route_2"></activity>
-        <activity android:name="com.kw.opal.final_route_3" android:label="final_route_3"></activity>
-
-
-        <activity android:name="com.kw.opal.loading" android:exported="true">
+        <activity
+            android:name=".login"
+            android:label="login" />
+        <activity
+            android:name=".MainActivity"
+            android:label="activity_main" />
+        <activity
+            android:name=".MainActivity_2"
+            android:label="activity_main_2" />
+        <activity
+            android:name=".MainActivity_3"
+            android:label="activity_main_3" />
+        <activity
+            android:name=".select"
+            android:label="select" />
+        <activity
+            android:name=".select1"
+            android:label="select1" />
+        <activity
+            android:name=".area"
+            android:label="area" />
+        <activity
+            android:name=".final_route_1"
+            android:label="final_route_1" />
+        <activity
+            android:name=".final_route_2"
+            android:label="final_route_2" />
+        <activity
+            android:name=".final_route_3"
+            android:label="final_route_3" />
+        <activity
+            android:name=".loading"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.kw.opal.root_loading" android:label="root_loading" ></activity>
-        <activity android:name="com.kw.opal.root_choice" android:label="root_choice" ></activity>
-        <activity android:name="com.kw.opal.root_make" android:label="root_make" ></activity>
-        <activity android:name="com.kw.opal.root_making_1" android:label="root_making_1" ></activity>
-        <activity android:name="com.kw.opal.root_making_2" android:label="root_making_2" ></activity>
-        <activity android:name="com.kw.opal.root_making_3" android:label="root_making_3" ></activity>
-
+        <activity
+            android:name=".root_loading"
+            android:label="root_loading" />
+        <activity
+            android:name=".root_choice"
+            android:label="root_choice" />
+        <activity
+            android:name=".root_make"
+            android:label="root_make" />
+        <activity
+            android:name=".root_making_1"
+            android:label="root_making_1" />
+        <activity
+            android:name=".root_making_2"
+            android:label="root_making_2" />
+        <activity
+            android:name=".root_making_3"
+            android:label="root_making_3" />
     </application>
 
 </manifest>

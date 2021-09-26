@@ -26,7 +26,18 @@ import com.kakao.usermgmt.response.model.UserAccount;
 import com.kakao.util.OptionalBoolean;
 import com.kakao.util.exception.KakaoException;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.HttpException;
+import retrofit2.Response;
+
 public class login extends AppCompatActivity {
+
 
     private Button btn_custom_login;
     private Button btn_custom_login_out;
@@ -37,6 +48,9 @@ public class login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        HashMap<String,Object> param = new HashMap<>();
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
