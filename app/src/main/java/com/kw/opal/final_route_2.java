@@ -12,11 +12,25 @@ public class final_route_2 extends AppCompatActivity {
 
     Button next;
     ImageView circle1, circle2, circle3, delete;
+    int check;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.final_route_2);
+
+        Intent intent = getIntent();
+        check = intent.getIntExtra("check", 0);
+
+        next = findViewById(R.id.next);
+        if (check == 0){
+            next.setText("이 전");
+        }
+        else {
+            next.setText("다 음");
+        }
+
+
 
         circle1 = findViewById(R.id.circle1);
         circle2 = findViewById(R.id.circle2);
@@ -27,12 +41,18 @@ public class final_route_2 extends AppCompatActivity {
         circle3.setColorFilter(getApplication().getResources().getColor(R.color.gray));
 
 
-        next = findViewById(R.id.next);
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(final_route_2.this, final_route_3.class);
-                startActivity(start_intent);
+
+                if (check == 0){
+                    finish();
+                }
+                else {
+                    Intent start_intent = new Intent(final_route_2.this, final_route_3.class);
+                    startActivity(start_intent);
+                }
             }
         });
 

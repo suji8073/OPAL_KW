@@ -1,6 +1,7 @@
 package com.kw.opal;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     Button play;
 
     String strNickname;
+    int login_check;
 
     boolean i, j = true;
 
@@ -33,17 +35,20 @@ public class MainActivity extends AppCompatActivity {
         //TextView tvProfile = findViewById(R.id.tvProfile);
 
         Intent intent = getIntent();
+        login_check = intent.getIntExtra("login_check", 0);
         strNickname = intent.getStringExtra("name");
         //strProfile = intent.getStringExtra("profile");
 
-        if (strNickname.length() > 0){
-            Toast.makeText(getApplicationContext(), "로그인 되셨습니다!",
-                    Toast.LENGTH_LONG).show();
+        if (login_check == 0){
+            Toast.makeText(getApplicationContext(), "비회원으로 로그인하셨습니다!",
+                    Toast.LENGTH_SHORT).show();
         }
         else {
-            Toast.makeText(getApplicationContext(), "비회원으로 로그인하셨습니다!",
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "로그인 되셨습니다!",
+                    Toast.LENGTH_SHORT).show();
         }
+
+
 
 
         tvNickname.setText(strNickname);
@@ -76,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 if (i == true){
                     heart_1.setImageResource(R.drawable.heart_on);
                     Toast.makeText(getApplicationContext(), "나의 경로에 담겼습니다!",
-                            Toast.LENGTH_LONG).show();
+                            Toast.LENGTH_SHORT).show();
                     heart_1.setColorFilter(getApplication().getResources().getColor(R.color.heart));
                     i = false;
                 }else {
@@ -94,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (j == true){
                     heart_2.setImageResource(R.drawable.heart_on);
-                    Toast.makeText(getApplicationContext(), "나의 경로에 담겼습니다!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "나의 경로에 담겼습니다!", Toast.LENGTH_SHORT).show();
                     heart_2.setColorFilter(getApplication().getResources().getColor(R.color.heart));
                     j = false;
                 }else {

@@ -32,6 +32,7 @@ public class final_route_1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent start_intent = new Intent(final_route_1.this, final_route_2.class);
+                start_intent.putExtra("check", 1);
                 startActivity(start_intent);
             }
         });
