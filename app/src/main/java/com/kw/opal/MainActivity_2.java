@@ -58,6 +58,15 @@ public class MainActivity_2 extends AppCompatActivity {
             }
         });
 
+        more = findViewById(R.id.more);
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_intent = new Intent(getApplicationContext(), tourism.class);
+                startActivity(start_intent);
+            }
+        });
+
 
     }
 }

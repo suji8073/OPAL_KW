@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         sp = getSharedPreferences("myFile", Activity.MODE_PRIVATE);
 
         Intent intent = getIntent();
-        login_check = intent.getIntExtra("login_check", 0);
+        login_check = intent.getIntExtra("login_check", 4);
         SharedPreferences.Editor editor = sp.edit();
         editor.putInt("login_check", login_check);
         editor.commit();
