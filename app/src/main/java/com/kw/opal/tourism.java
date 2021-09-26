@@ -1,15 +1,17 @@
 package com.kw.opal;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class tourism extends AppCompatActivity {
 
-    Button back;
+    ImageView back_main;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,12 +19,11 @@ public class tourism extends AppCompatActivity {
         setContentView(R.layout.tourism);
 
 
-        back = findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
+        back_main = findViewById(R.id.back_main);
+        back_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(tourism.this, tourism.class);
-                startActivity(start_intent);
+                finish();
             }
         });
 

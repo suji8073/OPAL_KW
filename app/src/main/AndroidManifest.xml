@@ -20,6 +20,23 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
 
+
+
+        <activity android:name="com.kw.opal.login" android:label="login"></activity>
+        <activity android:name="com.kw.opal.MainActivity" android:label="activity_main"></activity>
+        <activity android:name="com.kw.opal.MainActivity_2" android:label="activity_main_2"></activity>
+        <activity android:name="com.kw.opal.MainActivity_3" android:label="activity_main_3"></activity>
+        <activity android:name="com.kw.opal.select" android:label="select"></activity>
+        <activity android:name="com.kw.opal.select1" android:label="select1"></activity>
+        <activity android:name="com.kw.opal.area" android:label="area"></activity>
+        <activity android:name="com.kw.opal.final_route_1" android:label="final_route_1"></activity>
+        <activity android:name="com.kw.opal.final_route_2" android:label="final_route_2"></activity>
+        <activity android:name="com.kw.opal.final_route_3" android:label="final_route_3"></activity>
+        <activity android:name="com.kw.opal.tourism" android:label="tourism"></activity>
+
+
+        <activity android:name="com.kw.opal.loading" android:exported="true">
+
         <activity
             android:name=".login"
             android:label="login" />
@@ -53,6 +70,7 @@
         <activity
             android:name=".loading"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

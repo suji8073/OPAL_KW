@@ -62,16 +62,6 @@
                 android:textColor="#3C3C3C"
                 android:textSize="18dp"
                 android:textStyle="bold" />
-            <TextView
-                android:id="@+id/tvNickname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="10dp"
-                android:text="추천코스!"
-                android:textColor="#3C3C3C"
-                android:textSize="10dp"
-                android:textStyle="bold" />
 
 
         </LinearLayout>

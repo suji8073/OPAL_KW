@@ -1,8 +1,10 @@
 package com.kw.opal;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,38 +23,47 @@ public class MainActivity extends AppCompatActivity {
     TextView home2;
     Button play;
 
-    String strNickname;
+    String strNickname, strProfile;
     int login_check;
-
     boolean i, j = true;
+
+    private SharedPreferences sp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView tvNickname = findViewById(R.id.tvNickname);
-        //TextView tvProfile = findViewById(R.id.tvProfile);
+        sp = getSharedPreferences("myFile", Activity.MODE_PRIVATE);
 
         Intent intent = getIntent();
-        login_check = intent.getIntExtra("login_check", 0);
-        strNickname = intent.getStringExtra("name");
-        //strProfile = intent.getStringExtra("profile");
+        login_check = intent.getIntExtra("login_check", 4);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putInt("login_check", login_check);
+        editor.commit();
+
+        Log.d("API 확인", "login_check: " + sp.getInt("login_check", 0));
+        Log.d("API 확인", "nickname: " + sp.getString("strNickname", ""));
+        Log.d("API 확인", "profile image: " + sp.getString("strProfile", ""));
+
+
 
         if (login_check == 0){
             Toast.makeText(getApplicationContext(), "비회원으로 로그인하셨습니다!",
                     Toast.LENGTH_SHORT).show();
         }
-        else {
+        else if (login_check == 1){
             Toast.makeText(getApplicationContext(), "로그인 되셨습니다!",
                     Toast.LENGTH_SHORT).show();
+
+            strNickname = intent.getStringExtra("name");
+            strProfile = intent.getStringExtra("profile");
+
+            editor.putString("strNickname", strNickname);
+            editor.putString("strProfile", strProfile);
+            editor.commit();
         }
-
-
-
-
-        tvNickname.setText(strNickname);
-        //tvProfile.setText(strProfile);
 
         play = findViewById(R.id.play);
 
@@ -116,6 +127,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent main_1 = new Intent(MainActivity.this, MainActivity_2.class);
+                if (login_check == 0){
+                    main_1.putExtra("name", "");
+                    main_1.putExtra("profile", "");
+
+                }
+                else if (login_check == 1){
+                    main_1.putExtra("name", strNickname);
+                    main_1.putExtra("profile", strProfile);
+                }
                 startActivity(main_1);
             }
         });
@@ -124,6 +144,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent main_1 = new Intent(MainActivity.this, MainActivity_3.class);
+                if (login_check == 0){
+                    main_1.putExtra("name", "");
+                    main_1.putExtra("profile", "");
+
+                }
+                else if (login_check == 1){
+                    main_1.putExtra("name", strNickname);
+                    main_1.putExtra("profile", strProfile);
+                }
                 startActivity(main_1);
             }
         });

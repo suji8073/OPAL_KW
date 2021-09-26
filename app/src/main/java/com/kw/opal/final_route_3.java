@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class final_route_3 extends AppCompatActivity {
 
-    Button next;
+    Button next, more;
     ImageView circle1, circle2, circle3;
 
     @Override
@@ -32,6 +32,15 @@ public class final_route_3 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent start_intent = new Intent(final_route_3.this, root_loading.class);
+                startActivity(start_intent);
+            }
+        });
+
+        more = findViewById(R.id.more);
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_intent = new Intent(getApplicationContext(), tourism.class);
                 startActivity(start_intent);
             }
         });
