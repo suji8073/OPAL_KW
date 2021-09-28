@@ -1,14 +1,21 @@
 package com.kw.opal;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class area extends AppCompatActivity {
 
@@ -29,13 +36,17 @@ public class area extends AppCompatActivity {
 
     TextView[] text = new TextView[17]; // 텍스트
     LinearLayout[] layout = new LinearLayout[17]; // 텍스트
+    Set<String> area = new HashSet<String>();
+    String[] area_all = {"서울", "인천", "대전", "대구", "광주", "부산", "울산", "세종", "경기도", "강원도", "충청북도", "충청남도", "경상북도", "경상남도", "전라북도", "전라남도", "제주도"};
 
     int[] on_off = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    private SharedPreferences sroot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.area);
+        sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
 
         for (int i=0; i<check_num.length; i++){ // board 형변환
             check[i] = findViewById(check_num[i]);
@@ -75,8 +86,27 @@ public class area extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(area.this, com.kw.opal.select1.class);
-                startActivity(start_intent);
+                int click_check = 0;
+                for (int i = 0; i<on_off.length; i++){
+                    if (on_off[i] == 1) {
+                        click_check = 1;
+                        area.add(area_all[i]);
+                    }
+                }
+                if (click_check == 1) {
+                    SharedPreferences.Editor editor = sroot.edit();
+                    editor.putStringSet("area", area);
+                    editor.commit();
+
+
+                    Log.d("배열 확인", "배열: " + on_off);
+                    Intent start_intent = new Intent(area.this, com.kw.opal.select1.class);
+                    startActivity(start_intent);
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "여행 지역을 선택하세요!",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
