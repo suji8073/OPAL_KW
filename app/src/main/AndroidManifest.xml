@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kw.opal">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kw.opal"
+    >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 
     <application
         android:networkSecurityConfig="@xml/network_security_config"
@@ -37,49 +41,13 @@
 
         <activity android:name="com.kw.opal.loading" android:exported="true">
 
-        <activity
-            android:name=".login"
-            android:label="login" />
-        <activity
-            android:name=".MainActivity"
-            android:label="activity_main" />
-        <activity
-            android:name=".MainActivity_2"
-            android:label="activity_main_2" />
-        <activity
-            android:name=".MainActivity_3"
-            android:label="activity_main_3" />
-        <activity
-            android:name=".select"
-            android:label="select" />
-        <activity
-            android:name=".select1"
-            android:label="select1" />
-        <activity
-            android:name=".area"
-            android:label="area" />
-        <activity
-            android:name=".final_route_1"
-            android:label="final_route_1" />
-        <activity
-            android:name=".final_route_2"
-            android:label="final_route_2" />
-        <activity
-            android:name=".final_route_3"
-            android:label="final_route_3" />
-        <activity
-            android:name=".loading"
-            android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".root_loading"
-            android:label="root_loading" />
+
         <activity
             android:name=".root_choice"
             android:label="root_choice" />

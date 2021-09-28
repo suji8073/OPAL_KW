@@ -3,10 +3,14 @@ package com.kw.opal;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import net.daum.mf.map.api.MapView;
+
 
 public class final_route_1 extends AppCompatActivity {
 
@@ -36,6 +40,11 @@ public class final_route_1 extends AppCompatActivity {
                 startActivity(start_intent);
             }
         });
+
+        MapView mapView = new MapView(this);
+
+        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
+        mapViewContainer.addView(mapView);
 
     }
 

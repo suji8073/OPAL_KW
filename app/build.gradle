@@ -28,6 +28,9 @@ android {
 
 }
 
+
+
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -39,11 +42,12 @@ dependencies {
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:2.8.1"
     implementation "com.squareup.retrofit2:converter-gson:2.8.1"
-    implementation "com.google.code.gson:gson:2.8.5"
+    implementation "com.google.code.gson:gson:2.8.6"
     implementation("com.squareup.okhttp3:logging-interceptor:4.8.1")
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
+    implementation files('libs/libDaumMapAndroid.jar')
 }
