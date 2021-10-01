@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView home1, heart_1, heart_2;
     TextView home2;
     Button play;
+    TextView user_name_main;
 
     String strNickname, strProfile;
     int login_check;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("API 확인", "nickname: " + sp.getString("strNickname", ""));
         Log.d("API 확인", "profile image: " + sp.getString("strProfile", ""));
 
-
+        user_name_main = findViewById(R.id.user_name_main);
 
         if (login_check == 0){
             Toast.makeText(getApplicationContext(), "비회원으로 로그인하셨습니다!",
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putString("strNickname", strNickname);
             editor.putString("strProfile", strProfile);
             editor.commit();
+
         }
 
         play = findViewById(R.id.play);
@@ -73,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
 
         home1 = findViewById(R.id.home1);
         home2 = findViewById(R.id.home2);
+
+        String strNickname = sp.getString("strNickname", "");
+        user_name_main.setText("\"" + strNickname+ "\" 님");
 
 
         home1.setColorFilter(getApplication().getResources().getColor(R.color.main));
