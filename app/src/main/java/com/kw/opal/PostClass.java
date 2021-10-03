@@ -1,6 +1,8 @@
 package com.kw.opal;
 
+
 //import com.google.gson.annotations.SerializedName;
+
 
 import com.google.gson.annotations.SerializedName;
 

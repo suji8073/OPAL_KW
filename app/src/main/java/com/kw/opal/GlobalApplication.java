@@ -10,6 +10,9 @@ import com.kakao.auth.ISessionConfig;
 import com.kakao.auth.KakaoAdapter;
 import com.kakao.auth.KakaoSDK;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmObject;
 
 
 public class GlobalApplication extends Application {
@@ -30,6 +33,15 @@ public class GlobalApplication extends Application {
 
         // Kakao Sdk 초기화
         KakaoSDK.init(new KakaoSDKAdapter());
+        Realm.init(this);
+        RealmConfiguration config = new RealmConfiguration.Builder()
+                .name("Alldb.realm")
+                .schemaVersion(0)
+                .build();
+
+        //Realm에 셋팅한 정보 값을 지정
+        Realm.setDefaultConfiguration(config);
+
     }
 
     @Override
@@ -81,4 +93,6 @@ public class GlobalApplication extends Application {
             };
         }
     }
+
+
 }
