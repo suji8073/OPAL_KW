@@ -89,23 +89,52 @@
                     android:layout_margin="10dp"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/address"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="주소 : 제주특별자치도 서귀포시 안덕면 병악로 166"
                         android:layout_marginBottom="2dp"
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
-                    <TextView
-                        android:id="@+id/url"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:text="주소 : "  />
+
+                        <TextView
+                            android:id="@+id/address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="제주특별자치도 서귀포시 안덕면 병악로 166"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="홈페이지 : http://www.camelliahill.co.kr"
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:text="홈페이지 : " />
+
+                        <TextView
+                            android:id="@+id/url"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="http://www.camelliahill.co.kr"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
                 <ImageView

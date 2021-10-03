@@ -41,10 +41,10 @@ public class final_route_1 extends AppCompatActivity {
             }
         });
 
-        //MapView mapView = new MapView(this);
+        MapView mapView = new MapView(this);
 
-        //ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
-        //mapViewContainer.addView(mapView);
+        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
+        mapViewContainer.addView(mapView);
 
     }
 

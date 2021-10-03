@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         home2 = findViewById(R.id.home2);
 
         String strNickname = sp.getString("strNickname", "");
-        user_name_main.setText("\"" + strNickname+ "\" 님");
+        if (strNickname != "") user_name_main.setText("\"" + strNickname+ "\" 님");
 
 
         home1.setColorFilter(getApplication().getResources().getColor(R.color.main));
