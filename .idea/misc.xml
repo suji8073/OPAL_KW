@@ -31,11 +31,12 @@
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/activity_main_2.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/activity_main_3.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/area.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/final_route_1.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/final_route_2.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/final_route_1.xml" value="0.264" />
+        <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/final_route_2.xml" value="0.4" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/final_route_3.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/loading.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/login.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/network_security_config.xml" value="0.13802083333333334" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/root_choice.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/root_list.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/root_loading.xml" value="0.16510416666666666" />
@@ -45,10 +46,11 @@
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/root_making_3.xml" value="0.19334719334719336" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/select.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/select1.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/tab_item.xml" value="0.2" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/taste1.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/taste2.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/taste3.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/tourism.xml" value="0.136" />
+        <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/tourism.xml" value="0.264" />
       </map>
     </option>
   </component>

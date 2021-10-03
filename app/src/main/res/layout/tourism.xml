@@ -82,15 +82,60 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:text="주소 : 제주특별자치도 서귀포시 안덕면 병악로 166\n홈페이지 : http://www.camelliahill.co.kr"
-                    android:textColor="@color/black"
-                    android:textSize="13dp" />
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:text="주소 : "  />
+
+                        <TextView
+                            android:id="@+id/address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="제주특별자치도 서귀포시 안덕면 병악로 166"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:text="홈페이지 : " />
+
+                        <TextView
+                            android:id="@+id/url"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="http://www.camelliahill.co.kr"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -106,7 +151,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:text="이용안내" />
@@ -124,7 +169,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="10dp"
+                    android:textSize="12dp"
                     android:textColor="@color/text"
                     android:text="문의 및 안내 : 064-792-0088\n쉬는 날 : 연중무휴\n이용시간 : 동 절 기 (12월~2월) 08:30 ~ 18:00\n
                 간 절 기 (3월~5월, 9~11월) 08:30 ~ 18:30\n
@@ -137,7 +182,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:text="상세정보" />
@@ -155,7 +200,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="10dp"
+                    android:textSize="12dp"
                     android:textColor="@color/text"
                     android:text="입 장 료 : [개 인]\n
         성 인 (19 ~ 64세) 8,000원\n

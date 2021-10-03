@@ -100,7 +100,7 @@
                 android:background="@drawable/btn1"
                 android:gravity="center"
                 android:text="경로 선택 마치기"
-                android:textColor="#3C3C3C"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 

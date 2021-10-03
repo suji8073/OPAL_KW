@@ -1,14 +1,23 @@
 package com.kw.opal;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 public class select1 extends AppCompatActivity {
     LinearLayout random, want;
+    TextView checkarea;
+    private SharedPreferences sroot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +26,7 @@ public class select1 extends AppCompatActivity {
 
         random = findViewById(R.id.random);
         want = findViewById(R.id.want);
+        sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
 
 
         random.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +45,16 @@ public class select1 extends AppCompatActivity {
             }
         });
 
+        checkarea = findViewById(R.id.checkarea);
 
+        Set<String> area = sroot.getStringSet("area", new HashSet<String>());
+        Iterator<String> iterSet = area.iterator();
+        String textarea = "";
+        while(iterSet.hasNext()) {
+            textarea += iterSet.next() + " " ;
+        }
+
+        checkarea.setText(textarea);
 
 
     }
