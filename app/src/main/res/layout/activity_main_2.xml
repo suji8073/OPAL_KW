@@ -161,9 +161,9 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:background="@drawable/bar_design"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/bar_design"
                     app:srcCompat="@drawable/ic_home" />
 
                 <TextView
