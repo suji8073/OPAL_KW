@@ -74,7 +74,7 @@
                     android:id="@+id/layout1"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -108,7 +108,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -142,7 +142,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -176,7 +176,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -210,7 +210,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -244,7 +244,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -278,7 +278,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -312,7 +312,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -346,7 +346,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -380,7 +380,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -414,7 +414,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -448,7 +448,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -482,7 +482,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -516,7 +516,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -550,7 +550,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -584,7 +584,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView
@@ -618,7 +618,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/button_"
+                    android:background="@drawable/btn"
                     android:orientation="horizontal">
 
                     <TextView

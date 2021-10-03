@@ -1,18 +1,34 @@
 package com.kw.opal;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.lang.annotation.Target;
+import java.util.ArrayList;
 
 public class final_route_2 extends AppCompatActivity {
 
     Button next;
-    ImageView circle1, circle2, circle3, delete;
+    ImageView circle1, circle2, circle3;
     int check;
+    private RecyclerView mRecyclerView;
+    private TabListAdapter mAdapter;
+    private ItemTouchHelper mItemTouchHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +45,41 @@ public class final_route_2 extends AppCompatActivity {
         else {
             next.setText("다 음");
         }
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.rv_tab_list);
+
+        LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRecyclerView.setLayoutManager(manager);
+
+        mAdapter = new TabListAdapter();
+        mRecyclerView.setAdapter(mAdapter);
+
+        mItemTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallback(mAdapter));
+
+        mItemTouchHelper.attachToRecyclerView(mRecyclerView);
+
+        ArrayList<TabItem> items = new ArrayList<>();
+        TabItem item1 = new TabItem("SUBSCRIBE",0);
+        TabItem item2 = new TabItem("BEST",0);
+        TabItem item3 = new TabItem("MUSIC",0);
+        TabItem item4 = new TabItem("SPORTS",0);
+        TabItem item5 = new TabItem("GAME",0);
+        TabItem item6 = new TabItem("MUSIC",0);
+        TabItem item7 = new TabItem("SPORTS",0);
+        TabItem item8 = new TabItem("GAME",0);
+
+        items.add(item1);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
+        items.add(item5);
+        items.add(item6);
+        items.add(item7);
+        items.add(item8);
+
+
+        mAdapter.setItems(items);
 
 
 
@@ -56,16 +107,7 @@ public class final_route_2 extends AppCompatActivity {
             }
         });
 
-        delete = findViewById(R.id.delete);
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-
-
 
     }
+
 }
