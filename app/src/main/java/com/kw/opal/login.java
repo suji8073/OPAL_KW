@@ -59,7 +59,7 @@ public class login extends AppCompatActivity {
         sessionCallback = new SessionCallback();
         Session.getCurrentSession().addCallback(sessionCallback);
 
-        //Session.getCurrentSession().checkAndImplicitOpen(); //자동 로그인
+        Session.getCurrentSession().checkAndImplicitOpen(); //자동 로그인
 
 
 

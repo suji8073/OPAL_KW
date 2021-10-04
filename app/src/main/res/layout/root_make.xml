@@ -38,7 +38,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
             android:text="나의 경로 선택하기"
-            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
             android:textColor="#000000"
             android:textSize="18dp"
             android:textStyle="bold"
@@ -61,6 +61,7 @@
             android:layout_margin="20dp"
             android:textColor="#3C3C3C"
             android:textSize="16dp"
+            android:layout_gravity="center"
             android:textStyle="bold"
             android:background="@drawable/btn3"
             android:text="관광지" />

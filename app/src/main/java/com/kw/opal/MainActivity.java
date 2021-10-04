@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView home1, heart_1, heart_2;
     TextView home2;
     Button play;
-    TextView user_name_main;
+    TextView user_name_main, main_1_name, main_2_name, main_1_root, main_2_root;
 
     String strNickname, strProfile;
     int login_check;
@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d("API 확인", "profile image: " + sp.getString("strProfile", ""));
 
         user_name_main = findViewById(R.id.user_name_main);
+
+
 
         if (login_check == 0){
             Toast.makeText(getApplicationContext(), "비회원으로 로그인하셨습니다!",
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         final String strNickname = sp.getString("strNickname", "");
         if (strNickname != "") user_name_main.setText("\"" + strNickname+ "\" 님");
+        else user_name_main.setText("\"" + "비회원"+ "\" 님");
 
 
         home1.setColorFilter(getApplication().getResources().getColor(R.color.main));
@@ -90,6 +93,10 @@ public class MainActivity extends AppCompatActivity {
         heart_2.setColorFilter(getApplication().getResources().getColor(R.color.heart));
 
 
+        main_1_name = findViewById(R.id.main_1_name);
+        main_1_root = findViewById(R.id.main_1_root);
+        main_2_name = findViewById(R.id.main_2_name);
+        main_2_root = findViewById(R.id.main_2_root);
 
         heart_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +107,9 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     heart_1.setColorFilter(getApplication().getResources().getColor(R.color.heart));
                     i = false;
+                    editor.putString("main_1_name", String.valueOf(main_1_name));
+                    editor.putString("main_1_root", String.valueOf(main_1_root));
+                    editor.commit();
                 }else {
                     heart_1.setImageResource(R.drawable.heart_off);
                     heart_1.setColorFilter(getApplication().getResources().getColor(R.color.heart));

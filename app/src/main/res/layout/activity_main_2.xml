@@ -51,7 +51,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -94,9 +97,9 @@
 
         <FrameLayout
             android:id="@+id/FirstFrame"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="200dp">
 
@@ -121,15 +124,15 @@
 
         <TextView
             android:id="@+id/root_1"
-            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="13dp"
-            android:textColor="@color/text"
-            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:text="1일차 : 죽녹원 - 관방제림 - 숭일식당 - 숙소(담양한옥민박)
-            \n2일차 : 금성산성 - 가마골 계곡 - 신식당" />
+            \n2일차 : 금성산성 - 가마골 계곡 - 신식당"
+            android:textColor="@color/text"
+            android:textSize="13dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/root_2"
@@ -139,7 +142,8 @@
             android:layout_gravity="right"
             android:gravity="right"
             android:textSize="12dp"
-            android:textColor="#3A4CA8"
+            android:textColor="@color/main2"
+            android:textStyle="bold"
             android:text="100km\n총 비용 : 30,000원(1인당)\n총 소요 시간 : 약 5시간" />
 
 
@@ -161,9 +165,9 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:background="@drawable/bar_design"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/bar_design"
                     app:srcCompat="@drawable/ic_home" />
 
                 <TextView

@@ -56,6 +56,7 @@ public class MainActivity_3 extends AppCompatActivity {
         Log.d("M3 확인", "profile image: " + sp.getString("strProfile", ""));
 
         if (strNickname != "") user_Name.setText(strNickname + "님");
+        else user_Name.setText("\"" + "비회원"+ "\" 님");
         person1 = findViewById(R.id.person1);
         person2 = findViewById(R.id.person2);
 

@@ -1,6 +1,7 @@
 package com.kw.opal;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,6 +44,8 @@ public class tourism extends AppCompatActivity {
 
             }
         });
+
+        url.setPaintFlags(url.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG); // 밑줄
 
 
 
