@@ -13,25 +13,25 @@ import java.util.List;
 public class UserListAdapter extends BaseAdapter {
 
     final Context context;
-    final List<Local_user> userList;
+    final List<PointModel> pointList;
 
     
 
-    public UserListAdapter(Context context, List<Local_user> userList) {
+    public UserListAdapter(Context context, List<PointModel> pointList) {
         this.context = context;
-        this.userList = userList;
+        this.pointList = pointList;
     }
 
 
     @Override
     public int getCount() {
         //현재사용자의 개수 반환
-        return userList.size();
+        return pointList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return userList.get(position);
+        return pointList.get(position);
     }
 
     @Override
@@ -50,13 +50,13 @@ public class UserListAdapter extends BaseAdapter {
         TextView userName = (TextView)v.findViewById(R.id.addr);
         TextView userAge = (TextView)v.findViewById(R.id.addr2);
 
-        userID.setText(userList.get(position).getUserID());
-        userPassword.setText(userList.get(position).getUserPassword());
-        userName.setText(userList.get(position).getUserName());
-        userAge.setText(userList.get(position).getUserAge());
+        userID.setText(pointList.get(position).getName());
+        userPassword.setText(pointList.get(position).getAddr());
+        userName.setText(pointList.get(position).getImage());
+        //userAge.setText(pointList.get(position).getId()); int라 오류
 
         //특정 user에 아이디값을 그대로 반환할수 있게 해준다
-        v.setTag(userList.get(position).getUserID());
+        v.setTag(pointList.get(position).getId());
         return v;
 
     }

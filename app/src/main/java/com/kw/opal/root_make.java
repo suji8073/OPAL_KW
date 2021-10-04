@@ -33,10 +33,6 @@ public class root_make extends AppCompatActivity {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                HashMap<String,Object> param = new HashMap<>();
-                param.put("table","city");
-                param.put("cat","A0201");
-                param.put("areacode","1");
                 networkService.setPostBody(post)
                         .enqueue(new Callback<PointList>() {
                             @Override

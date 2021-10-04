@@ -14,4 +14,20 @@ public class PointModel implements Serializable {
         String str = super.toString();
         return "주소는 "+addr+" 이름은 "+ name+ " 나머진 아몰라";
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddr() {
+        return addr;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
