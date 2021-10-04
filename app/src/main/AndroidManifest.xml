@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.kw.opal"
-    >
+    package="com.kw.opal">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 
     <application
@@ -50,20 +48,16 @@
         </activity>
 
         <activity
-            android:name=".root_choice"
-            android:label="root_choice" />
+            android:name=".root_choice" android:label="root_choice" />
         <activity
-            android:name=".root_make"
-            android:label="root_make" />
+            android:name=".root_make" android:label="root_make" />
         <activity
-            android:name=".root_making_1"
-            android:label="root_making_1" />
+
+            android:name=".root_making_1" android:label="root_making_1" />
         <activity
-            android:name=".root_making_2"
-            android:label="root_making_2" />
+            android:name=".root_making_2" android:label="root_making_2" />
         <activity
-            android:name=".root_making_3"
-            android:label="root_making_3" />
+            android:name=".root_making_3" android:label="root_making_3" />
     </application>
 
 </manifest>

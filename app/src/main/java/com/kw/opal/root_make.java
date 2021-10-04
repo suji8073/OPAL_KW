@@ -26,8 +26,8 @@ public class root_make extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.root_make);
-        RetrofitService networkService = RetrofitHelper.create();
-        PostClass post = new PostClass("city",1,"A0201");
+        final RetrofitService networkService = RetrofitHelper.create();
+        final PostClass post = new PostClass("city",1,"A0201");
 
         play = findViewById(R.id.play);
         play.setOnClickListener(new View.OnClickListener() {
