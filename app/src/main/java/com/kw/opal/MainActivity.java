@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         home1 = findViewById(R.id.home1);
         home2 = findViewById(R.id.home2);
 
-        String strNickname = sp.getString("strNickname", "");
+        final String strNickname = sp.getString("strNickname", "");
         if (strNickname != "") user_name_main.setText("\"" + strNickname+ "\" 님");
 
 

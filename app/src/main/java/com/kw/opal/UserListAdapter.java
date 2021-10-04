@@ -13,11 +13,11 @@ import java.util.List;
 public class UserListAdapter extends BaseAdapter {
 
     final Context context;
-    final List<User> userList;
+    final List<Local_user> userList;
 
     
 
-    public UserListAdapter(Context context, List<User> userList) {
+    public UserListAdapter(Context context, List<Local_user> userList) {
         this.context = context;
         this.userList = userList;
     }
