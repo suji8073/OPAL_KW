@@ -54,6 +54,7 @@ public class root_make extends AppCompatActivity {
                             }
                             @Override
                             public void onFailure(Call<PointList> call, Throwable t) {
+                                Log.d("test",t.toString());
                             }
                         });
 
