@@ -45,16 +45,14 @@ public class select1 extends AppCompatActivity {
             }
         });
 
-        checkarea = findViewById(R.id.checkarea);
 
-        Set<String> area = sroot.getStringSet("area", new HashSet<String>());
+        /* Set<String> area = sroot.getStringSet("area", new HashSet<String>());
         Iterator<String> iterSet = area.iterator();
         String textarea = "";
         while(iterSet.hasNext()) {
             textarea += iterSet.next() + " " ;
-        }
+        }*/
 
-        checkarea.setText(textarea);
 
 
     }
