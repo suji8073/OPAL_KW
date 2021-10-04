@@ -8,9 +8,9 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.2'
-        classpath 'com.android.tools.build:gradle:3.4.1'
-        classpath "io.realm:realm-gradle-plugin:5.11.0"
+        classpath 'com.android.tools.build:gradle:7.0.2'
+        classpath 'com.android.tools.build:gradle:7.0.2'
+        classpath "io.realm:realm-gradle-plugin:6.0.2"
 
 
         
@@ -28,7 +28,7 @@ allprojects {
             url "https://maven.google.com"
         }
         /*카카오*/
-        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/'}
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
     }
 }
 

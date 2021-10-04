@@ -5,7 +5,7 @@ apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 31
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.lakue.kakaologinsample"
