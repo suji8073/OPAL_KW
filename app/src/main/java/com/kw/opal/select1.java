@@ -16,7 +16,6 @@ import java.util.Set;
 
 public class select1 extends AppCompatActivity {
     LinearLayout random, want;
-    TextView checkarea;
     private SharedPreferences sroot;
 
     @Override
@@ -45,16 +44,14 @@ public class select1 extends AppCompatActivity {
             }
         });
 
-        checkarea = findViewById(R.id.checkarea);
 
-        Set<String> area = sroot.getStringSet("area", new HashSet<String>());
+        /* Set<String> area = sroot.getStringSet("area", new HashSet<String>());
         Iterator<String> iterSet = area.iterator();
         String textarea = "";
         while(iterSet.hasNext()) {
             textarea += iterSet.next() + " " ;
-        }
+        }*/
 
-        checkarea.setText(textarea);
 
 
     }

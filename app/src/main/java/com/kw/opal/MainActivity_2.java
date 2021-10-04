@@ -1,6 +1,8 @@
 package com.kw.opal;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,10 +18,14 @@ public class MainActivity_2 extends AppCompatActivity {
     TextView place2;
     Button more;
 
+    public SharedPreferences sroot;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_2);
+        sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
+
 
         home = findViewById(R.id.home);
         place = findViewById(R.id.place);

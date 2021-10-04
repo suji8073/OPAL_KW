@@ -40,7 +40,7 @@ public class area extends AppCompatActivity {
     String[] area_all = {"서울", "인천", "대전", "대구", "광주", "부산", "울산", "세종", "경기도", "강원도", "충청북도", "충청남도", "경상북도", "경상남도", "전라북도", "전라남도", "제주도"};
 
     public int[] on_off = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    private SharedPreferences sroot;
+    public SharedPreferences sroot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
