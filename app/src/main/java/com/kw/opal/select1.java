@@ -16,7 +16,6 @@ import java.util.Set;
 
 public class select1 extends AppCompatActivity {
     LinearLayout random, want;
-    TextView checkarea;
     private SharedPreferences sroot;
 
     @Override
