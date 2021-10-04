@@ -52,6 +52,7 @@
         <activity
             android:name=".root_make" android:label="root_make" />
         <activity
+
             android:name=".root_making_1" android:label="root_making_1" />
         <activity
             android:name=".root_making_2" android:label="root_making_2" />

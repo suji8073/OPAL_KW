@@ -2,55 +2,42 @@ package com.kw.opal;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.kakao.usermgmt.response.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class root_making_1 extends AppCompatActivity {
-    Button finish;
-    Intent intent = getIntent();
 
-    ImageView cart;
+    private ListView listView;
+    private UserListAdapter adapter;
+    private ArrayList<Local_user> userList;
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        try{
-            ArrayList<PointList> pointlist = (ArrayList<PointList>) intent.getSerializableExtra("pointlist");
-            Log.d("test",pointlist.toString());
 
-        }catch (NullPointerException e){
-            Log.d("test","왜뜨는거지");
-        }
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.root_making_1);
+        Intent intent = getIntent();
+        //초기화를 해줘야지 실행이된다
+        listView = (ListView) findViewById(R.id.userListTextView);
+        userList = new ArrayList<Local_user>();
 
-        finish = findViewById(R.id.finish);
-        finish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_intent = new Intent(getApplicationContext(), root_make.class);
-                startActivity(start_intent);
-            }
-        });
-
-        cart = findViewById(R.id.cart);
-        cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_intent = new Intent(getApplicationContext(), final_route_2.class);
-                start_intent.putExtra("check", 0);
-                startActivity(start_intent);
-            }
-        });
+        userList.add(new Local_user("서울특별시1", "A0201", "http://tong.visitkorea.or.kr/cms/resource/88/2550988_image2_1.bmp", "경국사(서울)"));
+        userList.add(new Local_user("서울특별시1", "A0201", "http://tong.visitkorea.or.kr/cms/resource/88/2550988_image2_1.bmp", "경국사(서울)"));
+        userList.add(new Local_user("서울특별시1", "A0201", "http://tong.visitkorea.or.kr/cms/resource/88/2550988_image2_1.bmp", "경국사(서울)"));
 
 
+        //어댑터 초기화부분 userList와 어댑터를 연결해준다.
+        adapter = new UserListAdapter(getApplicationContext(), userList);
+        listView.setAdapter(adapter);
 
     }
+
 }
