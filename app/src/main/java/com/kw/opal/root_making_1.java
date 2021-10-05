@@ -1,6 +1,8 @@
 package com.kw.opal;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,21 +20,25 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class root_making_1 extends AppCompatActivity {
-
+    private SharedPreferences sroot;
     private ListView listView;
     private UserListAdapter adapter;
-    private ArrayList<Local_user> userList;
     final RetrofitService networkService = RetrofitHelper.create();
-    final PostClass post = new PostClass("city",2,"A0201"); //intent로 인자 넘겨받아야함
+
 
 
     @Override
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sroot=getSharedPreferences("root",Activity.MODE_PRIVATE);
+        int area = sroot.getInt("area",0);
+        final PostClass post = new PostClass("city",area,"A0201"); //intent로 인자 넘겨받아야함
         networkService.setPostBody(post)
                 .enqueue(new Callback<PointList>() {
                     @Override
+
                     public void onResponse(Call<PointList> call, Response<PointList> response) {
                         if(response.isSuccessful()){
                             List point = response.body().pointlist;
