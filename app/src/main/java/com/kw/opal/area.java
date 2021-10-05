@@ -77,8 +77,17 @@ public class area extends AppCompatActivity {
                         text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
                     }
                     else if (re == 2){ // 하나 이상 체크하려고 하는 경우
-                        Toast.makeText(getApplicationContext(), "한 여행 지역만 선택이 가능합니다.",
-                                Toast.LENGTH_SHORT).show();
+                        for (int i=0; i<on_off.length; i++){
+                            if (on_off[i] == 1){
+                                check[i].setImageResource(R.drawable.check_off);
+                                text[i].setTextColor(getApplication().getResources().getColor(R.color.black));
+                                on_off[i] = 0;
+                            }
+                        }
+                        check[INDEX].setImageResource(R.drawable.check_on);
+                        text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
+                        on_off[INDEX] = 1;
+
                     }
 
 
