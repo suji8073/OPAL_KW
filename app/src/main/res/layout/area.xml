@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="이번 여행은 어디로 떠나실래요? (중복 선택 가능)"
+            android:text="이번 여행은 어디로 떠나실래요?"
             android:textColor="@color/purple_700"
             android:textSize="15dp" />
 
