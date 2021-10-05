@@ -21,7 +21,7 @@ public class root_making_1 extends AppCompatActivity {
 
     private ListView listView;
     private UserListAdapter adapter;
-    private ArrayList<Local_user> userList;
+
     final RetrofitService networkService = RetrofitHelper.create();
     final PostClass post = new PostClass("city",2,"A0201"); //intent로 인자 넘겨받아야함
 
