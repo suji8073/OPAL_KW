@@ -36,8 +36,8 @@ public class area extends AppCompatActivity {
 
     TextView[] text = new TextView[17]; // 텍스트
     LinearLayout[] layout = new LinearLayout[17]; // 텍스트
-    Set<String> area = new HashSet<String>();
-    String[] area_all = {"서울", "인천", "대전", "대구", "광주", "부산", "울산", "세종", "경기도", "강원도", "충청북도", "충청남도", "경상북도", "경상남도", "전라북도", "전라남도", "제주도"};
+    int one_pick = 0;
+    int[] area_all = {1, 2, 3, 4, 5, 6, 7, 8, 31, 32, 33, 34, 35, 36, 37, 38, 39};
 
     public int[] on_off = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public SharedPreferences sroot;
@@ -76,6 +76,10 @@ public class area extends AppCompatActivity {
                         check[INDEX].setImageResource(R.drawable.check_on);
                         text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
                     }
+                    else if (re == 2){ // 하나 이상 체크하려고 하는 경우
+                        Toast.makeText(getApplicationContext(), "한 여행 지역만 선택이 가능합니다.",
+                                Toast.LENGTH_SHORT).show();
+                    }
 
 
                 }
@@ -87,15 +91,16 @@ public class area extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int click_check = 0;
+                int area_num = 0;
                 for (int i = 0; i<on_off.length; i++){
                     if (on_off[i] == 1) {
                         click_check = 1;
-                        area.add(area_all[i]);
+                        area_num = area_all[i];
                     }
                 }
                 if (click_check == 1) {
                     SharedPreferences.Editor editor = sroot.edit();
-                    editor.putStringSet("area", area);
+                    editor.putInt("area", area_num);
                     editor.commit();
 
 
@@ -103,6 +108,7 @@ public class area extends AppCompatActivity {
                     Intent start_intent = new Intent(area.this, com.kw.opal.select1.class);
                     startActivity(start_intent);
                 }
+
                 else {
                     Toast.makeText(getApplicationContext(), "여행 지역을 선택하세요!",
                             Toast.LENGTH_SHORT).show();
@@ -119,12 +125,17 @@ public class area extends AppCompatActivity {
             if (on_off[i] == 1){ //체크 된 것
                 if (index == i) { //체크 된 것과 내가 클릭한 것이 같으면 다시 체크안 된 것으로
                     on_off[i] = 0;
+                    one_pick -= 1;
                     return 0;
                 }
             }
         }
+        if (one_pick == 1){
+            return 2;
+        }
         // 전에 체크 되지 않은 것
         on_off[index] = 1;
+        one_pick += 1;
         return 1;
     }
 }

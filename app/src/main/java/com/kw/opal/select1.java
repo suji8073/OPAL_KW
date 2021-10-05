@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -45,12 +46,8 @@ public class select1 extends AppCompatActivity {
         });
 
 
-        /* Set<String> area = sroot.getStringSet("area", new HashSet<String>());
-        Iterator<String> iterSet = area.iterator();
-        String textarea = "";
-        while(iterSet.hasNext()) {
-            textarea += iterSet.next() + " " ;
-        }*/
+        int area = sroot.getInt("area",0);
+        Log.e("area_num", "내가 선택한 지역 " + area);
 
 
 
