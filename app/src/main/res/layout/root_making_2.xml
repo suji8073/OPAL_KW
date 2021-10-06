@@ -44,7 +44,7 @@
                 android:id="@+id/text_theme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="음식점 선택하기"
+                android:text="관광지 선택하기"
                 android:layout_gravity="center"
                 android:textColor="#000000"
                 android:textSize="18dp"
@@ -92,7 +92,7 @@
                 android:ems="5"
                 android:inputType="textPersonName"
                 android:textSize="12dp"
-                android:text="음식점을 입력하세요" />
+                android:text="관광지를 입력하세요" />
         </LinearLayout>
 
 
@@ -108,7 +108,7 @@
                 android:orientation="horizontal" >
 
                 <Button
-                    android:id="@+id/two_1"
+                    android:id="@+id/one_1"
                     android:background="@drawable/btn"
                     android:layout_width="80dp"
                     android:layout_height="25dp"
@@ -117,7 +117,7 @@
                     android:text="전체" />
 
                 <Button
-                    android:id="@+id/two_2"
+                    android:id="@+id/one_2"
                     android:background="@drawable/btn"
                     android:layout_width="80dp"
                     android:layout_height="25dp"
@@ -126,7 +126,7 @@
                     android:text="한식" />
 
                 <Button
-                    android:id="@+id/two_3"
+                    android:id="@+id/one_3"
                     android:background="@drawable/btn"
                     android:layout_width="80dp"
                     android:layout_height="25dp"
@@ -135,16 +135,7 @@
                     android:text="중식" />
 
                 <Button
-                    android:id="@+id/two_4"
-                    android:background="@drawable/btn"
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="일식" />
-
-                <Button
-                    android:id="@+id/two_5"
+                    android:id="@+id/one_4"
                     android:background="@drawable/btn"
                     android:layout_width="80dp"
                     android:layout_height="25dp"
@@ -152,285 +143,19 @@
                     android:textSize="14dp"
                     android:text="양식" />
 
+
             </LinearLayout>
         </HorizontalScrollView>
 
-        <ScrollView
+        <ListView
+            android:id="@+id/userListTextView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="10dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/button_"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_margin="5dp"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        app:srcCompat="@drawable/check_on" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:text="[백년가게] 개미집"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_marginTop="4dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"
-                            android:text="대표메뉴 : 낙곱새\n키워드 : 가격" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/button_"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_margin="5dp"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        app:srcCompat="@drawable/check_on" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:text="정아네 맛집"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"     />
-
-                        <TextView
-                            android:layout_marginTop="4dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"
-                            android:text="대표메뉴 : 닭볶음탕\n키워드 : 청결" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/button_"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_margin="5dp"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        app:srcCompat="@drawable/check_on" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:text="파스타치오"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_marginTop="4dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"
-                            android:text="대표메뉴 : 파스타\n키워드 : 전망" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/button_"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_margin="5dp"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        app:srcCompat="@drawable/check_on" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:text="안양해물탕"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_marginTop="4dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"
-                            android:text="대표메뉴 : 대왕해물탕\n키워드 : 맛" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/button_"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_margin="5dp"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        app:srcCompat="@drawable/check_on" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:text="오늘의행복"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_marginTop="4dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"
-                            android:text="대표메뉴 : 메밀면\n키워드 : 가격" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/button_"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="5dp"
-                        app:srcCompat="@drawable/check_on" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="10dp"
-                            android:text="오늘의행복"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="4dp"
-                            android:text="대표메뉴 : 메밀면\n키워드 : 가격"
-                            android:textColor="@color/black"
-                            android:textSize="14dp" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-        </ScrollView>
+        </ListView>
 
 
 

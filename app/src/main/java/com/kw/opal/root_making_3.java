@@ -1,43 +1,87 @@
 package com.kw.opal;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class root_making_3 extends AppCompatActivity {
     Button finish;
     ImageView cart;
+    private SharedPreferences sroot;
+    private ListView listView3;
+    private UserListAdapter adapter3;
+    final RetrofitService networkService = RetrofitHelper.create();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.root_making_3);
 
-        finish = findViewById(R.id.finish3);
-        finish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_intent = new Intent(getApplicationContext(), root_make.class);
-                startActivity(start_intent);
-            }
-        });
+        sroot=getSharedPreferences("root", Activity.MODE_PRIVATE);
+        int area = sroot.getInt("area",0);
+        final PostClass post = new PostClass("hotel",area,"B02011100"); //todo 카테고리 전체 불러올떈 sql인젝션으로 카테고리 구분 없이 처리
+        networkService.setPostBody(post)
+                .enqueue(new Callback<PointList>() {
+                    @Override
+
+                    public void onResponse(Call<PointList> call, Response<PointList> response) {
+                        if(response.isSuccessful()){
+
+                            List point = response.body().pointlist;
+                            ArrayList<PointModel> array = new ArrayList<>();
+                            array.addAll(point);
+                            Log.d("test",point.toString());
+                            setContentView(R.layout.root_making_3);
+                            //Intent intent = getIntent();
+                            Log.d("test",array.get(0).toString());
+                            adapter3 = new UserListAdapter(getApplicationContext(), array);
+                            listView3 = (ListView) findViewById(R.id.userListTextView3);
+                            listView3.setAdapter(adapter3);
+                            finish = findViewById(R.id.finish3);
+                            finish.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent start_intent = new Intent(getApplicationContext(), root_make.class);
+                                    startActivity(start_intent);
+                                }
+                            });
+                            cart = findViewById(R.id.cart);
+                            cart.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent start_intent = new Intent(getApplicationContext(), final_route_3.class);
+                                    start_intent.putExtra("check", 0);
+                                    startActivity(start_intent);
+                                }
+                            });
+
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<PointList> call, Throwable t) {
+                        Log.d("test",t.toString());
+                    }
+                });
 
 
-        cart = findViewById(R.id.cart);
-        cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_intent = new Intent(getApplicationContext(), final_route_2.class);
-                start_intent.putExtra("check", 0);
-                startActivity(start_intent);
-            }
-        });
+
 
     }
 }

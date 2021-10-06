@@ -33,26 +33,8 @@ public class root_make extends AppCompatActivity {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                networkService.setPostBody(post)
-                        .enqueue(new Callback<PointList>() {
-                            @Override
-                            public void onResponse(Call<PointList> call, Response<PointList> response) {
-                                if(response.isSuccessful()){
-                                    List point = response.body().pointlist;
-                                    ArrayList<PointModel> array = new ArrayList<>();
-                                    array.addAll(point);
-
-                                    Log.d("test",point.toString());
-                                    Intent play = new Intent(getApplicationContext(),root_making_1.class);
-                                    play.putExtra("pointlist", array);
-                                    startActivity(play);
-                                }
-                            }
-                            @Override
-                            public void onFailure(Call<PointList> call, Throwable t) {
-                                Log.d("test",t.toString());
-                            }
-                        });
+                Intent play = new Intent(getApplicationContext(),root_making_1.class);
+                startActivity(play);
 
             }
         });
