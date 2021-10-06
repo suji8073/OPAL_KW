@@ -26,7 +26,7 @@ public class UserListAdapter extends BaseAdapter {
 
     final Context context;
     final List<PointModel> pointList;
-    private ImageView ivimage;
+    ImageView image_tourism;
     
 
     public UserListAdapter(Context context, List<PointModel> pointList) {
@@ -57,14 +57,16 @@ public class UserListAdapter extends BaseAdapter {
         //하나의 사용자에대한 view를 보여주는 부분
         //한명의 사용자에대한 view가 만들어진다.
         View v = View.inflate(context, R.layout.user,null);
-        TextView userID = (TextView)v.findViewById(R.id.name);
-        TextView userPassword = (TextView)v.findViewById(R.id.id);
-        TextView userName = (TextView)v.findViewById(R.id.addr);
-        ivimage  = (ImageView) v.findViewById(R.id.image121);
-        int id=R.drawable.check_on;
-        if (pointList.get(position).getImage()==null){
+        TextView userID = (TextView)v.findViewById(R.id.name); // 관광지 이름
+        TextView userPassword = (TextView)v.findViewById(R.id.id); //
+        image_tourism  = (ImageView) v.findViewById(R.id.image_tourism); // 사진 띄우는 곳
+        ImageView heart = (ImageView) v.findViewById(R.id.tourism_heart); //하트
+
+
+        int id = R.drawable.no_camera;
+        if (pointList.get(position).getImage() == null){
             System.out.println(pointList.get(position).getImage());
-            ivimage.setImageResource(id);
+            image_tourism.setImageResource(id);
         }
         else{
             new DownloadFilesTask().execute(pointList.get(position).getImage());
@@ -73,9 +75,15 @@ public class UserListAdapter extends BaseAdapter {
 
         userID.setText(pointList.get(position).getName());
         userPassword.setText(pointList.get(position).getAddr());
-        userName.setText(pointList.get(position).getImage());
-
+        //userName.setText(pointList.get(position).getImage());
         //userAge.setText(pointList.get(position).getId());
+
+        heart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
 
         //특정 user에 아이디값을 그대로 반환할수 있게 해준다
@@ -108,7 +116,7 @@ public class UserListAdapter extends BaseAdapter {
         @Override
         protected void onPostExecute(Bitmap result) {
             // doInBackground 에서 받아온 total 값 사용 장소
-            ivimage.setImageBitmap(result);
+            image_tourism.setImageBitmap(result);
         }
     }
 
