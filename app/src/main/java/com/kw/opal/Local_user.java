@@ -6,12 +6,14 @@ public class Local_user {
     String userPassword;
     String userName;
     String userAge;
+    String image;
 
-    public Local_user(String userID, String userPassword, String userName, String userAge) {
+    public Local_user(String userID, String userPassword, String userName, String userAge,String image) {
         this.userID = userID;
         this.userPassword = userPassword;
         this.userName = userName;
         this.userAge = userAge;
+        this.image=image;
     }
 
     public String getUserID() {
@@ -44,6 +46,14 @@ public class Local_user {
 
     public void setUserAge(String userAge) {
         this.userAge = userAge;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image =image;
     }
 }
 
