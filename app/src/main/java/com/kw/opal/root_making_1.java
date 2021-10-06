@@ -1,6 +1,7 @@
 package com.kw.opal;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ public class root_making_1 extends AppCompatActivity {
     Button[] c_one = new Button[5];
     int[] on_off = new int[]{1, 0, 0, 0, 0};
     int one_pick = 1;
+    private SharedPreferences pref;
 
 
     @Override
@@ -43,8 +45,7 @@ public class root_making_1 extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        sroot=getSharedPreferences("root", Activity.MODE_PRIVATE);
+        sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
         int area = sroot.getInt("area",0);
         final PostClass post = new PostClass("city",area,"A0201"); //todo 카테고리 전체 불러올떈 sql인젝션으로 카테고리 구분 없이 처리
 
@@ -58,14 +59,22 @@ public class root_making_1 extends AppCompatActivity {
                             List point = response.body().pointlist;
                             ArrayList<PointModel> array = new ArrayList<>();
                             array.addAll(point);
-                            Log.d("test",point.toString());
                             setContentView(R.layout.root_making_1);
                             //Intent intent = getIntent();
-                            Log.d("test",array.get(0).toString());
+
 
                             adapter1 = new UserListAdapter(getApplicationContext(), array);
                             listView1 = (ListView) findViewById(R.id.userListTextView1);
                             listView1.setAdapter(adapter1);
+
+                            // 값 불러오기
+
+                            pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
+                            int position = pref.getInt("count", -1);
+                            Log.d("하트 누른거 뜨는거야 알겠지?", String.valueOf(position));
+
+
+
 
                             for (int i=0; i<c_one.length; i++){ // 카테고리 형 변환
                                 c_one[i] = findViewById(category[i]);
@@ -128,7 +137,7 @@ public class root_making_1 extends AppCompatActivity {
                     }
                     @Override
                     public void onFailure(Call<PointList> call, Throwable t) {
-                        Log.d("test",t.toString());
+
                     }
                 });
 
