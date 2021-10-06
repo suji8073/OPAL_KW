@@ -77,7 +77,7 @@
                 android:layout_marginTop="30dp"
                 android:text="오팔청춘이 추천하는 추천코스!"
                 android:textColor="#3C3C3C"
-                android:textSize="18dp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -102,10 +102,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textSize="16dp"
                     android:textColor="#3C3C3C"
-                    android:text="제주" />
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
 
                 <View
                     android:layout_width="0dp"
@@ -126,9 +125,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
+                android:text="산방산 - 용머리해안 - 사계해변 - 사계 발자국화석 발견지 - 섯알오름 - 송악산 "
                 android:textColor="#606060"
-                android:textSize="14dp"
-                android:text="산방산 - 용머리해안 - 사계해변 - 사계 발자국화석 발견지 - 섯알오름 - 송악산 " />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -151,10 +150,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textSize="16dp"
+                    android:text="강릉"
                     android:textColor="#3C3C3C"
-                    android:text="강릉" />
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
 
                 <View
                     android:layout_width="0dp"
@@ -175,9 +174,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
+                android:text="BTS정류장 + 주문진향호해변 - 주문진해수욕장 - 경포해변 - 안목항(카페거리) - 하슬라이트월드 - 정동진 발견지 - 섯알오름 - 송악산 "
                 android:textColor="#606060"
-                android:textSize="14dp"
-                android:text="BTS정류장 + 주문진향호해변 - 주문진해수욕장 - 경포해변 - 안목항(카페거리) - 하슬라이트월드 - 정동진 발견지 - 섯알오름 - 송악산 " />
+                android:textSize="16sp" />
 
         </LinearLayout>
 

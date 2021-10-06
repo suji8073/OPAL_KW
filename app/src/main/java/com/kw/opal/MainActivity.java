@@ -17,6 +17,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     LinearLayout home, place, person;
     ImageView home1, heart_1, heart_2;
@@ -97,6 +101,13 @@ public class MainActivity extends AppCompatActivity {
         main_1_root = findViewById(R.id.main_1_root);
         main_2_name = findViewById(R.id.main_2_name);
         main_2_root = findViewById(R.id.main_2_root);
+
+       //추천코스 넣기
+
+        this.InitializeView();
+        this.setTextView();
+
+
 
         heart_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,5 +193,51 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    private void setTextView() {
+
+        int[] category = {R.string.recommend1,R.string.recommend2,R.string.recommend3,R.string.recommend4,
+                R.string.recommend5,R.string.recommend6,R.string.recommend7,R.string.recommend8,R.string.recommend9,
+                R.string.recommend10,};
+
+        ArrayList<Integer> cards = new ArrayList<Integer>();
+        ArrayList<Integer> cards2 = new ArrayList<Integer>();
+
+        for (int i = 0; i < category.length; i++){
+            cards.add(category[i]);
+            cards2.add(category[i]);
+        }
+        double randomValue = Math.random();
+        int ran = (int)(randomValue * cards.size()) -1;
+        Integer get_Card = cards.get(ran);
+        cards.remove(ran);
+
+        // shuffle 이
+        Collections.shuffle(cards2);
+        Integer get_Card2 = cards2.get(0);
+
+        cards.remove(0);
+        System.out.println(get_Card2);
+        String a=getString(get_Card);
+        String b=getString(get_Card2);
+        System.out.println(a);
+        String getStr[]= a.split("/");
+
+        String getStr2[]= b.split("/");
+
+        main_1_name.setText(getStr[0]);
+        main_1_root.setText(getStr[1]);
+        main_2_name.setText(getStr2[0]);
+        main_2_root.setText(getStr2[1]);
+    }
+
+    private void InitializeView() {
+        main_1_name = findViewById(R.id.main_1_name);
+        main_1_root = findViewById(R.id.main_1_root);
+        main_2_name = findViewById(R.id.main_2_name);
+        main_2_root = findViewById(R.id.main_2_root);
+
+    }
+
 
 }

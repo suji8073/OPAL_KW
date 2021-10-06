@@ -31,8 +31,7 @@ public class root_making_1 extends AppCompatActivity {
     Button finish;
     ImageView cart;
 
-    Button finish;
-    ImageView cart;
+
 
 
     @Override
