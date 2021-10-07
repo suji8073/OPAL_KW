@@ -40,6 +40,7 @@ public class root_making_1 extends AppCompatActivity {
     private SharedPreferences pref;
 
 
+
     @Override
 
 
