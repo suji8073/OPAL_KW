@@ -1,7 +1,6 @@
 package com.kw.opal;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,8 +12,6 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
-import com.kakao.usermgmt.response.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +26,7 @@ public class root_making_1 extends AppCompatActivity {
     private ListView listView1;
     private UserListAdapter adapter1;
 
-    final RetrofitService networkService = RetrofitHelper.create();
+    final RSinterface networkService = RetrofitHelper.create();
     Button finish;
     ImageView cart;
 
@@ -48,9 +45,9 @@ public class root_making_1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
         int area = sroot.getInt("area",0);
-        final PostClass post = new PostClass("city",area,"A0201"); //todo 모든 카타고리 다 받아오고 각각의 리스트를 만들게 수정
+        final WPClass post = new WPClass("city",area,"A0201"); //todo 모든 카타고리 다 받아오고 각각의 리스트를 만들게 수정
 
-        networkService.setPostBody(post)
+        networkService.getPoint(post)
                 .enqueue(new Callback<PointList>() {
                     @Override
 

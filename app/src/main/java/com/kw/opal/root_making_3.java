@@ -3,7 +3,6 @@ package com.kw.opal;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,7 +26,7 @@ public class root_making_3 extends AppCompatActivity {
     private SharedPreferences sroot;
     private ListView listView3;
     private UserListAdapter adapter3;
-    final RetrofitService networkService = RetrofitHelper.create();
+    final RSinterface networkService = RetrofitHelper.create();
 
 
     @Override
@@ -36,8 +35,8 @@ public class root_making_3 extends AppCompatActivity {
 
         sroot=getSharedPreferences("root", Activity.MODE_PRIVATE);
         int area = sroot.getInt("area",0);
-        final PostClass post = new PostClass("hotel",area,"B02011100"); //todo 카테고리 전체 불러올떈 sql인젝션으로 카테고리 구분 없이 처리
-        networkService.setPostBody(post)
+        final WPClass post = new WPClass("hotel",area,"B02011100"); //todo 카테고리 전체 불러올떈 sql인젝션으로 카테고리 구분 없이 처리
+        networkService.getPoint(post)
                 .enqueue(new Callback<PointList>() {
                     @Override
 
