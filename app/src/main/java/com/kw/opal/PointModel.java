@@ -8,17 +8,21 @@ public class PointModel implements Serializable {
     public int id;
     public String image;
     public String name;
+
     public float mapx;
     public float mapy;
 
+    int count = 0; //??? 이거 필요?
 
     @Override
     public String toString(){
         String str = super.toString();
-        return "주소는 "+addr+" 이름은 "+ name+ " 나머진 아몰라";
+
+        return "주소는 "+count+" 이름은 "+ name+ " " + id;
     }
 
     public String getName() {
+        count+=1;
         return name;
     }
 
