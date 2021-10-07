@@ -29,8 +29,6 @@ public class root_making_1 extends AppCompatActivity {
     Button finish;
     ImageView cart;
 
-    Button finish;
-    ImageView cart;
 
 
     @Override
@@ -41,7 +39,7 @@ public class root_making_1 extends AppCompatActivity {
 
         sroot=getSharedPreferences("root", Activity.MODE_PRIVATE);
         int area = sroot.getInt("area",0);
-        final PostClass post = new PostClass("city",area,"A0201"); //todo 카테고리 전체 불러올떈 sql인젝션으로 카테고리 구분 없이 처리
+        final PostClass post = new PostClass("city",area,"A0201"); //todo 모든 카타고리 다 받아오고 각각의 리스트를 만들게 수정
 
         networkService.setPostBody(post)
                 .enqueue(new Callback<PointList>() {

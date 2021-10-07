@@ -8,6 +8,9 @@ public class PointModel implements Serializable {
     public int id;
     public String image;
     public String name;
+    public float mapx;
+    public float mapy;
+
 
     @Override
     public String toString(){
@@ -29,5 +32,13 @@ public class PointModel implements Serializable {
 
     public int getId() {
         return id;
+    }
+
+    public float getMap_x() {
+        return mapx;
+    }
+
+    public float getMap_y() {
+        return mapy;
     }
 }
