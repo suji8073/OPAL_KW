@@ -1,9 +1,12 @@
 package com.kw.opal;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +23,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.lang.annotation.Target;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class final_route_2 extends AppCompatActivity {
 
@@ -29,11 +34,21 @@ public class final_route_2 extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private TabListAdapter mAdapter;
     private ItemTouchHelper mItemTouchHelper;
+    public SharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.final_route_2);
+        pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
+        Set<String> area = pref.getStringSet("pref",null);
+        if( area != null)
+        {
+            for(Object lst:area)
+            {
+                Log.d("간다", lst.toString());
+            }
+        }
 
         Intent intent = getIntent();
         check = intent.getIntExtra("check", 0);
