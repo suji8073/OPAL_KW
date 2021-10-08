@@ -2,21 +2,10 @@ package com.kw.opal;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class root_make extends AppCompatActivity {
@@ -26,8 +15,8 @@ public class root_make extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.root_make);
-        final RetrofitService networkService = RetrofitHelper.create();
-        final PostClass post = new PostClass("city",1,"A0201");
+        final RSinterface networkService = RetrofitHelper.create();
+        final WPClass post = new WPClass("city",1,"A0201");
 
         play = findViewById(R.id.play);
         play.setOnClickListener(new View.OnClickListener() {

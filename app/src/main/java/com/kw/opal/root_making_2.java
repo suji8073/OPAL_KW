@@ -3,7 +3,6 @@ package com.kw.opal;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +25,7 @@ public class root_making_2 extends AppCompatActivity {
     private SharedPreferences sroot;
     private ListView listView2;
     private UserListAdapter adapter2;
-    final RetrofitService networkService = RetrofitHelper.create();
+    final RSinterface networkService = RetrofitHelper.create();
     Button finish;
     ImageView cart;
 
@@ -36,8 +35,8 @@ public class root_making_2 extends AppCompatActivity {
 
         sroot=getSharedPreferences("root", Activity.MODE_PRIVATE);
         int area = sroot.getInt("area",0);
-        final PostClass post = new PostClass("food",area,"A05020100"); //intent로 인자 넘겨받아야함
-        networkService.setPostBody(post)
+        final WPClass post = new WPClass("food",area,"A05020100"); //intent로 인자 넘겨받아야함
+        networkService.getPoint(post)
                 .enqueue(new Callback<PointList>() {
                     @Override
 

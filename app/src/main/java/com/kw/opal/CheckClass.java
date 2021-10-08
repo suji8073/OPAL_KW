@@ -6,17 +6,19 @@ package com.kw.opal;
 
 import com.google.gson.annotations.SerializedName;
 
-public class PostClass {
+public class CheckClass {
     @SerializedName("table") private String table;
     @SerializedName("areacode") private int areacode;
-    @SerializedName("cat") private String cat;
+    @SerializedName("mapx") private float mapx;
+    @SerializedName("mapy") private float mapy;
 
-    public PostClass(){
+    public CheckClass(){
 
     }
-    public PostClass(String table, int areacode, String cat) {
+    public CheckClass(String table, int areacode, float mapx,float mapy) {
         this.table=table;
         this.areacode=areacode;
-        this.cat=cat;
+        this.mapx=mapx;
+        this.mapy=mapy;
     }
 }
