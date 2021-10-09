@@ -156,6 +156,14 @@
                     android:layout_marginRight="10dp"
                     android:textSize="14dp"
                     android:text="양식" />
+                <Button
+                    android:id="@+id/one_5"
+                    android:background="@drawable/btn"
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14dp"
+                    android:text="뭘까" />
 
 
             </LinearLayout>
