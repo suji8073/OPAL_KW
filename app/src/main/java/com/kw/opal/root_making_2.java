@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,13 @@ public class root_making_2 extends AppCompatActivity {
     final RSinterface networkService = RetrofitHelper.create();
     Button finish;
     ImageView cart;
+
+    Integer[] category2 = {R.id.one_1, R.id.one_2, R.id.one_3, R.id.one_4};
+    Button[] c_one2 = new Button[4];
+    int[] on_off2 = new int[]{1, 0, 0, 0};
+    int one_pick2 = 1;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +61,46 @@ public class root_making_2 extends AppCompatActivity {
                             adapter2 = new UserListAdapter(getApplicationContext(), array);
                             listView2 = (ListView) findViewById(R.id.userListTextView2);
                             listView2.setAdapter(adapter2);
+
+                            for (int i=0; i<c_one2.length; i++){ // 카테고리 형 변환
+                                c_one2[i] = findViewById(category2[i]);
+                            }
+
+                            for (int i=0; i<c_one2.length; i++){
+                                final int INDEX;
+                                INDEX = i;
+
+                                c_one2[INDEX].setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        int re = check_on_off(INDEX); // 체크 되었는지 표시
+                                        if (re == 0){ // 이미 체크된 것임
+                                            c_one2[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
+                                            c_one2[INDEX].setTextColor(getApplication().getResources().getColor(R.color.black));
+                                        }
+                                        else if (re == 1){ // 전에 체크 되지 않은 것
+                                            c_one2[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_));
+                                            c_one2[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
+                                        }
+                                        else if (re == 2){ // 하나 이상 체크하려고 하는 경우
+                                            for (int i=0; i<on_off2.length; i++){
+                                                if (on_off2[i] == 1){
+                                                    c_one2[i].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
+                                                    c_one2[i].setTextColor(getApplication().getResources().getColor(R.color.black));
+                                                    on_off2[i] = 0;
+                                                }
+                                            }
+                                            c_one2[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_));
+                                            c_one2[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
+                                            on_off2[INDEX] = 1;
+
+                                        }
+
+                                    }
+                                });
+                            }
+
+
                             finish = findViewById(R.id.finish2);
                             finish.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -79,8 +127,23 @@ public class root_making_2 extends AppCompatActivity {
                     }
                 });
 
-
-
-
+    }
+    public int check_on_off(int index) { // 체크 되었는지 확인
+        for (int i=0; i<c_one2.length; i++){
+            if (on_off2[i] == 1){ //체크 된 것
+                if (index == i) { //체크 된 것과 내가 클릭한 것이 같으면 다시 체크안 된 것으로
+                    on_off2[i] = 0;
+                    one_pick2 -= 1;
+                    return 0;
+                }
+            }
+        }
+        if (one_pick2 == 1){
+            return 2;
+        }
+        // 전에 체크 되지 않은 것
+        on_off2[index] = 1;
+        one_pick2 += 1;
+        return 1;
     }
 }

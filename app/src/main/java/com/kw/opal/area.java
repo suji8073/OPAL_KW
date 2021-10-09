@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -71,21 +72,25 @@ public class area extends AppCompatActivity {
                     if (re == 0){ // 이미 체크된 것임
                         check[INDEX].setImageResource(R.drawable.check_off);
                         text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.black));
+                        layout[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
                     }
                     else if (re == 1){ // 전에 체크 되지 않은 것
                         check[INDEX].setImageResource(R.drawable.check_on);
                         text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
+                        layout[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_));
                     }
                     else if (re == 2){ // 하나 이상 체크하려고 하는 경우
                         for (int i=0; i<on_off.length; i++){
                             if (on_off[i] == 1){
                                 check[i].setImageResource(R.drawable.check_off);
                                 text[i].setTextColor(getApplication().getResources().getColor(R.color.black));
+                                layout[i].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
                                 on_off[i] = 0;
                             }
                         }
                         check[INDEX].setImageResource(R.drawable.check_on);
                         text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
+                        layout[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_));
                         on_off[INDEX] = 1;
 
                     }
