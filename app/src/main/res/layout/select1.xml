@@ -87,7 +87,8 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/white"
-                    android:textSize="14dp"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="15dp"
                     android:text="당신의 취향 파악을 통해\n원하는 경로를 추천해드릴께요!" />
 
             </LinearLayout>
@@ -131,8 +132,9 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:text="당신이 원하는 음식점, 숙소를\n하나씩 보고 계획해보세요!"
+                android:lineSpacingExtra="3dp"
                 android:textColor="@color/white"
-                android:textSize="14dp" />
+                android:textSize="15dp" />
 
         </LinearLayout>
 
