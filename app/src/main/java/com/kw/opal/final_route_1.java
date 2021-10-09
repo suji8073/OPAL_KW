@@ -73,7 +73,7 @@ public class final_route_1 extends AppCompatActivity {
 
         MapPolyline polyline = new MapPolyline();
         polyline.setTag(1000);
-        polyline.setLineColor(Color.argb(128, 255, 51, 0)); // Polyline 컬러 지정.
+        polyline.setLineColor(Color.argb(100, 255, 51, 0)); // Polyline 컬러 지정.
 
         // Polyline 좌표 지정.
         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.537229, 127.005515));

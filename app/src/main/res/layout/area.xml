@@ -52,7 +52,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="15dp"
             android:text="이번 여행은 어디로 떠나실래요?"
             android:textColor="@color/purple_700"
             android:textSize="15dp" />
@@ -62,7 +62,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_margin="10dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
