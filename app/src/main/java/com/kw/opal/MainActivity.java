@@ -208,7 +208,12 @@ public class MainActivity extends AppCompatActivity {
             cards2.add(category[i]);
         }
         double randomValue = Math.random();
-        int ran = (int)(randomValue * cards.size()) -1;
+        int ran ;
+        while (true){
+            ran=(int)(randomValue * cards.size()) -1;
+            if (!(ran<0))
+                break;
+        }
         Integer get_Card = cards.get(ran);
         cards.remove(ran);
 
