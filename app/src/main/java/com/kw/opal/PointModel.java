@@ -3,11 +3,11 @@ package com.kw.opal;
 import java.io.Serializable;
 
 public class PointModel implements Serializable {
-    public String addr;
-    public String cat;
-    public int id;
-    public String image;
-    public String name;
+    private String addr;
+    private String cat;
+    private int id;
+    private String image;
+    private String name;
 
     public float mapx;
     public float mapy;
@@ -18,7 +18,7 @@ public class PointModel implements Serializable {
     public String toString(){
         String str = super.toString();
 
-        return "주소는 "+count+" 이름은 "+ name+ " " + id;
+        return "주소는 "+count+" 이름은 "+ getName() + " " + getId();
     }
 
     public String getName() {
@@ -44,5 +44,29 @@ public class PointModel implements Serializable {
 
     public float getMap_y() {
         return mapy;
+    }
+
+    public void setAddr(String addr) {
+        this.addr = addr;
+    }
+
+    public String getCat() {
+        return cat;
+    }
+
+    public void setCat(String cat) {
+        this.cat = cat;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

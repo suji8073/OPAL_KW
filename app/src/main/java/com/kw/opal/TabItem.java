@@ -1,13 +1,15 @@
 package com.kw.opal;
 
+import java.io.Serializable;
+
 public class TabItem {
 
-    private String name;
-    private int number;
+    public String getName() {
+        return name;
+    }
 
-    public TabItem(String name, int number){
+    public void setName(String name) {
         this.name = name;
-        this.number = number;
     }
 
     public int getNumber() {
@@ -18,11 +20,18 @@ public class TabItem {
         this.number = number;
     }
 
-    public String getName() {
-        return name;
+    public String getImage() {
+        return image;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setImage(String image) {
+        this.image = image;
     }
+
+    public String name;
+    public int number;
+    public String image;
 }
+
+
+

@@ -1,15 +1,19 @@
 package com.kw.opal;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -50,8 +54,10 @@ public class root_making_1 extends AppCompatActivity {
         int area = sroot.getInt("area",0);
         final PostClass post = new PostClass("city",area,"A0201"); //todo 모든 카타고리 다 받아오고 각각의 리스트를 만들게 수정
 
+
         networkService.setPostBody(post)
                 .enqueue(new Callback<PointList>() {
+                    @SuppressLint("WrongConstant")
                     @Override
 
                     public void onResponse(Call<PointList> call, Response<PointList> response) {
@@ -86,12 +92,14 @@ public class root_making_1 extends AppCompatActivity {
                                 INDEX = i;
 
                                 c_one[INDEX].setOnClickListener(new View.OnClickListener() {
+                                    @SuppressLint("WrongConstant")
                                     @Override
                                     public void onClick(View view) {
                                         int re = check_on_off(INDEX); // 체크 되었는지 표시
                                         if (re == 0){ // 이미 체크된 것임
                                             c_one[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
                                             c_one[INDEX].setTextColor(getApplication().getResources().getColor(R.color.black));
+
                                         }
                                         else if (re == 1){ // 전에 체크 되지 않은 것
                                             c_one[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_));
@@ -142,6 +150,7 @@ public class root_making_1 extends AppCompatActivity {
                     }
                 });
 
+
     }
     public int check_on_off(int index) { // 체크 되었는지 확인
         for (int i=0; i<c_one.length; i++){
@@ -161,4 +170,10 @@ public class root_making_1 extends AppCompatActivity {
         one_pick += 1;
         return 1;
     }
+
+
+
+
+
 }
+

@@ -1,8 +1,10 @@
 package com.kw.opal;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,12 +16,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.kakao.usermgmt.UserManagement;
-import com.kakao.usermgmt.callback.LogoutResponseCallback;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout home, place, person;
@@ -35,10 +33,17 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sp;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        DbOpenHelper mDbOpenHelper;
+        mDbOpenHelper = new DbOpenHelper(this);
+        mDbOpenHelper.open();
+        mDbOpenHelper.create();
+
 
         sp = getSharedPreferences("myFile", Activity.MODE_PRIVATE);
 
@@ -120,6 +125,12 @@ public class MainActivity extends AppCompatActivity {
                     i = false;
                     editor.putString("main_1_name", String.valueOf(main_1_name));
                     editor.putString("main_1_root", String.valueOf(main_1_root));
+
+                    ContentValues values = new ContentValues();
+                    values.put("txt", String.valueOf(main_1_name));
+                    values.put("txt", String.valueOf(main_1_root));
+                    System.out.println(String.valueOf(main_1_name));
+
                     editor.commit();
                 }else {
                     heart_1.setImageResource(R.drawable.heart_off);
@@ -197,18 +208,25 @@ public class MainActivity extends AppCompatActivity {
     private void setTextView() {
 
         int[] category = {R.string.recommend1,R.string.recommend2,R.string.recommend3,R.string.recommend4,
-                R.string.recommend5,R.string.recommend6,R.string.recommend7,R.string.recommend8,R.string.recommend9,
-                R.string.recommend10,};
+                R.string.recommend5};
+        int[] category1={R.string.recommend6,R.string.recommend7,R.string.recommend8,R.string.recommend9,
+                R.string.recommend10};
 
         ArrayList<Integer> cards = new ArrayList<Integer>();
         ArrayList<Integer> cards2 = new ArrayList<Integer>();
 
         for (int i = 0; i < category.length; i++){
             cards.add(category[i]);
-            cards2.add(category[i]);
+            cards2.add(category1[i]);
         }
+
         double randomValue = Math.random();
-        int ran = (int)(randomValue * cards.size()) -1;
+        int ran ;
+        while (true){
+            ran=(int)(randomValue * cards.size()) -1;
+            if (!(ran<0))
+                break;
+        }
         Integer get_Card = cards.get(ran);
         cards.remove(ran);
 
@@ -222,7 +240,6 @@ public class MainActivity extends AppCompatActivity {
         String b=getString(get_Card2);
         System.out.println(a);
         String getStr[]= a.split("/");
-
         String getStr2[]= b.split("/");
 
         main_1_name.setText(getStr[0]);
