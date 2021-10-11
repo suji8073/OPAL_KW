@@ -78,7 +78,7 @@
                 android:textSize="18dp"
                 android:textColor="@color/text"
                 android:textStyle="bold"
-                android:text="[ 제주, 1박 2일, 4명 ]" />
+                android:text="[ 제주 ]" />
 
             <View
                 android:layout_width="0dp"
@@ -104,6 +104,7 @@
             android:layout_height="200dp">
 
             <ImageView
+                android:id="@+id/root_picture"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/logo"
@@ -127,11 +128,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
-            android:text="1일차 : 죽녹원 - 관방제림 - 숭일식당 - 숙소(담양한옥민박)
-            \n2일차 : 금성산성 - 가마골 계곡 - 신식당"
+            android:text="죽녹원 - 관방제림 - 숭일식당 - 숙소(담양한옥민박)"
+            android:lineSpacingExtra="3dp"
             android:textColor="@color/text"
-            android:textSize="13dp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
@@ -141,9 +143,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:gravity="right"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:textColor="@color/main2"
             android:textStyle="bold"
+            android:lineSpacingExtra="3dp"
             android:text="100km\n총 비용 : 30,000원(1인당)\n총 소요 시간 : 약 5시간" />
 
 
