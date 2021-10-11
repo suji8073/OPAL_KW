@@ -46,7 +46,7 @@
         <com.kakao.usermgmt.LoginButton
             android:id="@+id/btn_kakao_login"
             android:layout_width="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:layout_gravity="center"
             android:layout_height="wrap_content"/>
 
@@ -62,7 +62,7 @@
             android:layout_height="40dp"
             android:background="@drawable/btn"
             android:padding="8dp"
-            android:textSize="13dp"
+            android:textSize="14dp"
             android:text="비회원으로 로그인하기" />
 
         <View
