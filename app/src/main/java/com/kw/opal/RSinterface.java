@@ -1,5 +1,6 @@
 package com.kw.opal;
 
+import io.reactivex.rxjava3.core.Single;
 import retrofit2.Call;
 import retrofit2.http.Body;
 
@@ -10,13 +11,13 @@ public interface RSinterface {
     Call<PointList> getPoint(@Body WPClass postclass);
 
     @POST("/plus30")
-    Call<PointModel> plusPoint(@Body WPClass postclass);
+    Call<PointList> plusPoint(@Body WPClass postclass);
 
     @POST("/checkarea")
-    Call<PointModel> checkPoint(@Body WPClass postclass);
+    Call<PointList> checkPoint(@Body WPClass postclass);
 
     @POST("/searcharea")
-    Call<PointModel> searchPoint(@Body WPClass postclass);
+    Call<PointList> searchPoint(@Body SearchClass Searchclass);
 }
 
 

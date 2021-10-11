@@ -31,7 +31,7 @@ import java.util.Set;
 public class UserListAdapter extends BaseAdapter {
 
     final Context context;
-    final List<PointModel> pointList;
+    List<PointModel> pointList;
     ImageView image_tourism;
     Set<String> set = new HashSet<String>();
     String one, two, three, four;
@@ -43,6 +43,11 @@ public class UserListAdapter extends BaseAdapter {
         this.pointList = pointList;
 
     }
+    public void ListUpdate(List<PointModel> pointlist){
+        this.pointList=pointlist;
+        notifyDataSetChanged();
+    }
+
 
 
     @Override
