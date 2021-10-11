@@ -167,6 +167,46 @@
                     android:layout_marginRight="10dp"
                     android:textSize="14dp"
                     android:text="공원" />
+                <Button
+                    android:id="@+id/one_6"
+                    android:background="@drawable/btn"
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14dp"
+                    android:text="공원" />
+                <Button
+                    android:id="@+id/one_7"
+                    android:background="@drawable/btn"
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14dp"
+                    android:text="공원" />
+                <Button
+                    android:id="@+id/one_8"
+                    android:background="@drawable/btn"
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14dp"
+                    android:text="공원" />
+                <Button
+                    android:id="@+id/one_9"
+                    android:background="@drawable/btn"
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14dp"
+                    android:text="공원" />
 
             </LinearLayout>
         </HorizontalScrollView>
