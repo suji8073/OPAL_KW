@@ -37,6 +37,9 @@
         <activity android:name="com.kw.opal.final_route_3" android:label="final_route_3"></activity>
         <activity android:name="com.kw.opal.tourism" android:label="tourism"></activity>
         <activity android:name="com.kw.opal.root_loading" android:label="root_loading"></activity>
+        <activity android:name="com.kw.opal.random_1" android:label="random_1"></activity>
+        <activity android:name="com.kw.opal.random_2" android:label="random_2"></activity>
+        <activity android:name="com.kw.opal.random_3" android:label="random_3"></activity>
 
 
         <activity android:name="com.kw.opal.loading" android:exported="true">

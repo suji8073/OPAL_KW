@@ -53,6 +53,9 @@
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/loading.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/login.xml" value="0.264" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/network_security_config.xml" value="0.13802083333333334" />
+        <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/random_1.xml" value="0.264" />
+        <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/random_2.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/random_3.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/root_choice.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/root_list.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/root_loading.xml" value="0.16510416666666666" />
@@ -66,10 +69,8 @@
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/taste1.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/taste2.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/taste3.xml" value="0.25364583333333335" />
-
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/tourism.xml" value="0.2" />
         <entry key="..\:/Users/SUZY/AndroidStudioProjects/OPAL_KW/app/src/main/res/layout/user.xml" value="0.264" />
-
       </map>
     </option>
   </component>

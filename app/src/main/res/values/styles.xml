@@ -14,6 +14,9 @@
         <item name="android:actionOverflowButtonStyle">@style/AppTheme.OverFlow</item>
 
 
+
+
+
     </style>
 
     <style name="AppTheme.Actionbar" parent="Widget.AppCompat.Toolbar.Button.Navigation">
@@ -22,6 +25,12 @@
 
     <style name="AppTheme.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
         <item name="android:tint">@color/black</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog" >
+
+        <item name="android:textSize">18dp</item>
+
     </style>
 
 </resources>

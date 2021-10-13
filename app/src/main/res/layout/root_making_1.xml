@@ -226,6 +226,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <Button
@@ -233,7 +235,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="bottom"
-                android:layout_margin="5dp"
                 android:background="@drawable/btn1"
                 android:gravity="center"
                 android:text="선택완료"
