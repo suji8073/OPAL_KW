@@ -100,7 +100,7 @@ public class random_3 extends AppCompatActivity {
                                 oItems[which], Toast.LENGTH_LONG).show();
                     }
                 })
-                .setNegativeButton("그만하기", new DialogInterface.OnClickListener()
+                .setNegativeButton("경로 선택 완료하기", new DialogInterface.OnClickListener()
                 {
                     @Override
                     public void onClick(DialogInterface dialog, int id)
