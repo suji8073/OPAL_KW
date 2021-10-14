@@ -225,20 +225,42 @@
             android:layout_margin="5dp"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/random_intent_next"
+            <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/random_intent_yes"
+                android:layout_width="0dp"
+                android:layout_weight="3"
                 android:layout_height="60dp"
                 android:layout_gravity="bottom"
                 android:background="@drawable/btn1"
                 android:gravity="center"
-                android:text="첫번째 여행지로 선택하시겠습니까?"
+                android:layout_marginRight="10dp"
+                android:text="첫번째 여행지로 선택"
                 android:textColor="@color/white"
-                android:onClick="OnClickHandler"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/random_intent_no"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/btn4"
+                android:gravity="center"
+                android:text="취 소"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
 
+
+
+            </LinearLayout>
         </LinearLayout>
 
 

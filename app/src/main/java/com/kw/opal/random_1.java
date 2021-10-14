@@ -24,7 +24,7 @@ public class random_1 extends AppCompatActivity {
     Integer[] r_image = {R.id.random_1_image, R.id.random_2_image, R.id.random_3_image, R.id.random_4_image, R.id.random_5_image, R.id.random_6_image};
     ImageView[] image = new ImageView[6]; // 이미지
 
-    ImageView reset;
+    LinearLayout reset;
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
