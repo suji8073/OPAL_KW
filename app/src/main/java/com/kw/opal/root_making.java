@@ -183,12 +183,11 @@ public class root_making extends AppCompatActivity {
 
                                              }
                                          }
-
-
                             );
                         break;
+
                 }
-                return true;
+                return false;
 
             }
         });
