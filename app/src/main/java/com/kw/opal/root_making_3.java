@@ -24,6 +24,8 @@ import retrofit2.Response;
 public class root_making_3 extends root_making {
     public root_making_3() {
         this.layout = R.layout.root_making_3;
+        this.search=R.id.editText;
+        this.sbutton=R.id.search_button;
         this.userview = R.id.userListTextView3;
         this.cartv = R.id.cart;
         this.finishv = R.id.finish3;

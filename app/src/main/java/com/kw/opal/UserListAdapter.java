@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import com.bumptech.glide.Glide;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -90,7 +92,7 @@ public class UserListAdapter extends BaseAdapter {
             image_tourism.setImageResource(id);
         }
         else{
-            new DownloadFilesTask().execute(pointList.get(position).getImage());
+            Glide.with(context).load(pointList.get(position).getImage()).into(image_tourism);
 
         }
 
@@ -139,34 +141,34 @@ public class UserListAdapter extends BaseAdapter {
         Log.d("하트 들어가는 지 확인", String.valueOf(set));
 
     }
-
-    private class DownloadFilesTask extends AsyncTask<String, Void, Bitmap> {
-        @Override
-        protected Bitmap doInBackground(String... strings) {
-            Bitmap bmp = null;
-            try {
-                String img_url = strings[0]; //url of the image
-                URL url = new URL(img_url);
-                bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return bmp;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-
-        @Override
-        protected void onPostExecute(Bitmap result) {
-            // doInBackground 에서 받아온 total 값 사용 장소
-            image_tourism.setImageBitmap(result);
-        }
-    }
-
+//
+//    private class DownloadFilesTask extends AsyncTask<String, Void, Bitmap> {
+//        @Override
+//        protected Bitmap doInBackground(String... strings) {
+//            Bitmap bmp = null;
+//            try {
+//                String img_url = strings[0]; //url of the image
+//                URL url = new URL(img_url);
+//                bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+//            } catch (MalformedURLException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return bmp;
+//        }
+//
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//        }
+//
+//
+//        @Override
+//        protected void onPostExecute(Bitmap result) {
+//            // doInBackground 에서 받아온 total 값 사용 장소
+//            image_tourism.setImageBitmap(result);
+//        }
+//    }
+//
 }
