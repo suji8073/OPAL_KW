@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.1" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.kw.opal">
@@ -37,6 +37,9 @@
         <activity android:name="com.kw.opal.final_route_3" android:label="final_route_3"></activity>
         <activity android:name="com.kw.opal.tourism" android:label="tourism"></activity>
         <activity android:name="com.kw.opal.root_loading" android:label="root_loading"></activity>
+        <activity android:name="com.kw.opal.random_1" android:label="random_1"></activity>
+        <activity android:name="com.kw.opal.random_2" android:label="random_2"></activity>
+        <activity android:name="com.kw.opal.random_3" android:label="random_3"></activity>
 
 
         <activity android:name="com.kw.opal.loading" android:exported="true">

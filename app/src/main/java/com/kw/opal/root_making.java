@@ -16,7 +16,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.squareup.otto.Subscribe;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,8 +24,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import io.reactivex.rxjava3.disposables.CompositeDisposable;
-import io.reactivex.rxjava3.schedulers.Schedulers;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -57,7 +56,6 @@ public class root_making extends AppCompatActivity {
 
     final RSinterface networkService = RetrofitHelper.create();
 
-    private CompositeDisposable disposable = new CompositeDisposable();
 
 
 
