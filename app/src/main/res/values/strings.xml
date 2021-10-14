@@ -2,21 +2,21 @@
     <string name="app_name">OPAL_KW</string>
 
     <string name="kakao_app_key">0d7711dcbd2c930e730025a73b4c1830</string>
-    <string name="recommend1">세월이 만든 멋과 정취의 도시 / 대구수목원- 선교사스윗즈주택- 녹동서원- 김광석 길</string>
+    <string name="recommend1">세월이 만든 멋과 정취의 도시/ 대구수목원- 선교사스윗즈주택- 녹동서원- 김광석 길</string>
 
-    <string name="recommend2">안산으로 떠나는 미술관, 전시관 여행 /유리섬박물관- 경기도미술관- 성호기념관- 안산갈대습지공원</string>
-    <string name="recommend3">파주에서 즐길 수 있을 만한 좋은 여행/모산목장 (낙농체험)- 헤이리 문화예술마을- 점심식사(콩스콩스두부, 파머스테이블)- 임진각관광지(평화누리공원)</string>
-    <string name="recommend4">한국전쟁의 상흔을 느껴보는 여행 /거제도 포로수용소 유적공원- 백만석- 어구낚시마을- 안산갈대습지공원 </string>
+    <string name="recommend2">안산으로 떠나는 미술관, 전시관 여행/유리섬박물관- 경기도미술관- 성호기념관- 안산갈대습지공원</string>
+    <string name="recommend3">파주에서 즐길 수 있을 만한 좋은 여행/모산목장- 헤이리 문화예술마을- 콩스콩스두부, 파머스테이블- 임진각관광지(평화누리공원)</string>
+    <string name="recommend4">한국전쟁의 상흔을 느껴보는 여행/거제도 포로수용소 유적공원- 백만석- 어구낚시마을- 안산갈대습지공원 </string>
     <string name="recommend5">유채꽃 향기 따라 정남진 여행/선학동유채마을- 정남진해양낚시공원- 정남진전망대- 수문해수욕장</string>
 
     <string name="recommend6">부산의 자연생태 체험 코스 /삼락생태공원- 부산 암남공원- 영도 등대- 국립해양박물관 </string>
 
-    <string name="recommend7">인천 도심을 즐기다/월미도- 인천 차이나타운- 점심식사(대창반점)- 인천대교- 인천종합어시장- 연안부두</string>
+    <string name="recommend7">인천 도심을 즐기다/월미도- 인천 차이나타운- 대창반점- 인천대교- 인천종합어시장- 연안부두</string>
 
-    <string name="recommend8">푸른 바다를 벗삼아 걷는 낭만 여행길, 울산./울산대교 전망대- 대왕암공원- 낭만동행 슬도바닷길투어 (대왕암~슬도 코스)- 주전몽돌해변- 태화강 국가정원</string>
+    <string name="recommend8">푸른 바다를 벗삼아 걷는 낭만 여행길, 울산/울산대교 전망대- 대왕암공원- 낭만동행 슬도바닷길투어- 주전몽돌해변- 태화강 국가정원</string>
 
-    <string name="recommend9">남도에서 만나는 우리 것 /강진고려청자도요지- 영랑생가- 주작산자연휴양림 </string>
+    <string name="recommend9">남도에서 만나는 우리 것/강진고려청자도요지- 영랑생가- 주작산자연휴양림 </string>
 
-    <string name="recommend10">신나는 광주패밀리랜드 눈썰매장에서 하루를 즐겁게/ 광주패밀리랜드 눈썰매장- 광주패밀리랜드- 오리요리의 거리</string>
+    <string name="recommend10">신나는 광주패밀리랜드 눈썰매장에서/ 광주패밀리랜드 눈썰매장- 광주패밀리랜드- 오리요리의 거리</string>
 
 </resources>

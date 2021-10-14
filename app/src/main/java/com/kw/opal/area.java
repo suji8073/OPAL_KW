@@ -86,6 +86,7 @@ public class area extends AppCompatActivity {
                                 text[i].setTextColor(getApplication().getResources().getColor(R.color.black));
                                 layout[i].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
                                 on_off[i] = 0;
+
                             }
                         }
                         check[INDEX].setImageResource(R.drawable.check_on);
