@@ -26,8 +26,6 @@ public class root_make extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.root_make);
-        final RSinterface networkService = RetrofitHelper.create();
-        final WPClass post = new WPClass("city",1,"A0201");
 
         heart1=findViewById(R.id.heart1);
         heart1.setColorFilter(getApplication().getResources().getColor(R.color.heart));

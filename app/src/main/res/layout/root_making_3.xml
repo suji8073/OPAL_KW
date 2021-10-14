@@ -88,7 +88,7 @@
 
             <EditText
                 android:id="@+id/editText"
-                android:layout_width="0dp"
+                android:layout_width="250dp"
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
@@ -96,7 +96,14 @@
                 android:inputType="textPersonName"
                 android:textSize="12dp"
                 android:textColorHint="@color/gray"
-                android:hint ="숙소를 입력하세요" />
+                android:hint ="숙소를 입력하세요"
+                />
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="검색" />
         </LinearLayout>
 
         <HorizontalScrollView

@@ -9,7 +9,10 @@ import java.util.Arrays;
 public class root_making_1 extends root_making {
 
     public root_making_1(){
+
         this.layout =R.layout.root_making_1;
+        this.search=R.id.editText;
+        this.sbutton=R.id.search_button;
         this.userview=R.id.userListTextView1;
         this.cartv = R.id.cart;
         this.finishv = R.id.finish1;
