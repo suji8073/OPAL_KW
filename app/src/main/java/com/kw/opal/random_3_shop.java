@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +23,7 @@ import net.daum.mf.map.api.MapPolyline;
 import net.daum.mf.map.api.MapView;
 
 
-public class random_3_play extends AppCompatActivity {
+public class random_3_shop extends AppCompatActivity {
 
     Integer[] layout_num = {R.id.t1, R.id.t2, R.id.t3, R.id.t4, R.id.t5};
     LinearLayout[] layout = new LinearLayout[5];
@@ -51,7 +50,7 @@ public class random_3_play extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.random_3_play);
+        setContentView(R.layout.random_3_shop);
 
         for (int i=0; i<layout_num.length; i++){
             layout[i] = findViewById(layout_num[i]);
@@ -176,7 +175,7 @@ public class random_3_play extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int id)
                     {
-                        Intent start_intent = new Intent(getApplicationContext(), com.kw.opal.final_route_1.class);
+                        Intent start_intent = new Intent(getApplicationContext(), final_route_1.class);
                         startActivity(start_intent);
                     }
                 })
@@ -188,10 +187,10 @@ public class random_3_play extends AppCompatActivity {
     private void page_move(CharSequence oItem) {
 
         if ("관광지".equals(oItem)) {
-            Intent start_intent = new Intent(getApplicationContext(), random_3_play.class);
+            Intent start_intent = new Intent(getApplicationContext(), random_3_shop.class);
             startActivity(start_intent);
         } else if ("음식점 및 카페".equals(oItem)) {
-            Intent start_intent = new Intent(getApplicationContext(), random_3_food.class);
+            Intent start_intent = new Intent(getApplicationContext(), random_3_shop.class);
             startActivity(start_intent);
         } else if ("숙박".equals(oItem)) {
             Intent start_intent = new Intent(getApplicationContext(), random_3_sleep.class);

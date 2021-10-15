@@ -41,6 +41,9 @@
         <activity android:name="com.kw.opal.random_2" android:label="random_2"></activity>
 
         <activity android:name="com.kw.opal.random_3_play" android:label="random_3_play"></activity>
+        <activity android:name="com.kw.opal.random_3_food" android:label="random_3_food"></activity>
+        <activity android:name="com.kw.opal.random_3_sleep" android:label="random_3_sleep"></activity>
+        <activity android:name="com.kw.opal.random_3_shop" android:label="random_3_shop"></activity>
 
 
         <activity android:name="com.kw.opal.loading" android:exported="true">
