@@ -34,8 +34,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:orientation="horizontal">
 
             <TextView
@@ -44,8 +44,9 @@
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:text="대표관광지 선택하기"
+                android:layout_marginBottom="3dp"
                 android:textColor="#000000"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 android:layout_gravity="bottom"
                 android:textStyle="bold"
                 app:layout_constraintHorizontal_bias="0" />
@@ -53,19 +54,19 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_weight="3" />
 
             <LinearLayout
                 android:id="@+id/reset"
                 android:layout_width="0dp"
-                android:layout_weight="3"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:layout_height="50dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_gravity="center"
                     app:srcCompat="@drawable/reset" />
 
                 <TextView
@@ -75,7 +76,6 @@
                     android:textColor="@color/text"
                     android:textSize="13dp"
                     android:textStyle="bold"
-                    android:layout_gravity="center"
                     app:layout_constraintHorizontal_bias="0" />
             </LinearLayout>
 
@@ -86,20 +86,32 @@
             android:layout_height="1dp"
             android:background="@color/black" />
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <TextView
-            android:layout_margin="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="3dp"
             android:text="아래의 사진들 중 가고 싶은 관광지를 선택하세요!\n만약 원하는 관광지가 없다면 \'다시\' 버튼을 눌러주세요"
             android:textColor="@color/purple_700"
-            android:textSize="15dp" />
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:orientation="horizontal">
 
             <FrameLayout
@@ -108,7 +120,6 @@
                 android:layout_weight="1"
                 android:layout_height="140dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp">
 
                 <ImageView
@@ -140,7 +151,6 @@
                 android:layout_weight="1"
                 android:layout_height="140dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp">
 
                 <ImageView
@@ -169,6 +179,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:orientation="horizontal">
 
             <FrameLayout
@@ -177,7 +188,6 @@
                 android:layout_weight="1"
                 android:layout_height="140dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp">
 
                 <ImageView
@@ -209,7 +219,6 @@
                 android:layout_weight="1"
                 android:layout_height="140dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp">
 
                 <ImageView
@@ -238,6 +247,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:orientation="horizontal">
 
             <FrameLayout
@@ -246,7 +256,6 @@
                 android:layout_weight="1"
                 android:layout_height="140dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp">
 
                 <ImageView
@@ -278,7 +287,6 @@
                 android:layout_weight="1"
                 android:layout_height="140dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp">
 
                 <ImageView
@@ -303,6 +311,10 @@
 
             </FrameLayout>
         </LinearLayout>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
 
 

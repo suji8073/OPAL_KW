@@ -151,7 +151,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:text="이용안내" />
@@ -169,7 +169,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textColor="@color/text"
                     android:text="문의 및 안내 : 064-792-0088\n쉬는 날 : 연중무휴\n이용시간 : 동 절 기 (12월~2월) 08:30 ~ 18:00\n
                 간 절 기 (3월~5월, 9~11월) 08:30 ~ 18:30\n
@@ -182,7 +182,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:text="상세정보" />
@@ -200,7 +200,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textColor="@color/text"
                     android:text="입 장 료 : [개 인]\n
         성 인 (19 ~ 64세) 8,000원\n
