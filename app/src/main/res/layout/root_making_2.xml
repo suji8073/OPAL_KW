@@ -105,75 +105,137 @@
                 android:text="검색" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <HorizontalScrollView
+                android:layout_width="283dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:padding="5dp"
+                android:layout_gravity="left">
 
-        <HorizontalScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:layout_height="match_parent"
-                android:orientation="horizontal" >
+                    <Button
+                        android:id="@+id/one_1"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn_"
+                        android:text="전체"
+                        android:textColor="@color/main"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/one_1"
-                    android:background="@drawable/btn_"
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:textColor="@color/main"
-                    android:textStyle="bold"
-                    android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="전체" />
+                    <Button
+                        android:id="@+id/one_2"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="한식"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/one_2"
-                    android:background="@drawable/btn"
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:textColor="@color/text"
-                    android:textStyle="bold"
-                    android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="한식" />
+                    <Button
+                        android:id="@+id/one_3"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="중식"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/one_3"
-                    android:background="@drawable/btn"
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:textColor="@color/text"
-                    android:textStyle="bold"
-                    android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="중식" />
+                    <Button
+                        android:id="@+id/one_4"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="양식"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/one_4"
-                    android:background="@drawable/btn"
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:textColor="@color/text"
-                    android:textStyle="bold"
-                    android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="양식" />
-                <Button
-                    android:id="@+id/one_5"
-                    android:background="@drawable/btn"
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="뭘까" />
+                    <Button
+                        android:id="@+id/one_5"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="뭘까"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
+                    <Button
+                        android:id="@+id/one_6"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="그외"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
-        </HorizontalScrollView>
+                    <Button
+                        android:id="@+id/one_7"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="여러"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/one_8"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="가지"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/one_9"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="음식"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:padding="5dp"
+                android:layout_gravity="right"/>
+        </LinearLayout>
+
 
         <ListView
             android:id="@+id/userListTextView2"

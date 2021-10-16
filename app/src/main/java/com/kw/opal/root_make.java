@@ -16,8 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class root_make extends AppCompatActivity {
     Button finish_root;
-    FrameLayout play, sleep, food;
-    ImageView heart1, heart2, heart3, click1, click2, click3;
+    FrameLayout play, sleep, food, shop;
+    ImageView heart1, heart2, heart3,heart4, click1, click2, click3,click4;
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -33,6 +33,8 @@ public class root_make extends AppCompatActivity {
         heart2.setColorFilter(getApplication().getResources().getColor(R.color.heart));
         heart3=findViewById(R.id.heart3);
         heart3.setColorFilter(getApplication().getResources().getColor(R.color.heart));
+        heart4=findViewById(R.id.heart4);
+        heart4.setColorFilter(getApplication().getResources().getColor(R.color.heart));
 
         click1=findViewById(R.id.click1);
         click1.setColorFilter(getApplication().getResources().getColor(R.color.white));
@@ -40,6 +42,8 @@ public class root_make extends AppCompatActivity {
         click2.setColorFilter(getApplication().getResources().getColor(R.color.white));
         click3=findViewById(R.id.click3);
         click3.setColorFilter(getApplication().getResources().getColor(R.color.white));
+        click4=findViewById(R.id.click4);
+        click4.setColorFilter(getApplication().getResources().getColor(R.color.white));
 
 
 
@@ -69,6 +73,14 @@ public class root_make extends AppCompatActivity {
             public void onClick(View view) {
                 Intent sleep = new Intent(getApplicationContext(),root_making_3.class);
                 startActivity(sleep);
+            }
+        });
+        shop = findViewById(R.id.shop);
+        shop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent shop = new Intent(getApplicationContext(),root_making_4.class);
+                startActivity(shop);
             }
         });
 
