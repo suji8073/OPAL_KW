@@ -13,7 +13,7 @@ public class CheckClass {
     @SerializedName("mapy") private float mapy;
 
     public CheckClass(){
-
+//test
     }
     public CheckClass(String table, int areacode, float mapx,float mapy) {
         this.table=table;

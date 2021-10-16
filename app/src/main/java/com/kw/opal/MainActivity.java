@@ -247,11 +247,7 @@ public class MainActivity extends AppCompatActivity {
 
         double randomValue = Math.random();
         int ran ;
-        while (true){
-            ran=(int)(randomValue * cards.size()) -1;
-            if (!(ran<0))
-                break;
-        }
+        ran=(int)(randomValue * (cards.size()-1));
         Integer get_Card = cards.get(ran);
         cards.remove(ran);
 

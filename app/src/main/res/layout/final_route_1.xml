@@ -75,7 +75,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/main"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0" />
 
@@ -101,6 +101,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:gravity="bottom"
+            android:padding="3dp"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <Button
@@ -108,7 +110,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="bottom"
-                android:layout_margin="5dp"
                 android:background="@drawable/btn1"
                 android:gravity="center"
                 android:text="다 음"

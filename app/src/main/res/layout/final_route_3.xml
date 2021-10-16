@@ -75,7 +75,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/main"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
         <View
@@ -135,28 +135,18 @@
             android:textSize="16dp"
             android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/root_2"
-            android:layout_margin="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:gravity="right"
-            android:textSize="14dp"
-            android:textColor="@color/main2"
-            android:textStyle="bold"
-            android:text="100km\n총 비용 : 30,000원(1인당)\n총 소요 시간 : 약 5시간" />
-
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="2" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:gravity="bottom"
+            android:padding="3dp"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <Button
@@ -164,7 +154,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="bottom"
-                android:layout_margin="5dp"
                 android:background="@drawable/btn1"
                 android:gravity="center"
                 android:text="다 음"

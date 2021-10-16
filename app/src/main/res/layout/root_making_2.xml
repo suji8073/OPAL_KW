@@ -34,7 +34,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
@@ -47,7 +47,7 @@
                 android:text="음식점 선택하기"
                 android:layout_gravity="center"
                 android:textColor="#000000"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <View
@@ -88,7 +88,7 @@
 
             <EditText
                 android:id="@+id/editText"
-                android:layout_width="0dp"
+                android:layout_width="250dp"
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
@@ -97,6 +97,12 @@
                 android:textSize="12dp"
                 android:textColorHint="@color/gray"
                 android:hint ="음식점을 입력하세요" />
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="검색" />
         </LinearLayout>
 
 
@@ -184,6 +190,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <Button
@@ -191,7 +199,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="bottom"
-                android:layout_margin="5dp"
                 android:background="@drawable/btn1"
                 android:gravity="center"
                 android:text="선택완료"

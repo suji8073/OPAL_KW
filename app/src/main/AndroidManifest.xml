@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.1" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:remove="android:appComponentFactory"
+    tools:targetApi="p"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.kw.opal">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation" />
 
 
     <application
@@ -37,6 +40,13 @@
         <activity android:name="com.kw.opal.final_route_3" android:label="final_route_3"></activity>
         <activity android:name="com.kw.opal.tourism" android:label="tourism"></activity>
         <activity android:name="com.kw.opal.root_loading" android:label="root_loading"></activity>
+        <activity android:name="com.kw.opal.random_1" android:label="random_1"></activity>
+        <activity android:name="com.kw.opal.random_2" android:label="random_2"></activity>
+
+        <activity android:name="com.kw.opal.random_3_play" android:label="random_3_play"></activity>
+        <activity android:name="com.kw.opal.random_3_food" android:label="random_3_food"></activity>
+        <activity android:name="com.kw.opal.random_3_sleep" android:label="random_3_sleep"></activity>
+        <activity android:name="com.kw.opal.random_3_shop" android:label="random_3_shop"></activity>
 
 
         <activity android:name="com.kw.opal.loading" android:exported="true">

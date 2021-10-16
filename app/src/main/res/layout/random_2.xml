@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".tourism">
+    tools:context=".random_2">
 
 
     <LinearLayout
@@ -50,6 +50,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
+
             <TextView
                 android:id="@+id/theme_name"
                 android:layout_width="match_parent"
@@ -57,7 +58,7 @@
                 android:text="카멜리아힐"
                 android:layout_gravity="center"
                 android:textColor="#000000"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
             <View
                 android:layout_width="0dp"
@@ -75,9 +76,11 @@
             android:layout_height="1dp"
             android:background="@color/black" />
 
+
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -107,10 +110,9 @@
                             android:id="@+id/address"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="제주특별자치도 서귀포시 안덕면 병악로 166"
                             android:textColor="@color/black"
-                            android:textSize="14dp" />
+                            android:textSize="15dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -132,7 +134,7 @@
                             android:layout_height="wrap_content"
                             android:text="http://www.camelliahill.co.kr"
                             android:textColor="@color/main2"
-                            android:textSize="14dp" />
+                            android:textSize="15dp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -208,30 +210,56 @@
         어린이 (만 3세 ~ 12세) 5,000원\n
         경로 (만 65세 이상) / 군인 6,000원\n
         장애인 (1~3급) /국가유공자 5,000원\n" />
+
+
             </LinearLayout>
         </ScrollView>
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            android:gravity="bottom"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/next"
+            <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/random_intent_yes"
+                android:layout_width="0dp"
+                android:layout_weight="3"
                 android:layout_height="60dp"
                 android:layout_gravity="bottom"
-                android:layout_margin="5dp"
                 android:background="@drawable/btn1"
                 android:gravity="center"
-                android:text="다 음"
+                android:layout_marginRight="10dp"
+                android:text="첫번째 여행지로 선택"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/random_intent_no"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/btn4"
+                android:gravity="center"
+                android:text="취 소"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
 
+
+
+            </LinearLayout>
         </LinearLayout>
 
 

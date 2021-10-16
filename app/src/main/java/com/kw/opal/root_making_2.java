@@ -9,6 +9,8 @@ public class root_making_2 extends root_making {
 
     public root_making_2(){
         this.layout =R.layout.root_making_2;
+        this.search=R.id.editText;
+        this.sbutton=R.id.search_button;
         this.userview=R.id.userListTextView2;
         this.cartv = R.id.cart;
         this.finishv = R.id.finish2;

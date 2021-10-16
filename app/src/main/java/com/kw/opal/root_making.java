@@ -3,20 +3,24 @@ package com.kw.opal;
 import static java.lang.Thread.sleep;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.squareup.otto.Subscribe;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,14 +28,15 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import io.reactivex.rxjava3.disposables.CompositeDisposable;
-import io.reactivex.rxjava3.schedulers.Schedulers;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import android.annotation.SuppressLint;
 public class root_making extends AppCompatActivity {
     //새로 정의 해야 하는 부분
+    int search;
+    int sbutton;
     int layout;
     int userview ;
     int cartv ;
@@ -49,15 +54,16 @@ public class root_making extends AppCompatActivity {
     UserListAdapter adapter;
     Button finish;
     ImageView cart;
+    EditText searchtext;
     HashMap<String,ArrayList<PointModel>> postmap = new HashMap<>();//받아온 모든 카테고리 저장
     List inview;
+    Button SB;
 
 
     int one_pick = 1;
 
     final RSinterface networkService = RetrofitHelper.create();
 
-    private CompositeDisposable disposable = new CompositeDisposable();
 
 
 
@@ -74,7 +80,7 @@ public class root_making extends AppCompatActivity {
 
     }
 
-    public void AfterData(){ //TODO 데이터르 ㄹ추가로 받아오는거는 단순히 어댑터 변경 알림, 카테고리 변경은 새 어댑터
+    public void AfterData(int areacode){ //TODO 어떻게하면 드래그해서 더 불러올 수 있을것인가
         inview=postmap.get("all");
         adapter = new UserListAdapter(getApplicationContext(), inview);
         listView = (ListView) findViewById(userview);
@@ -82,6 +88,8 @@ public class root_making extends AppCompatActivity {
         pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
         int position = pref.getInt("count", -1);
         Log.d("하트 누른거 뜨는거야 알겠지?", String.valueOf(position));
+        searchtext = (EditText) findViewById(search);
+        SB=findViewById(sbutton);
 
         for (int i=0; i<c_one.length; i++){ // 카테고리 형 변환
             c_one[i] = findViewById(category[i]);
@@ -141,6 +149,86 @@ public class root_making extends AppCompatActivity {
                 startActivity(start_intent);
             }
         });
+        searchtext.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                InputMethodManager mInputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                switch (keyCode){
+                    case KeyEvent.KEYCODE_ENTER:
+                        SearchClass sc = new SearchClass(table,areacode,searchtext.getText().toString());
+                        Call<PointList> call= networkService.searchPoint(sc);
+                            call.enqueue(new Callback<PointList>() {
+                                             @Override
+                                             public void onResponse(Call<PointList> call, Response<PointList> response) {
+                                                 try {
+                                                     List point = response.body().pointlist;
+                                                     ArrayList<PointModel> array = new ArrayList<>();
+                                                     array.addAll(point);
+                                                     adapter.ListUpdate(array);
+                                                     searchtext.setText(null);
+                                                     mInputMethodManager.hideSoftInputFromWindow(searchtext.getWindowToken(), 0);
+                                                 }
+                                                 catch (NullPointerException n){
+                                                     //검색결과 없음
+                                                     mInputMethodManager.hideSoftInputFromWindow(searchtext.getWindowToken(), 0);
+                                                     searchtext.setText(null);
+                                                 }
+
+                                             }
+
+                                             @Override
+                                             public void onFailure(Call<PointList> call, Throwable t) {
+                                                 //TODO 네트워크 오류 관련 추가
+
+                                             }
+                                         }
+                            );
+                        break;
+
+                }
+                return false;
+
+            }
+        });
+        SB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InputMethodManager mInputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                SearchClass sc = new SearchClass(table,areacode,searchtext.getText().toString());
+                Call<PointList> call= networkService.searchPoint(sc);
+                call.enqueue(new Callback<PointList>() {
+                                 @Override
+                                 public void onResponse(Call<PointList> call, Response<PointList> response) {
+                                     try {
+                                         List point = response.body().pointlist;
+                                         ArrayList<PointModel> array = new ArrayList<>();
+                                         array.addAll(point);
+                                         adapter.ListUpdate(array);
+                                         searchtext.setText(null);
+                                         mInputMethodManager.hideSoftInputFromWindow(searchtext.getWindowToken(), 0);
+
+                                     }
+                                     catch (NullPointerException n){
+                                         //검색결과 없음
+                                         mInputMethodManager.hideSoftInputFromWindow(searchtext.getWindowToken(), 0);
+                                         searchtext.setText(null);
+                                     }
+                                 }
+
+                                 @Override
+                                 public void onFailure(Call<PointList> call, Throwable t) {
+                                     //TODO 네트워크 오류 관련 추가
+
+                                 }
+                             }
+
+
+                );
+            }
+        });
+
+
 
     }
 
@@ -176,7 +264,7 @@ public class root_making extends AppCompatActivity {
                     setContentView(layout);
                     postmap.put(cat,array);
                     if (postmap.size()== catlist.size()){ //TODO 이거 띄울때까지 로딩 빙글빙글 가능한가?
-                        AfterData();
+                        AfterData(area);
                     }
                 }
             }
@@ -187,6 +275,7 @@ public class root_making extends AppCompatActivity {
             }
         });
     }
+    
 
 
 

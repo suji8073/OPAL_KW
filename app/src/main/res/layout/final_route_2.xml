@@ -75,7 +75,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/main"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0" />
 
@@ -83,23 +83,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:text="여행 경로 순서를 변경하거나 삭제할 수 있습니다.\n변경하고자 하는 일정을 \'2초간\' 클릭한 후 원하는 순서에 추가하세요!"
+            android:text="여행 경로 순서를 변경하거나 삭제할 수 있습니다.\n순서를 변경하고 싶다면 \'2초간\' 클릭한 후 일정을 옮겨주세요!"
             android:textColor="@color/text"
             android:lineSpacingExtra="3dp"
-            android:textSize="12dp" />
+            android:textSize="13dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:text="오른쪽 혹은 왼쪽으로 밀면 삭제됩니다! (삭제 후 복원이 불가능하니 신중하세요!)"
-            android:textColor="@color/purple_700"
-            android:textSize="10dp" />
+            android:text="해당 일정을 밀면 삭제됩니다! (삭제 후 복원이 불가능하니 신중하세요!)"
+            android:textColor="@color/heart"
+            android:textSize="12dp" />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -123,6 +123,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="3dp"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <Button
@@ -130,7 +132,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="bottom"
-                android:layout_margin="5dp"
                 android:background="@drawable/btn1"
                 android:gravity="center"
                 android:text="다 음"

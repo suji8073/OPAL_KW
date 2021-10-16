@@ -57,6 +57,7 @@ public class MainActivity_3 extends AppCompatActivity {
 
         if (strNickname != "") user_Name.setText(strNickname + "님");
         else user_Name.setText("\"" + "비회원"+ "\" 님");
+
         person1 = findViewById(R.id.person1);
         person2 = findViewById(R.id.person2);
 
@@ -108,7 +109,15 @@ public class MainActivity_3 extends AppCompatActivity {
         @Override
         protected void onPostExecute(Bitmap result) {
             // doInBackground 에서 받아온 total 값 사용 장소
-            user_Profile.setImageBitmap(result);
+            if (result == null){
+                user_Profile.setImageResource(R.drawable.no_camera);
+            }
+            else{
+                user_Profile.setImageBitmap(result);
+            }
+
+
+
         }
     }
 }
