@@ -141,7 +141,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="호텔"
+                        android:text="쇼핑"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -152,7 +152,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="모텔"
+                        android:text="센터"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -163,7 +163,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="리조트"
+                        android:text="아니면"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -174,7 +174,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="휴양림"
+                        android:text="시장"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -185,7 +185,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="사실"
+                        android:text="특산품"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -196,7 +196,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="순서"
+                        android:text="좋아"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -207,7 +207,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="막씀"
+                        android:text="이거"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -218,7 +218,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="지어냄"
+                        android:text="또 수정"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -238,7 +238,7 @@
         </LinearLayout>
 
         <ListView
-            android:id="@+id/userListTextView3"
+            android:id="@+id/userListTextView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -257,7 +257,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/finish3"
+                android:id="@+id/finish4"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="bottom"

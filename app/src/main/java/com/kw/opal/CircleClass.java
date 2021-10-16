@@ -6,19 +6,18 @@ package com.kw.opal;
 
 import com.google.gson.annotations.SerializedName;
 
-public class WPClass {
+public class CircleClass {
     @SerializedName("table") private String table;
     @SerializedName("areacode") private int areacode;
     @SerializedName("cat") private String cat;
-    @SerializedName("order") private String order;//F-인기,T-이름,NT-역이름
 
-    public WPClass(){
+    public CircleClass(){
 
     }
-    public WPClass(String table, int areacode, String cat,String order) {
+    public CircleClass(String table, int areacode, String cat) {
         this.table=table;
         this.areacode=areacode;
         this.cat=cat;
-        this.order=order;
+
     }
 }

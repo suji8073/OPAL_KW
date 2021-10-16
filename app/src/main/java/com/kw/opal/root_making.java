@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -33,6 +35,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import android.annotation.SuppressLint;
+import android.widget.Spinner;
+
 public class root_making extends AppCompatActivity {
     //새로 정의 해야 하는 부분
     int search;
@@ -46,6 +50,8 @@ public class root_making extends AppCompatActivity {
     Integer[] category;
     Button[] c_one;
     int[] on_off;
+    int spinner_field_id;
+
 
     //이하는 공통사용
     SharedPreferences sroot;
@@ -58,6 +64,9 @@ public class root_making extends AppCompatActivity {
     HashMap<String,ArrayList<PointModel>> postmap = new HashMap<>();//받아온 모든 카테고리 저장
     List inview;
     Button SB;
+    Spinner spinner_field;
+    int currentidx =0;
+    Boolean checkF=true;
 
 
     int one_pick = 1;
@@ -91,6 +100,39 @@ public class root_making extends AppCompatActivity {
         searchtext = (EditText) findViewById(search);
         SB=findViewById(sbutton);
 
+        spinner_field = (Spinner) findViewById(spinner_field_id);
+        String[] str = getResources().getStringArray(R.array.spinnerArray);
+
+        ArrayAdapter<CharSequence> sadapter= ArrayAdapter.createFromResource(this,R.array.spinnerArray, android.R.layout.simple_spinner_item);
+        sadapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spinner_field.setAdapter(sadapter);
+
+        spinner_field.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position==1){
+                    if (!checkF){
+                        GetData2(areacode,catlist.get(currentidx),"F",adapter);
+                        checkF=true;
+                    }
+                }
+                else if(position==2){
+                    GetData2(areacode,catlist.get(currentidx),"T",adapter);
+                    checkF=false;
+                }
+                else if(position==3){
+                    GetData2(areacode,catlist.get(currentidx),"NT",adapter);
+                    checkF=false;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
         for (int i=0; i<c_one.length; i++){ // 카테고리 형 변환
             c_one[i] = findViewById(category[i]);
         }
@@ -113,6 +155,7 @@ public class root_making extends AppCompatActivity {
                         c_one[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
                         Log.d("test","테스트2");
                         adapter.ListUpdate(postmap.get(catlist.get(INDEX)));
+                        checkF=true;
                     }
                     else if (re == 2){ // 하나 이상 체크하려고 하는 경우
                         for (int i=0; i<on_off.length; i++){
@@ -120,13 +163,16 @@ public class root_making extends AppCompatActivity {
                                 c_one[i].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
                                 c_one[i].setTextColor(getApplication().getResources().getColor(R.color.black));
                                 on_off[i] = 0;
-                                Log.d("test","테스트3");
+
                             }
                         }
                         c_one[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_));
                         c_one[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
                         on_off[INDEX] = 1;
+                        currentidx = INDEX;
                         adapter.ListUpdate(postmap.get(catlist.get(INDEX)));
+                        checkF=true;
+                        Log.d("test",Arrays.toString(on_off));
                     }
                 }
             });
@@ -252,7 +298,7 @@ public class root_making extends AppCompatActivity {
     }
 
     public void GetData(int area, String cat){
-        WPClass post = new WPClass(table,area,cat); //todo 카테고리 검색은 여기다 catlist넣어서
+        WPClass post = new WPClass(table,area,cat,"F"); //todo 카테고리 검색은 여기다 catlist넣어서
         Call<PointList> call= networkService.getPoint(post);
             call.enqueue(new Callback<PointList>() {
             @Override
@@ -266,6 +312,27 @@ public class root_making extends AppCompatActivity {
                     if (postmap.size()== catlist.size()){ //TODO 이거 띄울때까지 로딩 빙글빙글 가능한가?
                         AfterData(area);
                     }
+                }
+            }
+            @Override
+            public void onFailure(Call<PointList> call, Throwable t) {
+                //TODO 인터넷 연결 관련 팝업창 띄우기
+
+            }
+        });
+    }
+
+    public void GetData2(int area, String cat,String order, UserListAdapter adapter){
+        WPClass post = new WPClass(table,area,cat,order); //todo 카테고리 검색은 여기다 catlist넣어서
+        Call<PointList> call= networkService.getPoint(post);
+        call.enqueue(new Callback<PointList>() {
+            @Override
+            public void onResponse(Call<PointList> call, Response<PointList> response) {
+                if(response.isSuccessful()){
+                    List point = response.body().pointlist;
+                    ArrayList<PointModel> array = new ArrayList<>();
+                    array.addAll(point);
+                    adapter.ListUpdate(array);
                 }
             }
             @Override

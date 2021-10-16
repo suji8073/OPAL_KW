@@ -18,8 +18,8 @@ public class root_making_2 extends root_making {
         this.catlist= new ArrayList<>(Arrays.asList("all","A05020100","A05020200","A05020300","A05020400","A05020500","A05020600","A05020700","A05020800","A05020900"));
         this.c_one=new Button[5];
         this.category = new Integer[]{R.id.one_1, R.id.one_2, R.id.one_3, R.id.one_4, R.id.one_5};
-
         this.on_off = new int[catlist.size()];
+        this.spinner_field_id=R.id.spinner;
     }
 }
 
