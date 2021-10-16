@@ -44,6 +44,30 @@ public class MainActivity extends AppCompatActivity {
         mDbOpenHelper.open();
         mDbOpenHelper.create();
 
+        rootDBOpenHelper rmDbOpenHelper;
+        rmDbOpenHelper = new rootDBOpenHelper(this);
+        rmDbOpenHelper.open();
+        rmDbOpenHelper.create();
+
+        reDBOpenHelper rDbOpenHelper;
+        rDbOpenHelper = new reDBOpenHelper(this);
+        rDbOpenHelper.open();
+        rDbOpenHelper.create();
+
+        rDbOpenHelper.insertColumn(2666461,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(234,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(235,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(2345,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(7645,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(58,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(254,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(7857,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(2666461,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(2666461,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(2666461,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(2666461,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(2666461,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
+        rDbOpenHelper.insertColumn(2666461,"경복궁","http://tong.visitkorea.or.kr/cms/resource/31/2666431_image2_1.jpg","경상북도 안동시 충효로 4439",128.7358031916,36.5496342496);
 
         sp = getSharedPreferences("myFile", Activity.MODE_PRIVATE);
 
@@ -123,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     heart_1.setColorFilter(getApplication().getResources().getColor(R.color.heart));
                     i = false;
+
                     editor.putString("main_1_name", String.valueOf(main_1_name));
                     editor.putString("main_1_root", String.valueOf(main_1_root));
 
