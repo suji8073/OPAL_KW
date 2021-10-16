@@ -121,7 +121,7 @@ public class final_route_2 extends AppCompatActivity {
     public void showDatabase(){
 
 
-        Cursor mCur = helper.sortColumn("_id");
+        Cursor mCur = helper.sortColumn("name");
         System.out.println(mCur);
         Log.d("showDatabase", "DB Size: " + mCur.getCount());
         arrayData.clear();

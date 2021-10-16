@@ -1,13 +1,8 @@
 package com.kw.opal;
 
-import android.content.Context;
-import android.database.SQLException;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
-public final class DataBases {
-
+public class reDataBases {
     public static final class CreateDB implements BaseColumns {
         public static final String _ID = "id";
         public static final String USERID = "userid";
@@ -16,7 +11,7 @@ public final class DataBases {
         public static final String MAP_X = "x";
         public static final String  MAP_Y = "y";
         public static final String IMAGE = "image";
-        public static final String _TABLENAME0 = "usertable";
+        public static final String _TABLENAME0 = "recommend";
 
         public static final String _CREATE0 = "create table if not exists "+_TABLENAME0+"("
                 +_ID+" integer primary key autoincrement, "
@@ -28,4 +23,3 @@ public final class DataBases {
                 +MAP_Y+" text not null );";
     }
 }
-
