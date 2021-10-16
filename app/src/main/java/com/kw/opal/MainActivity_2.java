@@ -3,6 +3,7 @@ package com.kw.opal;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class MainActivity_2 extends AppCompatActivity {
     TextView place2;
     Button more;
     TextView root_place, root_1, root_2;
+    private rootDBOpenHelper helper;
 
     public SharedPreferences sroot;
     int root_num = 0;
@@ -30,6 +32,7 @@ public class MainActivity_2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_2);
+        helper = new rootDBOpenHelper(MainActivity_2.this);
         sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
 
 
@@ -51,12 +54,12 @@ public class MainActivity_2 extends AppCompatActivity {
 
         more = findViewById(R.id.more);
 
-
+        Cursor mCur = helper.sortColumn();
+        System.out.println(mCur);
         // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
         root_place = findViewById(R.id.root_place); // 관광지의 이름이 들어가야 하는 곳 ex) 제주, 강릉, 강원도
         root_picture = findViewById(R.id.root_picture); // 관광지의 사진이 들어가야 하는 곳
         root_1 = findViewById(R.id.root_1); // 루트의 경로 ex) 해운대 - 광안리 - 카페 - 밥집 - 숙소
-        root_2 = findViewById(R.id.root_2); // 루트의 전체 정보 ex) 100km, 시간
 
         // root_num에 root가 저장되어 있는 개수를 넣어줘! ex) 경로를 2개 생성하면 2개로!
         for (int i=0; i<root_num; i++){

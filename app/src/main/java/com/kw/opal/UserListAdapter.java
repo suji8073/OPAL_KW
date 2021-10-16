@@ -33,9 +33,10 @@ public class UserListAdapter extends BaseAdapter {
     List<PointModel> pointList;
     ImageView image_tourism;
     Set<String> set = new HashSet<String>();
+    Integer id1;
     String one, two, three, four;
     DbOpenHelper helper ;
-
+    int count=0;
 
 
 
@@ -106,25 +107,35 @@ public class UserListAdapter extends BaseAdapter {
         heart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(count%2==0){
                 helper = new DbOpenHelper(context);
 
                 heart.setImageResource(R.drawable.heart_on);
                 heart.setColorFilter(v.getResources().getColor(R.color.heart));
-
-
+                id1=Integer.valueOf(pointList.get(position).getId());
                 one = String.valueOf(pointList.get(position).getName());
                 two = String.valueOf(pointList.get(position).getAddr());
                 three = String.valueOf(pointList.get(position).getImage());
+                Float x = Float.valueOf(pointList.get(position).getMap_x());
+                Float y = Float.valueOf(pointList.get(position).getMap_y());
                 set.addAll(Collections.singleton(one));
                 set.addAll(Collections.singleton(two));
                 set.addAll(Collections.singleton(three));
                 //set.addAll(Collections.singleton(String.valueOf(position)));
 
                 helper.open();
-                helper.insertColumn(position, one, three);
-
-
+                helper.insertColumn(id1, one, three,two,x,y);
+                count++;
             }
+                else if(count%2==1){
+                    heart.setImageResource(R.drawable.heart_off);
+                    heart.setColorFilter(v.getResources().getColor(R.color.gray));
+                    helper.deleteColumn(pointList.get(position).getName());
+                    count++;
+
+                }
+            }
+
         });
 
 

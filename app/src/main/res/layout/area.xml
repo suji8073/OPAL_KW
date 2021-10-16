@@ -39,7 +39,7 @@
             android:layout_marginBottom="10dp"
             android:text="여행 지역 선택하기"
             android:textColor="#000000"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0" />
 
@@ -52,10 +52,12 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="8dp"
             android:text="이번 여행은 어디로 떠나실래요?"
             android:textColor="@color/purple_700"
-            android:textSize="15dp" />
+            android:textSize="18dp" />
 
 
         <ScrollView
@@ -87,7 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="서울" />
@@ -121,7 +123,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="인천" />
@@ -155,7 +157,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="대전" />
@@ -189,7 +191,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="대구" />
@@ -223,7 +225,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="광주" />
@@ -257,7 +259,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="부산" />
@@ -291,7 +293,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="울산" />
@@ -325,7 +327,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="세종" />
@@ -359,7 +361,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="경기도" />
@@ -393,7 +395,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="강원도" />
@@ -427,7 +429,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="충청북도" />
@@ -461,7 +463,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="충청남도" />
@@ -495,7 +497,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="경상북도" />
@@ -529,7 +531,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="경상남도" />
@@ -563,7 +565,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="전라북도" />
@@ -597,7 +599,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="전라남도" />
@@ -631,7 +633,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:textSize="14dp"
+                        android:textSize="16dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:text="제주도" />
