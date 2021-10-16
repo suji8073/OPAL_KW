@@ -40,7 +40,7 @@
                 android:id="@+id/main_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
                 android:text="안녕하세요!"
@@ -55,8 +55,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
-                android:textColor="@color/main"
-                android:textSize="18dp"
+                android:textColor="@color/text"
+                android:textSize="20dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -81,6 +81,7 @@
                 android:textStyle="bold" />
 
 
+
         </LinearLayout>
 
         <LinearLayout
@@ -102,6 +103,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:text="부산"
                     android:textColor="#3C3C3C"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -109,8 +111,8 @@
 
                 <ImageView
                     android:id="@+id/heart_1"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginRight="20dp"
                     android:background="@drawable/heart"
                     app:srcCompat="@drawable/heart_off" />
@@ -120,7 +122,9 @@
                 android:id="@+id/main_1_root"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:text="산방산 - 용머리해안 - 사계해변 - 사계 발자국화석 발견지 - 섯알오름 - 송악산 "
                 android:textColor="#606060"
                 android:lineSpacingExtra="3dp"
@@ -156,8 +160,8 @@
 
                 <ImageView
                     android:id="@+id/heart_2"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginRight="20dp"
                     android:background="@drawable/heart"
                     app:srcCompat="@drawable/heart_off" />
@@ -167,7 +171,9 @@
                 android:id="@+id/main_2_root"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:text="BTS정류장 + 주문진향호해변 - 경포해변 - 안목항(카페거리) - 정동진 발견지 - 섯알오름 - 송악산 "
                 android:textColor="#606060"
                 android:lineSpacingExtra="3dp"
@@ -182,7 +188,8 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:background="@drawable/main_btn"
+            android:background="@drawable/btn1"
+            android:textSize="16dp"
             android:text="여행 시작하기"/>
 
         <LinearLayout
