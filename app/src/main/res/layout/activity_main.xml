@@ -65,6 +65,11 @@
             android:layout_width="match_parent"
             android:layout_height="1dp" />
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,15 +79,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
                 android:text="오팔청춘이 추천하는 추천코스!"
                 android:textColor="#3C3C3C"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
-
-
         </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -131,6 +139,11 @@
                 android:textSize="15dp" />
 
         </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -181,6 +194,11 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
         <Button
             android:id="@+id/play"
             android:layout_marginTop="5dp"
@@ -189,13 +207,19 @@
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:background="@drawable/btn1"
-            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
             android:text="여행 시작하기"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
         <LinearLayout
             android:id="@+id/bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:gravity="bottom"
             android:orientation="horizontal">
@@ -221,7 +245,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="홈 화면"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -243,7 +267,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="나의 경로"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -265,7 +289,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="나의 페이지"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
             </LinearLayout>
 

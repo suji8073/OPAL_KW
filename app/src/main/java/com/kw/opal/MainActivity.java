@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     String strNickname, strProfile;
     int login_check;
-    boolean i, j = true;
+    boolean i, j;
 
     private SharedPreferences sp;
 
@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        i = true;
+        j = true;
 
         DbOpenHelper mDbOpenHelper;
         mDbOpenHelper = new DbOpenHelper(this);

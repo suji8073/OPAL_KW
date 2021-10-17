@@ -175,6 +175,7 @@ public class random_3_shop extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int id)
                     {
+                        mapViewContainer.removeView(mapView);
                         Intent start_intent = new Intent(getApplicationContext(), final_route_1.class);
                         startActivity(start_intent);
                     }

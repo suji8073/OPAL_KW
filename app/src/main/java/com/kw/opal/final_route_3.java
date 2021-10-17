@@ -31,7 +31,7 @@ public class final_route_3 extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(final_route_3.this, root_loading.class);
+                Intent start_intent = new Intent(final_route_3.this, MainActivity.class);
                 startActivity(start_intent);
             }
         });

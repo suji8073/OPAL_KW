@@ -47,13 +47,13 @@ public class final_route_1 extends AppCompatActivity {
             }
         });
 
-        MapView mapView = new MapView(this);
+        MapView mapView1 = new MapView(this);
         ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
 
         MapPOIItem marker = new MapPOIItem();
 
-        mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(37.53737528, 127.00557633), true);
-        mapView.setZoomLevel(1, true);
+        mapView1.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(37.53737528, 127.00557633), true);
+        mapView1.setZoomLevel(1, true);
         marker.setTag(0);
 
         double[][] location = { { 37.537229, 127.005515 }, { 37.545024,127.03923 }, { 37.527896,127.036245 },  {37.541889,127.095388}}; // 위치 좌표
@@ -67,7 +67,7 @@ public class final_route_1 extends AppCompatActivity {
             marker.setMapPoint(MARKER_POINT[i]);
             marker.setMarkerType(MapPOIItem.MarkerType.YellowPin); // 기본으로 제공하는 BluePin 마커 모양.
             marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
-            mapView.addPOIItem(marker);
+            mapView1.addPOIItem(marker);
         }
 
 
@@ -82,14 +82,14 @@ public class final_route_1 extends AppCompatActivity {
         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.541889,127.095388));
 
         // Polyline 지도에 올리기.
-        mapView.addPolyline(polyline);
+        mapView1.addPolyline(polyline);
 
         // 지도뷰의 중심좌표와 줌레벨을 Polyline이 모두 나오도록 조정.
         MapPointBounds mapPointBounds = new MapPointBounds(polyline.getMapPoints());
         int padding = 100;
-        mapView.moveCamera(CameraUpdateFactory.newMapPointBounds(mapPointBounds, padding));
+        mapView1.moveCamera(CameraUpdateFactory.newMapPointBounds(mapPointBounds, padding));
 
-        mapViewContainer.addView(mapView);
+        mapViewContainer.addView(mapView1);
 
     }
 

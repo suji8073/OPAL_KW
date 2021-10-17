@@ -176,6 +176,7 @@ public class random_3_play extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int id)
                     {
+                        mapViewContainer.removeView(mapView);
                         Intent start_intent = new Intent(getApplicationContext(), com.kw.opal.final_route_1.class);
                         startActivity(start_intent);
                     }

@@ -81,6 +81,7 @@
 
                 <LinearLayout
                     android:id="@+id/t1"
+                    android:background="@drawable/button_"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -127,6 +128,7 @@
 
                 <LinearLayout
                     android:id="@+id/t2"
+                    android:background="@drawable/button_"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -175,6 +177,7 @@
 
                 <LinearLayout
                     android:id="@+id/t3"
+                    android:background="@drawable/button_"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -223,6 +226,7 @@
 
                 <LinearLayout
                     android:id="@+id/t4"
+                    android:background="@drawable/button_"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -271,6 +275,7 @@
 
                 <LinearLayout
                     android:id="@+id/t5"
+                    android:background="@drawable/button_"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
