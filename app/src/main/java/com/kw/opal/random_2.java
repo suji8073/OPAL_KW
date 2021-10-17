@@ -57,8 +57,10 @@ public class random_2 extends AppCompatActivity {
         random_intent_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(getApplicationContext(), random_3_play.class);
+
+                Intent start_intent = new Intent(getApplicationContext(), root_loading.class);
                 startActivity(start_intent);
+
             }
         });
 

@@ -165,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="홈 화면"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -189,7 +189,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="나의 경로"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -211,7 +211,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="나의 페이지"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
             </LinearLayout>
 

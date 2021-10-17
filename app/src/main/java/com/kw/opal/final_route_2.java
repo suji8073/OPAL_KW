@@ -143,7 +143,6 @@ public class final_route_2 extends AppCompatActivity {
 
             // 리스트에 넣기
             System.out.println(mCur.getString(2));
-
             System.out.println(mCur.getString(3));
 
             items.add(user);
