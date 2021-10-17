@@ -54,6 +54,8 @@ public class root_making extends AppCompatActivity {
 
 
     //이하는 공통사용
+    Button more30Button;
+    View footer;
     SharedPreferences sroot;
     SharedPreferences pref;
     ListView listView;
@@ -65,8 +67,9 @@ public class root_making extends AppCompatActivity {
     List inview;
     Button SB;
     Spinner spinner_field;
-    int currentidx =0;
-    Boolean checkF=true;
+    int currentidx =0; //현재 카테고리
+    int currentsort =1; //현재 정렬 1-인기 2-이름 3-역이름
+    List<String> sort = Arrays.asList(new String[]{"F","T","NT"});
 
 
     int one_pick = 1;
@@ -93,6 +96,8 @@ public class root_making extends AppCompatActivity {
         inview=postmap.get("all");
         adapter = new UserListAdapter(getApplicationContext(), inview);
         listView = (ListView) findViewById(userview);
+        footer=getLayoutInflater().inflate(R.layout.more30,null,false);
+        listView.addFooterView(footer);
         listView.setAdapter(adapter);
         pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
         int position = pref.getInt("count", -1);
@@ -103,32 +108,31 @@ public class root_making extends AppCompatActivity {
         spinner_field = (Spinner) findViewById(spinner_field_id);
         String[] str = getResources().getStringArray(R.array.spinnerArray);
 
-        ArrayAdapter<CharSequence> sadapter= ArrayAdapter.createFromResource(this,R.array.spinnerArray, android.R.layout.simple_spinner_item);
-        sadapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> sadapter= ArrayAdapter.createFromResource(this,R.array.spinnerArray, R.layout.spin_layout);
+        sadapter.setDropDownViewResource(R.layout.spindrop);
         spinner_field.setAdapter(sadapter);
 
         spinner_field.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position==1){
-                    if (!checkF){
-                        GetData2(areacode,catlist.get(currentidx),"F",adapter);
-                        checkF=true;
-                    }
+
+                if (currentsort!=position){
+                    GetData2(areacode,catlist.get(currentidx),sort.get(position),adapter);
+                    currentsort=position;
+                    listView.smoothScrollToPosition(0);
                 }
-                else if(position==2){
-                    GetData2(areacode,catlist.get(currentidx),"T",adapter);
-                    checkF=false;
-                }
-                else if(position==3){
-                    GetData2(areacode,catlist.get(currentidx),"NT",adapter);
-                    checkF=false;
-                }
+
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+        more30Button = (Button) footer.findViewById(R.id.more30);
+        more30Button.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                GetData3(areacode,catlist.get(currentidx), sort.get(currentsort),adapter );
             }
         });
 
@@ -155,7 +159,9 @@ public class root_making extends AppCompatActivity {
                         c_one[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
                         Log.d("test","테스트2");
                         adapter.ListUpdate(postmap.get(catlist.get(INDEX)));
-                        checkF=true;
+                        listView.smoothScrollToPosition(0);
+                        currentsort=0;
+
                     }
                     else if (re == 2){ // 하나 이상 체크하려고 하는 경우
                         for (int i=0; i<on_off.length; i++){
@@ -171,7 +177,8 @@ public class root_making extends AppCompatActivity {
                         on_off[INDEX] = 1;
                         currentidx = INDEX;
                         adapter.ListUpdate(postmap.get(catlist.get(INDEX)));
-                        checkF=true;
+                        listView.smoothScrollToPosition(0);
+                        currentsort=0;
                         Log.d("test",Arrays.toString(on_off));
                     }
                 }
@@ -333,6 +340,34 @@ public class root_making extends AppCompatActivity {
                     ArrayList<PointModel> array = new ArrayList<>();
                     array.addAll(point);
                     adapter.ListUpdate(array);
+                }
+            }
+            @Override
+            public void onFailure(Call<PointList> call, Throwable t) {
+                //TODO 인터넷 연결 관련 팝업창 띄우기
+
+            }
+        });
+    }
+    public void GetData3(int area,String cat,String order, UserListAdapter adapter){
+        List<PointModel> orgin = adapter.getList();
+        int idx=orgin.size();
+        More30Class post = new More30Class(table,area,cat,order,idx); //todo 카테고리 검색은 여기다 catlist넣어서
+        Call<PointList> call= networkService.plusPoint(post);
+        call.enqueue(new Callback<PointList>() {
+            @Override
+            public void onResponse(Call<PointList> call, Response<PointList> response) {
+                if(response.isSuccessful()){
+                    if(response.code()!=204){
+                        List point = response.body().pointlist;
+                        ArrayList<PointModel> array = new ArrayList<>();
+                        array.addAll(orgin);
+                        array.addAll(point);
+                        adapter.ListUpdate(array);
+                    }
+                    else{
+                        //TODO 204 더 불러올 코드 없음
+                    }
                 }
             }
             @Override
