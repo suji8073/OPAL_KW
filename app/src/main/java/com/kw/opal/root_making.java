@@ -92,7 +92,7 @@ public class root_making extends AppCompatActivity {
 
     }
 
-    public void AfterData(int areacode){ //TODO 어떻게하면 드래그해서 더 불러올 수 있을것인가
+    public void AfterData(int areacode){
         inview=postmap.get("all");
         adapter = new UserListAdapter(getApplicationContext(), inview);
         listView = (ListView) findViewById(userview);
@@ -109,7 +109,7 @@ public class root_making extends AppCompatActivity {
         String[] str = getResources().getStringArray(R.array.spinnerArray);
 
         ArrayAdapter<CharSequence> sadapter= ArrayAdapter.createFromResource(this,R.array.spinnerArray, R.layout.spin_layout);
-        sadapter.setDropDownViewResource(R.layout.spindrop);
+        sadapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);//드롭다운 spindrop
         spinner_field.setAdapter(sadapter);
 
         spinner_field.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
