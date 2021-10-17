@@ -47,6 +47,9 @@ public class UserListAdapter extends BaseAdapter {
 
 
     }
+    public List getList(){
+        return this.pointList;
+    }
     public void ListUpdate(List<PointModel> pointlist){
         this.pointList=pointlist;
         notifyDataSetChanged();

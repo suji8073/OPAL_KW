@@ -9,7 +9,7 @@ public interface RSinterface {
     Call<PointList> getPoint(@Body WPClass Wpclass);
 
     @POST("/plus30")
-    Call<PointList> plusPoint(@Body WPClass Wpclass);
+    Call<PointList> plusPoint(@Body More30Class more30class);
 
     @POST("/checkarea")
     Call<PointList> checkPoint(@Body CircleClass Circleclass);

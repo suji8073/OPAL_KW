@@ -3,13 +3,11 @@
 
 <string-array name="spinnerArray">
 
-    <item> 정렬 </item>
+    <item> 추천순 </item>
 
-    <item> 추천순(기본) </item>
+    <item> ㄱ-ㅎ순 </item>
 
-    <item> 이름(ㄱ-ㅎ)순 </item>
-
-    <item> 이름역(ㅎ-ㄱ)순 </item>
+    <item> ㅎ-ㄱ순 </item>
 
 
 </string-array>
