@@ -14,7 +14,7 @@ public class tourism extends AppCompatActivity {
 
     ImageView back_main;
     TextView theme_name, address, url;
-    TextView text1_theme, text2_theme;
+    TextView text0_theme,text1_theme;
     String tourism_url;
 
     @Override
@@ -24,8 +24,9 @@ public class tourism extends AppCompatActivity {
 
         theme_name = findViewById(R.id.theme_name); //관광지 이름
         address = findViewById(R.id.address); // 관광지 주소
+        text0_theme = findViewById(R.id.text0_theme); // 관광지 소개
         text1_theme = findViewById(R.id.text1_theme); //관광지 이용안내
-        text2_theme = findViewById(R.id.text2_theme); // 관광지 상세정보
+
         url = findViewById(R.id.url); // 관광지 홈페이지 url 넣을 장소
         url.setPaintFlags(url.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG); // 밑줄
 

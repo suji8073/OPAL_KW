@@ -34,6 +34,10 @@ public class reDBOpenHelper {
             db.execSQL("DROP TABLE IF EXISTS "+reDataBases.CreateDB._TABLENAME0);
             onCreate(db);
         }
+        public void onConfigure(SQLiteDatabase db) {
+            super.onConfigure(db);
+            db.disableWriteAheadLogging();
+        }
     }
 
     public reDBOpenHelper(Context context){
