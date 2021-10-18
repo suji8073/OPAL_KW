@@ -1,12 +1,10 @@
 package com.kw.opal;
 
-import android.content.ContentValues;
+import static android.content.Context.MODE_PRIVATE;
+
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +12,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static android.content.Context.MODE_PRIVATE;
-
 import com.bumptech.glide.Glide;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -37,6 +30,7 @@ public class UserListAdapter extends BaseAdapter {
     String one, two, three, four;
     DbOpenHelper helper ;
     int count=0;
+
 
 
 
@@ -78,6 +72,7 @@ public class UserListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         //하나의 사용자에대한 view를 보여주는 부분
         //한명의 사용자에대한 view가 만들어진다.
+
         View v = View.inflate(context, R.layout.user,null);
         TextView userID = (TextView)v.findViewById(R.id.name); // 관광지 이름
         TextView userPassword = (TextView)v.findViewById(R.id.id); //주소
@@ -108,10 +103,17 @@ public class UserListAdapter extends BaseAdapter {
 
 
         heart.setOnClickListener(new View.OnClickListener() {
+            SharedPreferences sroot;
+            String area_name;
             @Override
+
             public void onClick(View view) {
+
+                sroot = context.getSharedPreferences("root", Activity.MODE_PRIVATE);
+                area_name = sroot.getString("area_name", "");
                 if(count%2==0){
                 helper = new DbOpenHelper(context);
+
 
                 heart.setImageResource(R.drawable.heart_on);
                 heart.setColorFilter(v.getResources().getColor(R.color.heart));
@@ -127,7 +129,7 @@ public class UserListAdapter extends BaseAdapter {
                 //set.addAll(Collections.singleton(String.valueOf(position)));
 
                 helper.open();
-                helper.insertColumn(id1, one, three,two,x,y);
+                helper.insertColumn(id1, one, three,two,x,y,area_name);
                 count++;
             }
                 else if(count%2==1){
