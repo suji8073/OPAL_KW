@@ -149,7 +149,7 @@ public class UserListAdapter extends BaseAdapter {
     }
     // 값 저장하기
     public void setReadCount(Set<String> set){
-        SharedPreferences pref = context.getSharedPreferences("pref", MODE_PRIVATE);
+        SharedPreferences pref = context.getSharedPreferences("sroot", MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
         editor.putStringSet("pref", set);
         Log.d("하트 들어가는 지 확인", String.valueOf(set));

@@ -117,6 +117,7 @@
             android:layout_height="wrap_content">
             <HorizontalScrollView
                 android:layout_width="283dp"
+                android:scrollbarFadeDuration = "0"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"

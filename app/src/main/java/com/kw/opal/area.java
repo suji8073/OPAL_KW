@@ -15,9 +15,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class area extends AppCompatActivity {
 
     Button next;
@@ -107,14 +104,17 @@ public class area extends AppCompatActivity {
             public void onClick(View view) {
                 int click_check = 0;
                 int area_num = 0;
+                int string_area_index = -1;
                 for (int i = 0; i<on_off.length; i++){
                     if (on_off[i] == 1) {
                         click_check = 1;
                         area_num = area_all[i];
+                        string_area_index = i;
                     }
                 }
                 if (click_check == 1) {
                     SharedPreferences.Editor editor = sroot.edit();
+                    editor.putString("area_name", text[string_area_index].getText().toString());
                     editor.putInt("area", area_num);
                     editor.commit();
 

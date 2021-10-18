@@ -7,13 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
 
 public class select1 extends AppCompatActivity {
     LinearLayout random, want;
@@ -47,7 +42,9 @@ public class select1 extends AppCompatActivity {
 
 
         int area = sroot.getInt("area",0);
+        String area_name = sroot.getString("area_name", "");
         Log.e("area_num", "내가 선택한 지역 " + area);
+        Log.e("area_name", "내가 선택한 지역 이름 " + area_name);
 
 
 
