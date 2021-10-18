@@ -89,6 +89,8 @@ public class MainActivity_2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent start_intent = new Intent(getApplicationContext(), tourism.class);
+                start_intent.putExtra("Id","128205");
+                start_intent.putExtra("TypeId","12");//휴양림 테스트
                 startActivity(start_intent);
             }
         });

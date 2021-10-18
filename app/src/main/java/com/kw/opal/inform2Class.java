@@ -2,27 +2,40 @@ package com.kw.opal;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.HashMap;
+
 //소개정보
 public class inform2Class {
     @SerializedName("MobileOS") private String MobileOS;
     @SerializedName("MobileApp") private String MobileApp;
     @SerializedName("ServiceKey") private String ServiceKey;
     @SerializedName("contentId") private String contentId;
-    @SerializedName("contentTypeId") private int contentTypeId;
+    @SerializedName("contentTypeId") private String contentTypeId;
     @SerializedName("_type") private String _type;
 
 
     public inform2Class(){
 
     }
-    public inform2Class(String contentId ,int contentTypeId) {
+    public inform2Class(String contentId ,String contentTypeId) {
         this.MobileOS="AND";
         this.MobileApp="OPAL_KW";
-        this.ServiceKey="uwmWNJVnBKFjz09fJ%2BejdUQAcnphK3ZvWWnNFPA0DV41h%2FwEpeLcIEUxm4rbcEnPXn%2FY750OzERxXM7F9vghxQ%3D%3D";
+        this.ServiceKey="uwmWNJVnBKFjz09fJ+ejdUQAcnphK3ZvWWnNFPA0DV41h/wEpeLcIEUxm4rbcEnPXn/Y750OzERxXM7F9vghxQ==";
         this.contentId=contentId;
         this.contentTypeId=contentTypeId;
         this._type="json";
 
+
+    }
+    public HashMap<String,String> Makehashmap(){
+        HashMap<String,String> retro = new HashMap<>();
+        retro.put("MobileOS",this.MobileOS);
+        retro.put("MobileApp",this.MobileApp);
+        retro.put("ServiceKey",this.ServiceKey);
+        retro.put("contentId",this.contentId);
+        retro.put("contentTypeId",this.contentTypeId);
+        retro.put("_type",this._type);
+        return retro;
 
     }
 }

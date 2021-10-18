@@ -2,6 +2,8 @@ package com.kw.opal;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
+
 import com.kakao.auth.ApprovalType;
 import com.kakao.auth.AuthType;
 import com.kakao.auth.IApplicationConfig;
@@ -29,6 +31,8 @@ public class GlobalApplication extends Application {
 
         // Kakao Sdk 초기화
         KakaoSDK.init(new KakaoSDKAdapter());
+        String keyHash = com.kakao.util.helper.Utility.getKeyHash(this /* context */);
+        Log.d("test",keyHash);
 
     }
 
