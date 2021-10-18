@@ -19,6 +19,7 @@ public class root_making_4 extends root_making {
         this.category = new Integer[]{R.id.one_1, R.id.one_2, R.id.one_3, R.id.one_4, R.id.one_5};
         this.on_off = new int[catlist.size()];
         this.spinner_field_id=R.id.spinner;
+        this.TypeID="38";
     }
 }
 

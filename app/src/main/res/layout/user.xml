@@ -20,6 +20,7 @@
 
 
         <LinearLayout
+            android:id="@+id/pointinform"
             android:layout_width="230dp"
             android:layout_height="80dp"
             android:orientation="vertical"

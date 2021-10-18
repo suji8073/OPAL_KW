@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class PointModel implements Serializable {
     private String addr;
     private String cat;
-    private int id;
+    private String id;
     private String image;
     private String name;
 
@@ -34,7 +34,7 @@ public class PointModel implements Serializable {
         return image;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -58,9 +58,6 @@ public class PointModel implements Serializable {
         this.cat = cat;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public void setImage(String image) {
         this.image = image;
