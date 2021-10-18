@@ -54,28 +54,32 @@ public class rootDBOpenHelper {
     // Insert DB
 
 
-    public void insertColumn(Integer userid, Integer a1,Integer a2,Integer a3,Integer a4) {
+    public void insertColumn( String a1,String a2,String a3,String a4,String area,String image) {
         // 중복 검사
 
 
         ContentValues values = new ContentValues();
-        values.put(rootDataBases.CreateDB._ID, userid);
+
         values.put(rootDataBases.CreateDB.A1, a1);
         values.put(rootDataBases.CreateDB.A2, a2);
         values.put(rootDataBases.CreateDB.A3, a3);
         values.put(rootDataBases.CreateDB.A4, a4);
+        values.put(rootDataBases.CreateDB.AREA, area);
+        values.put(rootDataBases.CreateDB.IMAGE, image);
 
 
         mDB.insertWithOnConflict(rootDataBases.CreateDB._TABLENAME0, null, values, SQLiteDatabase.CONFLICT_REPLACE);
     }
     // Update DB
-    public boolean updateColumn (long id,Integer userid, Integer a1,Integer a2,Integer a3,Integer a4){
+    public boolean updateColumn (long id, String a1,String a2,String a3,String a4,String area,String image){
         ContentValues values = new ContentValues();
-        values.put(rootDataBases.CreateDB._ID, userid);
+
         values.put(rootDataBases.CreateDB.A1, a1);
         values.put(rootDataBases.CreateDB.A2, a2);
         values.put(rootDataBases.CreateDB.A3, a3);
         values.put(rootDataBases.CreateDB.A4, a4);
+        values.put(rootDataBases.CreateDB.AREA, area);
+        values.put(rootDataBases.CreateDB.IMAGE, image);
 
         return mDB.update(rootDataBases.CreateDB._TABLENAME0, values, "_id=" + id, null) > 0;
     }
@@ -99,5 +103,12 @@ public class rootDBOpenHelper {
 
         Cursor c = mDB.rawQuery("SELECT * FROM usertable;", null);
         return c;
+    }
+    public int getProfilesCount() {
+        String countQuery = "SELECT  * FROM " + "usertable";
+        Cursor cursor = mDB.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
     }
 }

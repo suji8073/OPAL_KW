@@ -95,6 +95,7 @@ public class area extends AppCompatActivity {
 
 
                 }
+
             });
         }
 
@@ -130,7 +131,6 @@ public class area extends AppCompatActivity {
                 }
             }
         });
-
 
 
     }

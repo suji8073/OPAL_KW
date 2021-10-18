@@ -1,18 +1,26 @@
 package com.kw.opal;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity_2 extends AppCompatActivity {
@@ -21,13 +29,18 @@ public class MainActivity_2 extends AppCompatActivity {
     TextView place2;
     Button more;
     TextView root_place, root_1, root_2;
-    private rootDBOpenHelper helper;
-
+    rootDBOpenHelper helper;
+    ArrayList<String> list = new ArrayList<>();
+    ArrayList<String> list1 = new ArrayList<>();
     public SharedPreferences sroot;
     int root_num = 0;
     HashMap<Integer, String> map = new HashMap<Integer, String>();
 
+    Cursor mCur;
+    Context context;
 
+    @SuppressLint("SetTextI18n")
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,22 +64,59 @@ public class MainActivity_2 extends AppCompatActivity {
 
         back.setColorFilter(getApplication().getResources().getColor(R.color.gray));
         next.setColorFilter(getApplication().getResources().getColor(R.color.gray));
-
-        more = findViewById(R.id.more);
-
-        Cursor mCur = helper.sortColumn();
-        System.out.println(mCur);
-        // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
         root_place = findViewById(R.id.root_place); // 관광지의 이름이 들어가야 하는 곳 ex) 제주, 강릉, 강원도
         root_picture = findViewById(R.id.root_picture); // 관광지의 사진이 들어가야 하는 곳
         root_1 = findViewById(R.id.root_1); // 루트의 경로 ex) 해운대 - 광안리 - 카페 - 밥집 - 숙소
-
         // root_num에 root가 저장되어 있는 개수를 넣어줘! ex) 경로를 2개 생성하면 2개로!
-        for (int i=0; i<root_num; i++){
-            String name = ""; //관광지 이름과 순서 매핑해줘!
-            map.put(i+1, name); // 순서와 관광지 매핑 -> 그 경로가 두개 있을 때 next 버튼 ">" 이렇게 생긴거 활성화 하기 위함
-        }
+        more = findViewById(R.id.more);
+        mCur = helper.sortColumn();
 
+        set();//첫페이지 보여주기
+
+
+
+            next.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+
+                    int id = R.drawable.no_camera;
+                    // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
+                    if (mCur != null&& mCur.moveToNext() ){
+                        System.out.println(mCur);
+                        System.out.println(mCur.getString(1));
+                        root_place.setText(mCur.getString(4));
+                        if (mCur.getString(5) != null) {
+                            Glide.with(MainActivity_2.this).load(mCur.getString(5)).into(root_picture);
+                        } else {root_picture.setImageResource(id);
+                        }}
+                    root_1.setText(mCur.getString(0) + "-" + mCur.getString(1) + "-" + mCur.getString(2) + "-" + mCur.getString(3));
+
+
+
+                    System.out.println(mCur);
+
+                }
+            });
+
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    int id = R.drawable.no_camera;
+                    // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
+                    if (mCur != null&& mCur.moveToPrevious() ){
+                        System.out.println(mCur);
+                        System.out.println(mCur.getString(1));
+                        root_place.setText(mCur.getString(4));
+                        if (mCur.getString(5) != null) {
+                            Glide.with(MainActivity_2.this).load(mCur.getString(5)).into(root_picture);
+                        } else {root_picture.setImageResource(id);
+                        }}
+                    root_1.setText(mCur.getString(0) + "-" + mCur.getString(1) + "-" + mCur.getString(2) + "-" + mCur.getString(3));
+
+                }
+            });
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +144,28 @@ public class MainActivity_2 extends AppCompatActivity {
                 startActivity(start_intent);
             }
         });
+
+
+    }
+
+
+
+
+    public void set() {
+        // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
+
+
+        int id = R.drawable.no_camera;
+        // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
+        if (mCur != null&& mCur.moveToFirst() ){
+            System.out.println(mCur);
+            System.out.println(mCur.getString(1));
+            root_place.setText(mCur.getString(4));
+                if (mCur.getString(5) != null) {
+                    Glide.with(MainActivity_2.this).load(mCur.getString(5)).into(root_picture);
+                } else {root_picture.setImageResource(id);
+                }}
+        root_1.setText(mCur.getString(0) + "-" + mCur.getString(1) + "-" + mCur.getString(2) + "-" + mCur.getString(3));
 
 
     }

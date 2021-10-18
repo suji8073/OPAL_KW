@@ -59,7 +59,7 @@ public class DbOpenHelper {
     // Insert DB
 
 
-    public void insertColumn(Integer userid, String name, String image, String addr2, Float x, Float y) {
+    public void insertColumn(Integer userid, String name,String image, String addr2, Float x, Float y, String area) {
         // 중복 검사
 
 
@@ -72,27 +72,31 @@ public class DbOpenHelper {
         else{
             ContentValues values = new ContentValues();
             values.put(DataBases.CreateDB.USERID, userid);
+
             values.put(DataBases.CreateDB.NAME, name);
+
             values.put(DataBases.CreateDB.IMAGE, image);
             values.put(DataBases.CreateDB.ADDR, addr2);
             values.put(DataBases.CreateDB.MAP_X, x);
             values.put(DataBases.CreateDB.MAP_Y, y);
+            values.put(DataBases.CreateDB.AREA, area);
 
 
             mDB.insertWithOnConflict(DataBases.CreateDB._TABLENAME0, null, values, SQLiteDatabase.CONFLICT_REPLACE);
         }}
         // Update DB
-        public boolean updateColumn ( long id, String name, String image, String addr2,float x,
-        float y){
+        public boolean updateColumn ( long id,String name, String image, String addr2,float x,
+        float y, String area){
             ContentValues values = new ContentValues();
             values.put(DataBases.CreateDB.USERID, id);
-
             values.put(DataBases.CreateDB.NAME, name);
             values.put(DataBases.CreateDB.IMAGE, image);
 
             values.put(DataBases.CreateDB.ADDR, addr2);
             values.put(DataBases.CreateDB.MAP_X, x);
             values.put(DataBases.CreateDB.MAP_Y, y);
+            values.put(DataBases.CreateDB.AREA, area);
+
             return mDB.update(DataBases.CreateDB._TABLENAME0, values, "_id=" + id, null) > 0;
         }
 
@@ -118,4 +122,12 @@ public class DbOpenHelper {
 
 
         }
+        public Cursor sortColumn1 (String sort){
+
+            Cursor c = mDB.rawQuery("SELECT name FROM usertable ORDER BY " + sort + ";", null);
+            return c;
+
+
+        }
+
     }

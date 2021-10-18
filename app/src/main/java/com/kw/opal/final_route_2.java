@@ -99,7 +99,12 @@ public class final_route_2 extends AppCompatActivity {
         circle1.setColorFilter(getApplication().getResources().getColor(R.color.gray));
         circle2.setColorFilter(getApplication().getResources().getColor(R.color.main2));
         circle3.setColorFilter(getApplication().getResources().getColor(R.color.gray));
-        showDatabase();
+        if(helper!=null){
+            System.out.println(helper!=null);
+            showDatabase();
+
+        }
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

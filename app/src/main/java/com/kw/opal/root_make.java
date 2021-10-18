@@ -2,6 +2,7 @@ package com.kw.opal;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,12 +14,16 @@ import android.widget.ImageView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 
 public class root_make extends AppCompatActivity {
     Button finish_root;
     FrameLayout play, sleep, food, shop;
     ImageView heart1, heart2, heart3,heart4, click1, click2, click3,click4;
-
+    rootDBOpenHelper helper;
+    DbOpenHelper helper1;
+    ArrayList<String> list=new ArrayList<>();
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -26,6 +31,9 @@ public class root_make extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.root_make);
+        helper=new rootDBOpenHelper(this);
+        helper1=new DbOpenHelper(this);
+
 
         heart1=findViewById(R.id.heart1);
         heart1.setColorFilter(getApplication().getResources().getColor(R.color.heart));
@@ -84,13 +92,37 @@ public class root_make extends AppCompatActivity {
             }
         });
 
-
+        final int[] i = {0};
         finish_root = findViewById(R.id.finish_root);
+        int id = R.drawable.no_camera;
         finish_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent finish_root = new Intent(getApplicationContext(),final_route_1.class);
+                String area;
+                String image;
+                Cursor mCur=helper1.selectColumns();
+                if( mCur != null && mCur.moveToFirst() ) {
+                    area = mCur.getString(7);
+                    if(mCur.getString(3)!=null){image = mCur.getString(3);}
+                    else{
+                        image="null";}
+                    list.add(mCur.getString(2));
+                    while (mCur.moveToNext()) {
+                        list.add(mCur.getString(2));
+                        System.out.println(mCur.getString(2));
+                    }
+                    helper.insertColumn(String.valueOf(list.get(0)),String.valueOf(list.get(1)),String.valueOf(list.get(2)),String.valueOf(list.get(3)),area,image);
+                    helper1.deleteAllColumns();
+
+                    i[0]++;
+                    System.out.println(i);
+                }
+
+                Intent finish_root = new Intent(getApplicationContext(),final_route_2.class);
                 startActivity(finish_root);
+
+
+
             }
         });
 
