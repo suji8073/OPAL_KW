@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 
@@ -38,6 +39,8 @@ public class MainActivity_2 extends AppCompatActivity {
 
     Cursor mCur;
     Context context;
+    int cnt = 0;
+    int next_page = 0;
 
     @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -45,6 +48,8 @@ public class MainActivity_2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_2);
+
+
         helper = new rootDBOpenHelper(MainActivity_2.this);
         sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
 
@@ -70,31 +75,34 @@ public class MainActivity_2 extends AppCompatActivity {
         // root_num에 root가 저장되어 있는 개수를 넣어줘! ex) 경로를 2개 생성하면 2개로!
         more = findViewById(R.id.more);
         mCur = helper.sortColumn();
+        cnt = mCur.getCount();
 
-        set();//첫페이지 보여주기
-
+        if (cnt > 0) {
+            set();//첫페이지 보여주기
+            check_btn(cnt, next_page);
 
 
             next.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
+                    if (cnt - next_page > 1) {
+                        next_page++;
+                        check_btn(cnt, next_page);
 
-                    int id = R.drawable.no_camera;
-                    // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
-                    if (mCur != null&& mCur.moveToNext() ){
+                        int id = R.drawable.no_camera;
+                        // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
+                        if (mCur != null && mCur.moveToNext()) {
+                            System.out.println(mCur);
+                            System.out.println(mCur.getString(1));
+                            root_place.setText(mCur.getString(4));
+                            if (mCur.getString(5) != null) {
+                                Glide.with(MainActivity_2.this).load(mCur.getString(5)).into(root_picture);
+                            } else root_picture.setImageResource(id);
+                        }
+                        root_1.setText(mCur.getString(0) + "-" + mCur.getString(1) + "-" + mCur.getString(2) + "-" + mCur.getString(3));
                         System.out.println(mCur);
-                        System.out.println(mCur.getString(1));
-                        root_place.setText(mCur.getString(4));
-                        if (mCur.getString(5) != null) {
-                            Glide.with(MainActivity_2.this).load(mCur.getString(5)).into(root_picture);
-                        } else {root_picture.setImageResource(id);
-                        }}
-                    root_1.setText(mCur.getString(0) + "-" + mCur.getString(1) + "-" + mCur.getString(2) + "-" + mCur.getString(3));
-
-
-
-                    System.out.println(mCur);
+                    }
 
                 }
             });
@@ -103,21 +111,40 @@ public class MainActivity_2 extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
-                    int id = R.drawable.no_camera;
-                    // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
-                    if (mCur != null&& mCur.moveToPrevious() ){
-                        System.out.println(mCur);
-                        System.out.println(mCur.getString(1));
-                        root_place.setText(mCur.getString(4));
-                        if (mCur.getString(5) != null) {
-                            Glide.with(MainActivity_2.this).load(mCur.getString(5)).into(root_picture);
-                        } else {root_picture.setImageResource(id);
-                        }}
-                    root_1.setText(mCur.getString(0) + "-" + mCur.getString(1) + "-" + mCur.getString(2) + "-" + mCur.getString(3));
+                    if (cnt - next_page > 0 && next_page > 0) {
+                        next_page--;
+                        check_btn(cnt, next_page);
 
+                        int id = R.drawable.no_camera;
+                        // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
+                        if (mCur != null && mCur.moveToPrevious()) {
+                            System.out.println(mCur);
+                            System.out.println(mCur.getString(1));
+                            root_place.setText(mCur.getString(4));
+                            if (mCur.getString(5) != null) {
+                                Glide.with(MainActivity_2.this).load(mCur.getString(5)).into(root_picture);
+                            } else {
+                                root_picture.setImageResource(id);
+                            }
+                        }
+                        root_1.setText(mCur.getString(0) + "-" + mCur.getString(1) + "-" + mCur.getString(2) + "-" + mCur.getString(3));
+                    }
                 }
             });
 
+
+
+            more = findViewById(R.id.more);
+            more.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent start_intent = new Intent(getApplicationContext(), tourism.class);
+                    start_intent.putExtra("Id", "128205");
+                    start_intent.putExtra("TypeId", "12");//휴양림 테스트
+                    startActivity(start_intent);
+                }
+            });
+        }
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,21 +161,30 @@ public class MainActivity_2 extends AppCompatActivity {
             }
         });
 
-        more = findViewById(R.id.more);
-        more.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_intent = new Intent(getApplicationContext(), tourism.class);
-                start_intent.putExtra("Id","128205");
-                start_intent.putExtra("TypeId","12");//휴양림 테스트
-                startActivity(start_intent);
-            }
-        });
-
 
     }
 
+    private void check_btn(int cnt, int next_page) {
 
+        if(cnt - next_page > 1 ) { // 1>1
+            next.setColorFilter(getApplication().getResources().getColor(R.color.main2));
+            next.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_check_is));
+        }
+        else{
+            next.setColorFilter(getApplication().getResources().getColor(R.color.gray));
+            next.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_));
+
+        }
+        if (next_page > 0){
+            back.setColorFilter(getApplication().getResources().getColor(R.color.main2));
+            back.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_check_is));
+        }
+        else if (next_page == 0){
+            back.setColorFilter(getApplication().getResources().getColor(R.color.gray));
+            back.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_));
+        }
+
+    }
 
 
     public void set() {
