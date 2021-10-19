@@ -148,7 +148,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="호텔"
+                        android:text="펜션"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -159,7 +159,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="모텔"
+                        android:text="한옥"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -170,7 +170,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="리조트"
+                        android:text="모텔"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -181,7 +181,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="휴양림"
+                        android:text="관광호텔"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -192,9 +192,9 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="사실"
+                        android:text="게스트"
                         android:textColor="@color/text"
-                        android:textSize="14dp"
+                        android:textSize="13dp"
                         android:textStyle="bold" />
 
                     <Button
@@ -203,7 +203,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="순서"
+                        android:text="콘도"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -214,7 +214,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="막씀"
+                        android:text="민막"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -225,10 +225,21 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="지어냄"
+                        android:text="유스호스텔"
                         android:textColor="@color/text"
-                        android:textSize="14dp"
+                        android:textSize="9dp"
                         android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/one_10"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="가족호텔"
+                        android:textColor="@color/text"
+                        android:textSize="9dp"
+                        android:textStyle="bold" />
+
 
                 </LinearLayout>
             </HorizontalScrollView>

@@ -160,9 +160,9 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="인문"
+                        android:text="고목/괴석"
                         android:textColor="@color/text"
-                        android:textSize="14dp"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
 
                     <Button
@@ -171,7 +171,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="절"
+                        android:text="역사"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -182,7 +182,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="공원"
+                        android:text="휴양"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -193,7 +193,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="공원"
+                        android:text="체험"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -204,7 +204,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="공원"
+                        android:text="건축"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -215,18 +215,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="공원"
-                        android:textColor="@color/text"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/one_9"
-                        android:layout_width="60dp"
-                        android:layout_height="25dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/btn"
-                        android:text="공원"
+                        android:text="산업"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
