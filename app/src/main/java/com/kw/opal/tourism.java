@@ -203,6 +203,7 @@ public class tourism extends AppCompatActivity {
     public void AfterData(){
         Log.d("test",addr);
 
+
         mainimage = findViewById(R.id.mainimage);
         theme_name = findViewById(R.id.theme_name); //관광지 이름
         address = findViewById(R.id.address); // 관광지 주소
@@ -216,21 +217,29 @@ public class tourism extends AppCompatActivity {
         address.setText(addr);
         text0_theme.setText(conv);
         text1_theme.setText(inform);
-        url.setText(site);
+
 
         if (!isBlank(site)){
             tourism_url = site; // 관광지 홈페이지 넣으면 됨
+            Log.e("url", String.valueOf(url));
 
             //url 클릭하면 해당 홈페이지로 이동
             url.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(tourism_url));
+
+                    String[] array_url = tourism_url.split(" ");
+                    Log.d("관광지 url 들어가는 지 확인", array_url[1]);
+                    Log.d("관광지 url 들어가는 지 확인", array_url[1].substring(5, '\"'));
+                    String real_url = array_url[1].substring(5);
+                    String real_url1 = real_url.substring(1, real_url.length()-1);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(real_url1));
                     startActivity(intent);
 
                 }
             });
         }
+        else url.setText("");
 
         back_main = findViewById(R.id.back_main);
         back_main.setOnClickListener(new View.OnClickListener() {

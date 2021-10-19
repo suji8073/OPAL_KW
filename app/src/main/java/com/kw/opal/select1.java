@@ -24,13 +24,13 @@ public class select1 extends AppCompatActivity {
         sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
 
 
-        random.setOnClickListener(new View.OnClickListener() {
+        /* random.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent start_intent = new Intent(select1.this, com.kw.opal.random_1.class);
                 startActivity(start_intent);
             }
-        });
+        });*/
 
         want.setOnClickListener(new View.OnClickListener() {
             @Override
