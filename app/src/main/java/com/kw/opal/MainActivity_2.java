@@ -54,7 +54,7 @@ public class MainActivity_2 extends AppCompatActivity {
         setContentView(R.layout.activity_main_2);
 
         helper = new reDBOpenHelper(MainActivity_2.this);
-        helper = new rootDBOpenHelper(MainActivity_2.this);
+        helper = new reDBOpenHelper(MainActivity_2.this);
 
         sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
 
@@ -94,36 +94,30 @@ public class MainActivity_2 extends AppCompatActivity {
                     if (cnt - next_page > 1) {
                         next_page++;
                         check_btn(cnt, next_page);
-                      list.clear();
-                    code+=1;
-                    mCur=helper.selectC(code);
-                    System.out.println(mCur);
-                    mCur.moveToFirst();
-                    int id = R.drawable.no_camera;
-                    // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
-                    if (mCur.getString(3) != null) {
-                        Glide.with(MainActivity_2.this).load(mCur.getString(3)).into(root_picture);
-
-                    } else {root_picture.setImageResource(id);
-                    }
-                    mCur.moveToFirst();
-                    if (mCur != null&& mCur.moveToFirst() ){
-
-                        System.out.println(mCur.getString(1));
-
-                        root_place.setText(mCur.getString(8));
-                        list.add(mCur.getString(2));
-                        list.add("-");
-                        while(mCur.moveToNext()){
-                            list.add(mCur.getString(2));
-
-                            if(mCur.isLast()!=true){
-                                list.add("-");
-                            }
-
+                        list.clear();
+                        code+=1;
+                        mCur=helper.selectC(code);
+                        System.out.println(mCur);
+                        mCur.moveToFirst();
+                        int id = R.drawable.no_camera;
+                        // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
+                        if (mCur.getString(3) != null) {
+                            Glide.with(MainActivity_2.this).load(mCur.getString(3)).into(root_picture);
                         }
+                        else {root_picture.setImageResource(id); }
+                        mCur.moveToFirst();
+                        if (mCur != null&& mCur.moveToFirst() ) {
+                            System.out.println(mCur.getString(1));
+                            root_place.setText(mCur.getString(8));
+                            list.add(mCur.getString(2));
+                            list.add("-");
+                            while (mCur.moveToNext()) {
+                                list.add(mCur.getString(2));
 
-
+                                if (mCur.isLast() != true) {
+                                    list.add("-");
+                                }
+                            }
                         }
                         System.out.println(mCur);
 
@@ -137,37 +131,34 @@ public class MainActivity_2 extends AppCompatActivity {
             back.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-
                     if (cnt - next_page > 0 && next_page > 0) {
                         next_page--;
                         check_btn(cnt, next_page);
-
                         list.clear();
-                    code-=1;
-                    mCur=helper.selectC(code);
-                    System.out.println(mCur);
-                    mCur.moveToFirst();
-                    int id = R.drawable.no_camera;
-                    // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
-                    if (mCur.getString(3) != null) {
-                        Glide.with(MainActivity_2.this).load(mCur.getString(3)).into(root_picture);
+                        code-=1;
+                        mCur=helper.selectC(code);
+                        System.out.println(mCur);
+                        mCur.moveToFirst();
+                        int id = R.drawable.no_camera;
+                        // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
+                        if (mCur.getString(3) != null) {
+                            Glide.with(MainActivity_2.this).load(mCur.getString(3)).into(root_picture);
 
-                    } else {root_picture.setImageResource(id);
-                    }
-                    mCur.moveToFirst();
-                    if (mCur != null&& mCur.moveToFirst() ){
+                        }
+                        else root_picture.setImageResource(id);
+                        mCur.moveToFirst();
+                        if (mCur != null&& mCur.moveToFirst() ) {
 
-                        System.out.println(mCur.getString(1));
-
-                        root_place.setText(mCur.getString(8));
-                        list.add(mCur.getString(2));
-                        list.add("-");
-                        while(mCur.moveToNext()){
+                            System.out.println(mCur.getString(1));
+                            root_place.setText(mCur.getString(8));
                             list.add(mCur.getString(2));
+                            list.add("-");
+                            while (mCur.moveToNext()) {
+                                list.add(mCur.getString(2));
 
-                            if(mCur.isLast()!=true){
-                                list.add("-");
+                                if (mCur.isLast() != true) {
+                                    list.add("-");
+                                }
                             }
                         }
                         System.out.println(mCur);
