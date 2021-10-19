@@ -40,9 +40,9 @@ public class MainActivity_2 extends AppCompatActivity {
     reDBOpenHelper helper;
     Cursor mCur;
     Context context;
+    Cursor mCur1;
 
-    int code=0;
-
+    int code;
     int cnt = 0;
     int next_page = 0;
 
@@ -55,6 +55,14 @@ public class MainActivity_2 extends AppCompatActivity {
 
         helper = new reDBOpenHelper(MainActivity_2.this);
         helper = new reDBOpenHelper(MainActivity_2.this);
+
+        mCur1=helper.sortColumn();
+
+
+        if (mCur1 != null&& mCur1.moveToFirst() ) {
+            System.out.println(mCur1.getString(4));
+            code=mCur1.getInt(7);
+            System.out.println("코드는"+code);}
 
         sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
 
