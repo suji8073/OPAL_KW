@@ -152,7 +152,7 @@ public class UserListAdapter extends BaseAdapter {
 
                 helper.open();
 
-                helper.insertColumn(id1, one, three,two,x,y,area_name);
+                helper.insertColumn(id1, one, three,two,x,y,area_name,null);
 
                 count++;
             }

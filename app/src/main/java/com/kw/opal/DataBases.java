@@ -18,6 +18,8 @@ public final class DataBases {
         public static final String IMAGE = "image";
         public static final String _TABLENAME0 = "usertable";
         public static final String AREA = "area";
+        public static final String TYPEID = "typeid";
+
 
 
         public static final String _CREATE0 = "create table if not exists "+_TABLENAME0+"("
@@ -29,8 +31,9 @@ public final class DataBases {
                 +ADDR+" text not null , "
                 +MAP_X+" text not null , "
                 +MAP_Y+" text not null , "
+                +AREA+" text not null , "
 
-                +AREA+" text not null );";
+                +TYPEID+" text not null );";
     }
 }
 

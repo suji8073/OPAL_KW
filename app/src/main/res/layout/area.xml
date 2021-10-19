@@ -49,7 +49,7 @@
             android:background="@color/black" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/root_place"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
