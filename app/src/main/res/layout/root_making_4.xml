@@ -148,9 +148,9 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="쇼핑"
+                        android:text="상설시장"
                         android:textColor="@color/text"
-                        android:textSize="14dp"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
 
                     <Button
@@ -159,7 +159,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="센터"
+                        android:text="5일장"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -170,7 +170,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="아니면"
+                        android:text="특산물"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -181,9 +181,9 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="시장"
+                        android:text="공예공방"
                         android:textColor="@color/text"
-                        android:textSize="14dp"
+                        android:textSize="11dp"
                         android:textStyle="bold" />
 
                     <Button
@@ -192,9 +192,9 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="특산품"
+                        android:text="관광기념품"
                         android:textColor="@color/text"
-                        android:textSize="14dp"
+                        android:textSize="9dp"
                         android:textStyle="bold" />
 
                     <Button
@@ -203,9 +203,9 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="좋아"
+                        android:text="전문상가"
                         android:textColor="@color/text"
-                        android:textSize="14dp"
+                        android:textSize="11dp"
                         android:textStyle="bold" />
 
                     <Button
@@ -214,9 +214,9 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="이거"
+                        android:text="백화점"
                         android:textColor="@color/text"
-                        android:textSize="14dp"
+                        android:textSize="13dp"
                         android:textStyle="bold" />
 
                     <Button
@@ -225,9 +225,9 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="또 수정"
+                        android:text="면세점"
                         android:textColor="@color/text"
-                        android:textSize="14dp"
+                        android:textSize="13dp"
                         android:textStyle="bold" />
 
                 </LinearLayout>

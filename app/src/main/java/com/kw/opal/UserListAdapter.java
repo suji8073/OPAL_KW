@@ -99,7 +99,7 @@ public class UserListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Intent start_intent = new Intent(context, tourism.class);
                 start_intent.putExtra("Id",pointList.get(position).getId());
-                start_intent.putExtra("TypeId",TypeID);
+                start_intent.putExtra("TypeId",pointList.get(position).getContentTypeId());
                 context.startActivity(start_intent.addFlags(FLAG_ACTIVITY_NEW_TASK));
             }
         });

@@ -1,5 +1,6 @@
 package com.kw.opal;
 
+import java.io.Console;
 import java.io.Serializable;
 
 public class PointModel implements Serializable {
@@ -8,6 +9,7 @@ public class PointModel implements Serializable {
     private String id;
     private String image;
     private String name;
+    private  String contentTypeId;
 
     public float mapx;
     public float mapy;
@@ -25,6 +27,7 @@ public class PointModel implements Serializable {
         count+=1;
         return name;
     }
+    public String getContentTypeId(){return contentTypeId;}
 
     public String getAddr() {
         return addr;
