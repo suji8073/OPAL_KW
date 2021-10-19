@@ -116,6 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <HorizontalScrollView
+                android:scrollbarFadeDuration = "0"
                 android:layout_width="283dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -158,7 +159,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="중식"
+                        android:text="양식"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -169,7 +170,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="양식"
+                        android:text="중식"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -180,7 +181,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="뭘까"
+                        android:text="일식"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -191,7 +192,7 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="그외"
+                        android:text="카페"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -202,9 +203,9 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="여러"
+                        android:text="아시아"
                         android:textColor="@color/text"
-                        android:textSize="14dp"
+                        android:textSize="13dp"
                         android:textStyle="bold" />
 
                     <Button
@@ -213,9 +214,9 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="가지"
+                        android:text="패밀리"
                         android:textColor="@color/text"
-                        android:textSize="14dp"
+                        android:textSize="13dp"
                         android:textStyle="bold" />
 
                     <Button
@@ -224,7 +225,17 @@
                         android:layout_height="25dp"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/btn"
-                        android:text="음식"
+                        android:text="이색"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/one_10"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="채식"
                         android:textColor="@color/text"
                         android:textSize="14dp"
                         android:textStyle="bold" />

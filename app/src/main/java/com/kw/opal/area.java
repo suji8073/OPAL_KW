@@ -15,9 +15,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class area extends AppCompatActivity {
 
     Button next;

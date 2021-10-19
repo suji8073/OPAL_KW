@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 
@@ -39,14 +40,22 @@ public class MainActivity_2 extends AppCompatActivity {
     reDBOpenHelper helper;
     Cursor mCur;
     Context context;
+
     int code=0;
+
+    int cnt = 0;
+    int next_page = 0;
+
     @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_2);
+
         helper = new reDBOpenHelper(MainActivity_2.this);
+        helper = new rootDBOpenHelper(MainActivity_2.this);
+
         sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
 
 
@@ -71,15 +80,21 @@ public class MainActivity_2 extends AppCompatActivity {
         // root_num에 root가 저장되어 있는 개수를 넣어줘! ex) 경로를 2개 생성하면 2개로!
         more = findViewById(R.id.more);
         mCur = helper.sortColumn();
+        cnt = mCur.getCount();
 
-        set();//첫페이지 보여주기
-
+        if (cnt > 0) {
+            set();//첫페이지 보여주기
+            check_btn(cnt, next_page);
 
 
             next.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    list.clear();
+
+                    if (cnt - next_page > 1) {
+                        next_page++;
+                        check_btn(cnt, next_page);
+                      list.clear();
                     code+=1;
                     mCur=helper.selectC(code);
                     System.out.println(mCur);
@@ -106,6 +121,8 @@ public class MainActivity_2 extends AppCompatActivity {
                                 list.add("-");
                             }
 
+                        }
+
 
                         }
                         System.out.println(mCur);
@@ -120,7 +137,13 @@ public class MainActivity_2 extends AppCompatActivity {
             back.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    list.clear();
+
+
+                    if (cnt - next_page > 0 && next_page > 0) {
+                        next_page--;
+                        check_btn(cnt, next_page);
+
+                        list.clear();
                     code-=1;
                     mCur=helper.selectC(code);
                     System.out.println(mCur);
@@ -146,11 +169,8 @@ public class MainActivity_2 extends AppCompatActivity {
                             if(mCur.isLast()!=true){
                                 list.add("-");
                             }
-
-
                         }
                         System.out.println(mCur);
-
 
                         root_1.setText(TextUtils.join(" ", list));
 
@@ -158,6 +178,19 @@ public class MainActivity_2 extends AppCompatActivity {
                 }
             });
 
+
+
+            more = findViewById(R.id.more);
+            more.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent start_intent = new Intent(getApplicationContext(), tourism.class);
+                    start_intent.putExtra("Id", "128205");
+                    start_intent.putExtra("TypeId", "12");//휴양림 테스트
+                    startActivity(start_intent);
+                }
+            });
+        }
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,19 +207,30 @@ public class MainActivity_2 extends AppCompatActivity {
             }
         });
 
-        more = findViewById(R.id.more);
-        more.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_intent = new Intent(getApplicationContext(), tourism.class);
-                startActivity(start_intent);
-            }
-        });
-
 
     }
 
+    private void check_btn(int cnt, int next_page) {
 
+        if(cnt - next_page > 1 ) { // 1>1
+            next.setColorFilter(getApplication().getResources().getColor(R.color.main2));
+            next.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_check_is));
+        }
+        else{
+            next.setColorFilter(getApplication().getResources().getColor(R.color.gray));
+            next.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_));
+
+        }
+        if (next_page > 0){
+            back.setColorFilter(getApplication().getResources().getColor(R.color.main2));
+            back.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_check_is));
+        }
+        else if (next_page == 0){
+            back.setColorFilter(getApplication().getResources().getColor(R.color.gray));
+            back.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_));
+        }
+
+    }
 
 
     public void set() {

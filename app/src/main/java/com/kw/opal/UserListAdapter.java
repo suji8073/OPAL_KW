@@ -4,14 +4,19 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
+import static android.content.Context.MODE_PRIVATE;
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -30,6 +35,7 @@ public class UserListAdapter extends BaseAdapter {
     String one, two, three, four;
     DbOpenHelper helper ;
     int count=0;
+    String TypeID;
 
 
 
@@ -47,6 +53,9 @@ public class UserListAdapter extends BaseAdapter {
     public void ListUpdate(List<PointModel> pointlist){
         this.pointList=pointlist;
         notifyDataSetChanged();
+    }
+    public void setTypeID(String Type){
+        this.TypeID=Type;
     }
 
 
@@ -79,8 +88,21 @@ public class UserListAdapter extends BaseAdapter {
         image_tourism  = (ImageView) v.findViewById(R.id.image_tourism); // 사진 띄우는 곳
         ImageView heart = (ImageView) v.findViewById(R.id.tourism_heart); //하트
 
+        LinearLayout inform = (LinearLayout)v.findViewById(R.id.pointinform);
+
+
         heart.setImageResource(R.drawable.heart_off);
         heart.setColorFilter(v.getResources().getColor(R.color.gray));
+
+        inform.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent start_intent = new Intent(context, tourism.class);
+                start_intent.putExtra("Id",pointList.get(position).getId());
+                start_intent.putExtra("TypeId",pointList.get(position).getContentTypeId());
+                context.startActivity(start_intent.addFlags(FLAG_ACTIVITY_NEW_TASK));
+            }
+        });
 
 
 
@@ -129,7 +151,9 @@ public class UserListAdapter extends BaseAdapter {
                 //set.addAll(Collections.singleton(String.valueOf(position)));
 
                 helper.open();
+
                 helper.insertColumn(id1, one, three,two,x,y,area_name,null);
+
                 count++;
             }
                 else if(count%2==1){
@@ -151,7 +175,7 @@ public class UserListAdapter extends BaseAdapter {
     }
     // 값 저장하기
     public void setReadCount(Set<String> set){
-        SharedPreferences pref = context.getSharedPreferences("pref", MODE_PRIVATE);
+        SharedPreferences pref = context.getSharedPreferences("sroot", MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
         editor.putStringSet("pref", set);
         Log.d("하트 들어가는 지 확인", String.valueOf(set));

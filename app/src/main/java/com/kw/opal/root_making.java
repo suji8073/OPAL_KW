@@ -51,6 +51,7 @@ public class root_making extends AppCompatActivity {
     Button[] c_one;
     int[] on_off;
     int spinner_field_id;
+    String TypeID;
 
 
     //이하는 공통사용
@@ -95,6 +96,7 @@ public class root_making extends AppCompatActivity {
     public void AfterData(int areacode){
         inview=postmap.get("all");
         adapter = new UserListAdapter(getApplicationContext(), inview);
+        adapter.setTypeID(TypeID);
         listView = (ListView) findViewById(userview);
         footer=getLayoutInflater().inflate(R.layout.more30,null,false);
         listView.addFooterView(footer);
