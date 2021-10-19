@@ -55,7 +55,6 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         HashMap<String,Object> param = new HashMap<>();
-        Log.e("getKeyHash", ""+getKeyHash(login.this));
 
 
         super.onCreate(savedInstanceState);
