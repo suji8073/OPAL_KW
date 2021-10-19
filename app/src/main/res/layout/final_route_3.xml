@@ -85,7 +85,7 @@
 
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/root_place"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -105,10 +105,11 @@
             android:layout_height="200dp">
 
             <ImageView
+                android:id="@+id/root_picture"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/logo"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/logo" />
 
 
             <Button

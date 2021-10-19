@@ -129,7 +129,7 @@ public class UserListAdapter extends BaseAdapter {
                 //set.addAll(Collections.singleton(String.valueOf(position)));
 
                 helper.open();
-                helper.insertColumn(id1, one, three,two,x,y,area_name);
+                helper.insertColumn(id1, one, three,two,x,y,area_name,null);
                 count++;
             }
                 else if(count%2==1){

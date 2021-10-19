@@ -61,7 +61,7 @@ public class reDBOpenHelper {
     // Insert DB
 
 
-    public void insertColumn(Integer userid, String name, String image, String addr2, double x, double y) {
+    public void insertColumn(String userid, String name, String image, String addr2, double x, double y, Integer code, String area) {
         // 중복 검사
 
 
@@ -73,13 +73,15 @@ public class reDBOpenHelper {
             values.put(reDataBases.CreateDB.ADDR, addr2);
             values.put(reDataBases.CreateDB.MAP_X, x);
             values.put(reDataBases.CreateDB.MAP_Y, y);
+        values.put(reDataBases.CreateDB.CODE, code);
+        values.put(reDataBases.CreateDB.AREA, area);
 
 
             mDB.insertWithOnConflict(reDataBases.CreateDB._TABLENAME0, null, values, SQLiteDatabase.CONFLICT_REPLACE);
         }
     // Update DB
     public boolean updateColumn ( long id, String name, String image, String addr2,double x,
-                                  double y){
+                                  double y,Integer code,String area){
         ContentValues values = new ContentValues();
         values.put(reDataBases.CreateDB.USERID, id);
         values.put(reDataBases.CreateDB.NAME, name);
@@ -87,6 +89,8 @@ public class reDBOpenHelper {
         values.put(reDataBases.CreateDB.ADDR, addr2);
         values.put(reDataBases.CreateDB.MAP_X, x);
         values.put(reDataBases.CreateDB.MAP_Y, y);
+        values.put(reDataBases.CreateDB.CODE, code);
+        values.put(reDataBases.CreateDB.AREA, area);
         return mDB.update(reDataBases.CreateDB._TABLENAME0, values, "_id=" + id, null) > 0;
     }
 
@@ -105,9 +109,16 @@ public class reDBOpenHelper {
     }
 
     // sort by column
-    public Cursor sortColumn (String sort){
+    public Cursor sortColumn (){
 
-        Cursor c = mDB.rawQuery("SELECT * FROM recommend ORDER BY " + sort + ";", null);
+        Cursor c = mDB.rawQuery("SELECT * FROM recommend;", null);
+        return c;
+
+
+    }
+    public Cursor selectC (Integer str){
+
+        Cursor c = mDB.rawQuery("SELECT * FROM recommend WHERE code="+str+";", null);
         return c;
 
 
