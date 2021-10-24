@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cat5Array">
+
+        <item> 전체 </item>
+        <item> 박물관 </item>
+        <item> 전시관 </item>
+        <item> 미술관 </item>
+        <item> 공연장 </item>
+        <item> 문화원 </item>
+        <item> 도서관 </item>
+        <item> 기념관 </item>
+        <item> 문화전수시설 </item>
+        <item> 컨벤션센터 </item>
+
+
+    </string-array>
+
+</resources>
