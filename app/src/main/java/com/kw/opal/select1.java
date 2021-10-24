@@ -35,7 +35,7 @@ public class select1 extends AppCompatActivity {
         want.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_i = new Intent(select1.this, com.kw.opal.root_make.class);
+                Intent start_i = new Intent(select1.this, com.kw.opal.root_making.class);
                 startActivity(start_i);
             }
         });
