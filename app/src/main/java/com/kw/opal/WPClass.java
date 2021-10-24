@@ -21,4 +21,9 @@ public class WPClass {
         this.cat=cat;
         this.order=order;
     }
+    public String toString(){
+        String k = "table "+table+ " areacode "+areacode+" cat "+cat+" order "+order;
+        return k;
+    }
+
 }

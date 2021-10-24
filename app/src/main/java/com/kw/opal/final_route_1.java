@@ -23,7 +23,6 @@ public class final_route_1 extends AppCompatActivity {
 
     Button next;
     ImageView circle1, circle2, circle3;
-
     reDBOpenHelper helper;
     Cursor mCur;
     Cursor mCur1;
@@ -89,8 +88,7 @@ public class final_route_1 extends AppCompatActivity {
         mapView1.setZoomLevel(1, true);
         marker.setTag(0);
 
-       MapPoint[] MARKER_POINT = new MapPoint[4];
-
+        MapPoint[] MARKER_POINT = new MapPoint[4];
 
 
         for (int i=0; i<Location.length; i++){
