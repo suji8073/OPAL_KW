@@ -1,6 +1,7 @@
 package com.kw.opal;
 
 import static android.content.Context.MODE_PRIVATE;
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,9 +15,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
-import static android.content.Context.MODE_PRIVATE;
-import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -145,7 +143,6 @@ public class UserListAdapter extends BaseAdapter {
                 three = String.valueOf(pointList.get(position).getImage());
                 Float x = Float.valueOf(pointList.get(position).getMap_x());
                 Float y = Float.valueOf(pointList.get(position).getMap_y());
-                String TypeId =String.valueOf(pointList.get(position).getContentTypeId());
                 set.addAll(Collections.singleton(one));
                 set.addAll(Collections.singleton(two));
                 set.addAll(Collections.singleton(three));
@@ -153,7 +150,7 @@ public class UserListAdapter extends BaseAdapter {
 
                 helper.open();
 
-                helper.insertColumn(id1, one, three,two,x,y,area_name,TypeId);
+                helper.insertColumn(id1, one, three,two,x,y,area_name,null);
 
                 count++;
             }
