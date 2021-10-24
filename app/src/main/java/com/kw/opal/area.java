@@ -39,6 +39,7 @@ public class area extends AppCompatActivity {
 
     public int[] on_off = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public SharedPreferences sroot;
+    int where_from;
 
 
     @Override
@@ -57,6 +58,8 @@ public class area extends AppCompatActivity {
             layout[i] = findViewById(layout_num[i]);
         }
 
+        Intent intent = getIntent();
+        where_from = intent.getIntExtra("where_check", 0);
 
 
         for (int i=0; i<text_num.length; i++){
@@ -122,8 +125,7 @@ public class area extends AppCompatActivity {
 
 
                     Log.d("배열 확인", "배열: " + on_off);
-                    Intent start_intent = new Intent(area.this, com.kw.opal.select1.class);
-                    startActivity(start_intent);
+                    where_from_move(where_from);
                 }
 
                 else {
@@ -134,6 +136,19 @@ public class area extends AppCompatActivity {
         });
 
 
+    }
+
+    private void where_from_move(int where_from) {
+
+        if (where_from == 2){
+            Intent start_1 = new Intent(getApplicationContext(), com.kw.opal.random_1.class);
+            startActivity(start_1);
+        }
+
+        else if (where_from == 3){
+            Intent start_2 = new Intent(getApplicationContext(), com.kw.opal.root_make.class);
+            startActivity(start_2);
+        }
     }
 
     public int check_on_off(int index) { // 체크 되었는지 확인

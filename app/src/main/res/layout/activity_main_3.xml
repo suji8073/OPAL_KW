@@ -24,7 +24,7 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:layout_centerInParent="true"
                 app:srcCompat="@drawable/logo1_" />
 
@@ -52,8 +52,8 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/user_Profile"
             android:layout_marginTop="20dp"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/logo1" />
 

@@ -8,9 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import net.daum.mf.map.api.CameraUpdateFactory;
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
@@ -69,12 +67,9 @@ public class final_route_1 extends AppCompatActivity {
         circle1 = findViewById(R.id.circle1);
         circle2 = findViewById(R.id.circle2);
         circle3 = findViewById(R.id.circle3);
-
         circle1.setColorFilter(getApplication().getResources().getColor(R.color.main2));
         circle2.setColorFilter(getApplication().getResources().getColor(R.color.gray));
         circle3.setColorFilter(getApplication().getResources().getColor(R.color.gray));
-
-
         next = findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +79,6 @@ public class final_route_1 extends AppCompatActivity {
                 startActivity(start_intent);
             }
         });
-
         MapView mapView1 = new MapView(this);
         ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
 
@@ -105,13 +99,12 @@ public class final_route_1 extends AppCompatActivity {
             marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
             mapView1.addPOIItem(marker);
         }
-
-
         MapPolyline polyline = new MapPolyline();
         polyline.setTag(1000);
         polyline.setLineColor(Color.argb(100, 255, 51, 0)); // Polyline 컬러 지정.
 
         // Polyline 좌표 지정.
+
         for (int m=0;m<Location.length;m++){
             polyline.addPoint(MapPoint.mapPointWithGeoCoord(Location[m][0], Location[m][1]));
         }
@@ -122,10 +115,6 @@ public class final_route_1 extends AppCompatActivity {
         MapPointBounds mapPointBounds = new MapPointBounds(polyline.getMapPoints());
         int padding = 100;
         mapView1.moveCamera(CameraUpdateFactory.newMapPointBounds(mapPointBounds, padding));
-
         mapViewContainer.addView(mapView1);
-
+        }
     }
-
-}
-

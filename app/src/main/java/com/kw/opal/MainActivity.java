@@ -1,14 +1,11 @@
 package com.kw.opal;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,9 +18,9 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayout home, place, person;
-    ImageView home1, heart_1, heart_2;
+    ImageView home1;
     TextView home2;
-    Button play;
+    LinearLayout random_root, want_root, smart_root;
     TextView user_name_main, main_1_name, main_2_name, main_1_root, main_2_root;
 
     String strNickname, strProfile;
@@ -38,6 +35,31 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        random_root = findViewById(R.id.random_root);
+        want_root = findViewById(R.id.want_root);
+        smart_root = findViewById(R.id.smart_root);
+
+        random_root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_intent = new Intent(getApplicationContext(), com.kw.opal.area.class);
+                start_intent.putExtra("where_check", 2);
+                startActivity(start_intent);
+            }
+        });
+
+        want_root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_i = new Intent(getApplicationContext(), com.kw.opal.area.class);
+                start_i.putExtra("where_check", 3);
+                startActivity(start_i);
+            }
+        });
+
+
 
         mDbOpenHelper = new DbOpenHelper(this);
         mDbOpenHelper.open();
@@ -90,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        play = findViewById(R.id.play);
 
         home = findViewById(R.id.home);
         place = findViewById(R.id.place);
@@ -107,11 +128,14 @@ public class MainActivity extends AppCompatActivity {
         home1.setColorFilter(getApplication().getResources().getColor(R.color.main));
         home2.setTextColor(getApplication().getResources().getColor(R.color.main));
 
+        /*
         heart_1 = findViewById(R.id.heart_1);
         heart_2 = findViewById(R.id.heart_2);
 
         heart_1.setColorFilter(getApplication().getResources().getColor(R.color.heart));
         heart_2.setColorFilter(getApplication().getResources().getColor(R.color.heart));
+
+        */
 
 
         main_1_name = findViewById(R.id.main_1_name);
@@ -121,11 +145,11 @@ public class MainActivity extends AppCompatActivity {
 
        //추천코스 넣기
 
-        this.InitializeView();
-        this.setTextView();
+        //this.InitializeView();
+        //this.setTextView();
 
 
-
+        /*
         heart_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -170,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
-        });
+        }); */
 
 
         place.setOnClickListener(new View.OnClickListener() {
@@ -207,13 +231,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_intent = new Intent(MainActivity.this, area.class);
-                startActivity(start_intent);
-            }
-        });
+
+
+
+
 
 
     }

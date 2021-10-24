@@ -19,8 +19,6 @@ public class select1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select1);
 
-        random = findViewById(R.id.random);
-        want = findViewById(R.id.want);
         sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
 
 
