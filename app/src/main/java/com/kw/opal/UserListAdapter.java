@@ -89,7 +89,7 @@ public class UserListAdapter extends BaseAdapter {
         LinearLayout inform = (LinearLayout)v.findViewById(R.id.pointinform);
 
 
-        heart.setImageResource(R.drawable.heart_off);
+        heart.setImageResource(R.drawable.check_off);
         heart.setColorFilter(v.getResources().getColor(R.color.gray));
 
         inform.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +135,7 @@ public class UserListAdapter extends BaseAdapter {
                 helper = new DbOpenHelper(context);
 
 
-                heart.setImageResource(R.drawable.heart_on);
+                heart.setImageResource(R.drawable.check_on);
                 heart.setColorFilter(v.getResources().getColor(R.color.heart));
                 id1=Integer.valueOf(pointList.get(position).getId());
                 one = String.valueOf(pointList.get(position).getName());
@@ -155,7 +155,7 @@ public class UserListAdapter extends BaseAdapter {
                 count++;
             }
                 else if(count%2==1){
-                    heart.setImageResource(R.drawable.heart_off);
+                    heart.setImageResource(R.drawable.check_off);
                     heart.setColorFilter(v.getResources().getColor(R.color.gray));
                     helper.deleteColumn(pointList.get(position).getName());
                     count++;
