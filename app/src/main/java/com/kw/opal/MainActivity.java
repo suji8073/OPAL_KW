@@ -17,10 +17,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout home, place, person;
+    LinearLayout home, place, person, random_root, want_root, smart_root;
     ImageView home1;
     TextView home2;
-    LinearLayout random_root, want_root, smart_root;
     TextView user_name_main, main_1_name, main_2_name, main_1_root, main_2_root;
 
     String strNickname, strProfile;
@@ -36,30 +35,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        random_root = findViewById(R.id.random_root);
-        want_root = findViewById(R.id.want_root);
-        smart_root = findViewById(R.id.smart_root);
-
-        random_root.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_intent = new Intent(getApplicationContext(), com.kw.opal.area.class);
-                start_intent.putExtra("where_check", 2);
-                startActivity(start_intent);
-            }
-        });
-
-        want_root.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_i = new Intent(getApplicationContext(), com.kw.opal.area.class);
-                start_i.putExtra("where_check", 3);
-                startActivity(start_i);
-            }
-        });
-
-
 
         mDbOpenHelper = new DbOpenHelper(this);
         mDbOpenHelper.open();
@@ -93,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
         user_name_main = findViewById(R.id.user_name_main);
 
-
-
         if (login_check == 0){
             Toast.makeText(getApplicationContext(), "비회원으로 로그인하셨습니다!",
                     Toast.LENGTH_SHORT).show();
@@ -119,6 +92,28 @@ public class MainActivity extends AppCompatActivity {
 
         home1 = findViewById(R.id.home1);
         home2 = findViewById(R.id.home2);
+
+        random_root = findViewById(R.id.random_root);
+        want_root = findViewById(R.id.want_root);
+        smart_root = findViewById(R.id.smart_root);
+
+        random_root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_intent = new Intent(MainActivity.this, com.kw.opal.area.class);
+                start_intent.putExtra("where_check", 2);
+                startActivity(start_intent);
+            }
+        });
+
+        want_root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_i = new Intent(MainActivity.this, com.kw.opal.area.class);
+                start_i.putExtra("where_check", 3);
+                startActivity(start_i);
+            }
+        });
 
         final String strNickname = sp.getString("strNickname", "");
         if (strNickname != "") user_name_main.setText("\"" + strNickname+ "\" 님");

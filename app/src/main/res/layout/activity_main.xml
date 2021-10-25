@@ -87,12 +87,12 @@
         <LinearLayout
             android:id="@+id/smart_root"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.5"
+            android:layout_height="120dp"
             android:background="@drawable/btn4"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:orientation="vertical">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -140,8 +140,7 @@
         <LinearLayout
             android:id="@+id/random_root"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.5"
+            android:layout_height="120dp"
             android:background="@drawable/btn1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -194,8 +193,7 @@
         <LinearLayout
             android:id="@+id/want_root"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.5"
+            android:layout_height="120dp"
             android:background="@drawable/btn2"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"

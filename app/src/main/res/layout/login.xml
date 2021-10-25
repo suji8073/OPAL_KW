@@ -50,11 +50,12 @@
             android:layout_margin="30dp"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/btn1"
+            android:background="@color/main2"
             android:textSize="18dp"
             android:text="비회원으로 로그인하기" />
+
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -63,15 +64,15 @@
         <com.kakao.usermgmt.LoginButton
             android:id="@+id/btn_kakao_login"
             android:layout_width="wrap_content"
-            android:padding="5dp"
+            android:padding="10dp"
             android:layout_gravity="center"
             android:layout_height="wrap_content"/>
-
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1" />
+
     </LinearLayout>
 
 

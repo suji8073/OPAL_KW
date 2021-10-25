@@ -50,6 +50,7 @@ public class area extends AppCompatActivity {
 
         for (int i=0; i<check_num.length; i++){ // board 형변환
             check[i] = findViewById(check_num[i]);
+            check[i].setColorFilter(getApplication().getResources().getColor(R.color.black));
         }
         for (int i= 0; i<text_num.length; i++){ // 숫자 형변환
             text[i] = findViewById(text_num[i]);
@@ -57,6 +58,8 @@ public class area extends AppCompatActivity {
         for (int i= 0; i<layout_num.length; i++){ // layout 형변환
             layout[i] = findViewById(layout_num[i]);
         }
+
+
 
         Intent intent = getIntent();
         where_from = intent.getIntExtra("where_check", 0);
@@ -72,11 +75,13 @@ public class area extends AppCompatActivity {
                     int re = check_on_off(INDEX); // 체크 되었는지 표시
                     if (re == 0){ // 이미 체크된 것임
                         check[INDEX].setImageResource(R.drawable.check_off);
+                        check[INDEX].setColorFilter(getApplication().getResources().getColor(R.color.black));
                         text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.black));
                         layout[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
                     }
                     else if (re == 1){ // 전에 체크 되지 않은 것
                         check[INDEX].setImageResource(R.drawable.check_on);
+                        check[INDEX].setColorFilter(getApplication().getResources().getColor(R.color.main));
                         text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
                         layout[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_));
                     }
@@ -84,6 +89,7 @@ public class area extends AppCompatActivity {
                         for (int i=0; i<on_off.length; i++){
                             if (on_off[i] == 1){
                                 check[i].setImageResource(R.drawable.check_off);
+                                check[i].setColorFilter(getApplication().getResources().getColor(R.color.black));
                                 text[i].setTextColor(getApplication().getResources().getColor(R.color.black));
                                 layout[i].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
                                 on_off[i] = 0;
@@ -91,6 +97,7 @@ public class area extends AppCompatActivity {
                             }
                         }
                         check[INDEX].setImageResource(R.drawable.check_on);
+                        check[INDEX].setColorFilter(getApplication().getResources().getColor(R.color.main));
                         text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
                         layout[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_));
                         on_off[INDEX] = 1;
@@ -146,7 +153,7 @@ public class area extends AppCompatActivity {
         }
 
         else if (where_from == 3){
-            Intent start_2 = new Intent(getApplicationContext(), com.kw.opal.root_make.class);
+            Intent start_2 = new Intent(getApplicationContext(), com.kw.opal.root_making.class);
             startActivity(start_2);
         }
     }
