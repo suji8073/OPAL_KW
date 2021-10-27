@@ -25,7 +25,7 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:layout_centerInParent="true"
                 app:srcCompat="@drawable/logo1_" />
 
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
@@ -107,7 +107,6 @@
                             android:id="@+id/address"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="제주특별자치도 서귀포시 안덕면 병악로 166"
                             android:textColor="@color/black"
                             android:textSize="14dp" />
@@ -124,6 +123,7 @@
                             android:id="@+id/url"
                             android:layout_height="wrap_content"
                             android:textSize="14dp"
+                            android:textStyle="bold"
                             android:textColor="@color/main2"
                             android:text="홈페이지로 이동하기" />
 
@@ -136,14 +136,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="250dp"
                     android:layout_margin="10dp"
-                    app:srcCompat="@drawable/logo" />
+                    app:srcCompat="@drawable/no_camera" />
 
                 <TextView
                     android:id="@+id/main_text0_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:textSize="16dp"
                     android:textColor="@color/black"

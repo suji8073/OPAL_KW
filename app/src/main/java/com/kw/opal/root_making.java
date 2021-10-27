@@ -1,41 +1,29 @@
 package com.kw.opal;
 
-import static java.lang.Thread.sleep;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
-
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import android.annotation.SuppressLint;
-import android.widget.Spinner;
 
 public class root_making extends AppCompatActivity {
     //새로 정의 해야 하는 부분
@@ -53,10 +41,10 @@ public class root_making extends AppCompatActivity {
     ArrayList<String> catlist6 = new ArrayList<>(Arrays.asList("all","B02010700", "B020101600", "B02010900", "B02010100", "B02011100", "B02010500", "B02011000", "B02010600", "B02010400"));
     ArrayList<ArrayList> catlist =new ArrayList<>(Arrays.asList(catlist1,catlist2,catlist3,catlist4,catlist5,catlist6));
     Integer[] category;
-    Button[] c_one;
-    int[] on_off;
-    int spinner_field_id;
     Button T_city,T_food,T_repo,T_shop,T_cult,T_hotel;
+    HashMap<Button, String> list = new HashMap<Button, String>();
+    int spinner_field_id;
+
 
 
 
@@ -179,6 +167,9 @@ public class root_making extends AppCompatActivity {
         T_city.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = "button_p";
+                list.put(T_city, name);
+                check_on_off(list);
                 if (currenttable!=0) {
                     currentarr.clear();
                     currentarr.addAll(arr1);
@@ -386,23 +377,9 @@ public class root_making extends AppCompatActivity {
 
     }
 
-    public int check_on_off(int index) { // 체크 되었는지 확인
-        for (int i=0; i<c_one.length; i++){
-            if (on_off[i] == 1){ //체크 된 것
-                if (index == i) { //체크 된 것과 내가 클릭한 것이 같으면 다시 체크안 된 것으로
-                    on_off[i] = 0;
-                    one_pick -= 1;
-                    return 0;
-                }
-            }
-        }
-        if (one_pick == 1){
-            return 2;
-        }
-        // 전에 체크 되지 않은 것
-        on_off[index] = 1;
-        one_pick += 1;
-        return 1;
+    private void check_on_off(HashMap<Button, String> name) {
+
+
     }
 
     public void GetData(int area, String table){//최초검색

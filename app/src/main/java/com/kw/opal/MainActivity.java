@@ -97,6 +97,14 @@ public class MainActivity extends AppCompatActivity {
         want_root = findViewById(R.id.want_root);
         smart_root = findViewById(R.id.smart_root);
 
+        smart_root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_intent = new Intent(MainActivity.this, com.kw.opal.smart_root.class);
+                startActivity(start_intent);
+            }
+        });
+
         random_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
