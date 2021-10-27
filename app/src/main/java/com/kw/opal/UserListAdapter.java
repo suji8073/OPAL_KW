@@ -143,6 +143,7 @@ public class UserListAdapter extends BaseAdapter {
                 three = String.valueOf(pointList.get(position).getImage());
                 Float x = Float.valueOf(pointList.get(position).getMap_x());
                 Float y = Float.valueOf(pointList.get(position).getMap_y());
+                String typeid=String.valueOf(pointList.get(position).getContentTypeId());
                 set.addAll(Collections.singleton(one));
                 set.addAll(Collections.singleton(two));
                 set.addAll(Collections.singleton(three));
@@ -150,7 +151,7 @@ public class UserListAdapter extends BaseAdapter {
 
                 helper.open();
 
-                helper.insertColumn(id1, one, three,two,x,y,area_name,null);
+                helper.insertColumn(id1, one, three,two,x,y,area_name,typeid);
 
                 count++;
             }
