@@ -112,13 +112,12 @@
                     android:textStyle="bold"
                     android:textSize="18dp"
                     android:textColor="@color/white"
-                    android:text="스마트 루트 짜기" />
+                    android:text="추천 코스 보기" />
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="0.5"
-                    android:layout_gravity="right"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:gravity="right"
                     app:srcCompat="@drawable/ic_arrow" />
             </LinearLayout>
 
@@ -126,11 +125,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/white"
                 android:lineSpacingExtra="3dp"
                 android:textSize="16dp"
-                android:text="오팔세대들이 좋아하는\n대표적인 여행 루트를 보여드릴께요!" />
+                android:text="오팔세대들이 좋아하는\n대표적인 여행 코스를 보여드릴께요!" />
 
         </LinearLayout>
 
@@ -165,12 +164,11 @@
                     android:textStyle="bold"
                     android:textSize="18dp"
                     android:textColor="@color/white"
-                    android:text="추천 루트 보기" />
+                    android:text="스마트 관광지 코스 선택" />
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="0.5"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="right"
                     app:srcCompat="@drawable/ic_arrow" />
             </LinearLayout>
@@ -179,11 +177,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/white"
                 android:lineSpacingExtra="3dp"
                 android:textSize="16dp"
-                android:text="당신의 취향 파악을 통해\n원하는 경로를 추천해드릴께요!" />
+                android:text="원하시는 관광지를 선택하시면\n 주변의 관광지들을 추천해드려요!" />
 
         </LinearLayout>
 
@@ -215,15 +213,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="직접 루트 선택"
+                    android:text="직접 관광지 코스 선택"
                     android:textColor="@color/white"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="0.5"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_gravity="right"
                     app:srcCompat="@drawable/ic_arrow" />
             </LinearLayout>
@@ -232,7 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/white"
                 android:lineSpacingExtra="3dp"
                 android:textSize="16dp"

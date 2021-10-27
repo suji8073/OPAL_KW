@@ -131,7 +131,7 @@ public class UserListAdapter extends BaseAdapter {
 
                 sroot = context.getSharedPreferences("root", Activity.MODE_PRIVATE);
                 area_name = sroot.getString("area_name", "");
-                if(count%2==0){
+                if(count % 2 == 0){
                 helper = new DbOpenHelper(context);
 
 

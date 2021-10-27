@@ -47,7 +47,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:text="관광지 선택하기"
+                android:text="여행지 선택하기"
                 android:layout_gravity="center"
                 android:textColor="#000000"
                 android:textSize="20dp"
@@ -69,9 +69,9 @@
         </LinearLayout>
 
         <View
+            android:background="#BBBBBB"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/black" />
+            android:layout_height="2dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,7 +79,6 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="5dp"
             android:orientation="horizontal">
 
 
@@ -220,6 +219,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
+
             <Button
                 android:id="@+id/button_s"
                 android:layout_width="wrap_content"
@@ -228,6 +228,7 @@
                 android:background="@drawable/btn4"
                 android:textSize="16dp"
                 android:text="검 색"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_gravity="left"
                  />
