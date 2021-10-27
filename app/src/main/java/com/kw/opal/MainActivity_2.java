@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -58,11 +57,13 @@ public class MainActivity_2 extends AppCompatActivity {
 
         mCur1=helper.sortColumn();
 
-
-        if (mCur1 != null&& mCur1.moveToFirst() ) {
-            System.out.println(mCur1.getString(4));
-            code=mCur1.getInt(7);
-            System.out.println("코드는"+code);}
+        if (cnt > 0) {
+            if (mCur1 != null && mCur1.moveToFirst()) {
+                System.out.println(mCur1.getString(4));
+                code = mCur1.getInt(7);
+                System.out.println("코드는" + code);
+            }
+        }
 
         sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
 

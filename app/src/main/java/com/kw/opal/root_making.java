@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,7 +43,7 @@ public class root_making extends AppCompatActivity {
     ArrayList<ArrayList> catlist =new ArrayList<>(Arrays.asList(catlist1,catlist2,catlist3,catlist4,catlist5,catlist6));
     Integer[] category;
     Button T_city,T_food,T_repo,T_shop,T_cult,T_hotel;
-    HashMap<Button, String> list = new HashMap<Button, String>();
+    Button Previous;
     int spinner_field_id;
 
 
@@ -163,13 +164,14 @@ public class root_making extends AppCompatActivity {
                 GetData3(areacode,cc.get(currentcat),sort.get(currentsort),adapter );
             }
         });
+
         T_city = findViewById(R.id.button_p);
+        Previous = T_city;
         T_city.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = "button_p";
-                list.put(T_city, name);
-                check_on_off(list);
+                check_on_off(name, T_city);
                 if (currenttable!=0) {
                     currentarr.clear();
                     currentarr.addAll(arr1);
@@ -189,6 +191,9 @@ public class root_making extends AppCompatActivity {
         T_food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = "button_f";
+                check_on_off(name, T_food);
+
                 if (currenttable!=1) {
                     currentarr.clear();
                     currentarr.addAll(arr2);
@@ -207,6 +212,9 @@ public class root_making extends AppCompatActivity {
         T_repo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = "button_r";
+                check_on_off(name, T_repo);
+
                 if (currenttable!=2) {
                     currentarr.clear();
                     currentarr.addAll(arr3);
@@ -224,6 +232,9 @@ public class root_making extends AppCompatActivity {
         T_shop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = "button_sh";
+                check_on_off(name, T_shop);
+
                 if (currenttable!=3) {
                     currentarr.clear();
                     currentarr.addAll(arr4);
@@ -241,6 +252,9 @@ public class root_making extends AppCompatActivity {
         T_cult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = "button_cu";
+                check_on_off(name, T_cult);
+
                 if (currenttable!=4) {
                     currentarr.clear();
                     currentarr.addAll(arr5);
@@ -258,6 +272,9 @@ public class root_making extends AppCompatActivity {
         T_hotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = "button_ho";
+                check_on_off(name, T_hotel);
+
                 if (currenttable!=5) {
                     currentarr.clear();
                     currentarr.addAll(arr6);
@@ -377,8 +394,15 @@ public class root_making extends AppCompatActivity {
 
     }
 
-    private void check_on_off(HashMap<Button, String> name) {
+    private void check_on_off(String name, Button btn) {
 
+        Previous.setTextColor(getApplication().getResources().getColor(R.color.text));
+        Previous.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
+
+        btn.setTextColor(getApplication().getResources().getColor(R.color.main));
+        btn.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_));
+
+        Previous = btn;
 
     }
 
