@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".root_making_1">
+    tools:context=".smart_root">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/button_"
-        android:layout_marginRight="10dp"
+        android:layout_height="76dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_"
         android:orientation="horizontal">
 
         <View
@@ -22,9 +22,11 @@
 
         <LinearLayout
             android:layout_width="0dp"
+            android:layout_height="63dp"
             android:layout_weight="12"
-            android:layout_height="100dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+
+            >
 
             <View
                 android:layout_width="0dp"
@@ -32,53 +34,46 @@
                 android:layout_weight="0.1" />
 
             <TextView
-                android:id="@+id/smart_area"
-                android:layout_width="wrap_content"
+                android:id="@+id/smart_title"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="left|center"
                 android:text="강릉"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
+
             <View
+
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="0.1" />
-
-            <TextView
-                android:id="@+id/smart_root"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="산방산 - 용머리해안 - 사계해변 - 사계 발자국화석 발견지 - 섯알오름 - 송악산 "
-                android:textColor="#606060"
-                android:textSize="14dp" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="0.1" />
-
 
         </LinearLayout>
+
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="0.3" />
 
+
         <ImageView
-            android:id="@+id/smart_check"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/check_off" />
+            android:id="@+id/smart_image"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:src="@drawable/no_camera" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="0.5" />
 
+
     </LinearLayout>
+
 
 
 </LinearLayout>

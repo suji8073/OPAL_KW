@@ -100,7 +100,8 @@ public class MainActivity extends AppCompatActivity {
         smart_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(MainActivity.this, com.kw.opal.smart_root.class);
+                Intent start_intent = new Intent(MainActivity.this, com.kw.opal.area.class);
+                start_intent.putExtra("where_check", 4);
                 startActivity(start_intent);
             }
         });

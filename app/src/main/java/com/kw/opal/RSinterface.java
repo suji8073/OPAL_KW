@@ -11,6 +11,9 @@ public interface RSinterface {
     @POST("/plus30")
     Call<PointList> plusPoint(@Body More30Class more30class);
 
+    @POST("/routelist")
+    Call<RouteList> getRoute(@Body RouteClass routeClass);
+
     @POST("/checkarea")
     Call<PointList> checkPoint(@Body CircleClass Circleclass);
 

@@ -156,6 +156,10 @@ public class area extends AppCompatActivity {
             Intent start_2 = new Intent(getApplicationContext(), com.kw.opal.root_making.class);
             startActivity(start_2);
         }
+        else if (where_from == 4){
+            Intent start_3 = new Intent(getApplicationContext(), com.kw.opal.smart_root.class);
+            startActivity(start_3);
+        }
     }
 
     public int check_on_off(int index) { // 체크 되었는지 확인
