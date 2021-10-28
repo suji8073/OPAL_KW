@@ -88,7 +88,7 @@ public class final_route_1 extends AppCompatActivity {
         mapView1.setZoomLevel(1, true);
         marker.setTag(0);
 
-        MapPoint[] MARKER_POINT = new MapPoint[4];
+        MapPoint[] MARKER_POINT = new MapPoint[4];//TODO 장바구니 개수에 따라 유동적으로 생성
 
 
         for (int i=0; i<Location.length; i++){
