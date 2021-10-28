@@ -46,7 +46,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
-                android:text="대표관광지 선택하기"
+                android:text="최초 관광지 선택하기"
                 android:textColor="#000000"
                 android:textSize="20dp"
                 android:layout_gravity="bottom"
@@ -94,13 +94,56 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="clip_horizontal|center_horizontal"
+            android:layout_gravity="left|center_horizontal"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:lineSpacingExtra="3dp"
-            android:text="아래의 사진들 중 가고 싶은 관광지를 선택하세요!\n만약 원하는 관광지가 없다면 \'다시\' 버튼을 눌러주세요"
+            android:text="가고 싶은 관광지를 골라보세요\n마음에 드시는 장소가 없으시면 &quot;다시&quot; 버튼을\n특별히 찾는 장소가 있으시다면 하단의 검색을 이용해 주세요"
             android:textColor="@color/purple_700"
             android:textSize="14dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_search" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="250dp"
+                android:layout_weight="5"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:ems="5"
+                android:inputType="textPersonName"
+                android:textSize="12dp"
+                android:textColorHint="@color/gray"
+                android:hint ="관광지를 입력하세요" />
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn4"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:text="검색" />
+        </LinearLayout>
 
         <View
             android:layout_width="0dp"

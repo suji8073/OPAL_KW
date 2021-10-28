@@ -45,7 +45,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
-                android:text="스마트 루트 선택하기"
+                android:text="다채로운 관광코스"
                 android:textColor="#000000"
                 android:textSize="20dp"
                 android:textStyle="bold"

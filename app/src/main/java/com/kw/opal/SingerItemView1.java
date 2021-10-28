@@ -2,6 +2,7 @@ package com.kw.opal;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -9,10 +10,14 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
+
 public class SingerItemView1 extends LinearLayout {
 
     TextView textView;
-    TextView textView2;
+    ImageView imageview;
+    RouteModel rm;
+
 
 
     // Generate > Constructor
@@ -34,18 +39,22 @@ public class SingerItemView1 extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.smart_list, this, true);
 
-        textView = (TextView) findViewById(R.id.smart_area);
-        textView2 = (TextView) findViewById(R.id.smart_root);
+        textView = (TextView) findViewById(R.id.smart_title);
+        imageview =(ImageView) findViewById(R.id.smart_image);
+
 
     }
-
-    public void setName(String name) {
-        textView.setText(name);
+    public void setmodel(RouteModel model){
+        rm=model;
+        textView.setText(rm.getName());
+        if (rm.getImage() != null){
+            Glide.with(this).load(rm.getImage()).into(imageview);
+        }
+        else{
+            imageview.setImageResource(R.drawable.no_camera);
+        }
     }
 
-    public void setMobile(String mobile) {
-        textView2.setText(mobile);
-    }
 
 
 

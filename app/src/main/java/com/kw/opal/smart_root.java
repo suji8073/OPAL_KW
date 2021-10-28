@@ -1,6 +1,9 @@
 package com.kw.opal;
 
+import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -11,11 +14,16 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class smart_root extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class smart_root extends AppCompatActivity { //이게 걍 미리 제공되어진 경로
 
     Button smart_root_check, smart_root_no;
-
+    final RSinterface networkService = RetrofitHelper.create();
     SingerAdapter adapter;
 
     @Override
@@ -23,32 +31,59 @@ public class smart_root extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.smart_root);
         ListView listView = (ListView) findViewById(R.id.smart_root);
+        SharedPreferences sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
+        int area = sroot.getInt("area",0);
         adapter = new SingerAdapter();
         //TODO 여기 item에 하나씩 넣으면 됨여 랜덤
-        adapter.addItem(new SingerItem1("주현이는", "지각쟁이"));
 
-        listView.setAdapter(adapter);
-        smart_root_check = findViewById(R.id.smart_root_check); // 선택하기 버튼
-        smart_root_check.setOnClickListener(new View.OnClickListener() {
+
+        RouteClass post = new RouteClass(area,"all","F");
+        Log.d("test",post.toString());
+        Call<RouteList> call= networkService.getRoute(post);
+        call.enqueue(new Callback<RouteList>() {
             @Override
-            public void onClick(View view) {
+            public void onResponse(Call<RouteList> call, Response<RouteList> response) {
+                if(response.isSuccessful()){
+                    List point = response.body().pointlist;
+                    ArrayList<RouteModel> array = new ArrayList<>();
+                    array.addAll(point);
+                    adapter.addItem(array);
 
+
+                    listView.setAdapter(adapter);
+                    smart_root_check = findViewById(R.id.smart_root_check); // 선택하기 버튼
+                    smart_root_check.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+
+                        }
+                    });
+
+                    smart_root_no = findViewById(R.id.smart_root_no); // 취소하기 버튼
+                    smart_root_no.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            finish();
+                        }
+                    });
+
+
+
+                }
+            }
+            @Override
+            public void onFailure(Call<RouteList> call, Throwable t) {
+                //TODO 인터넷 연결 관련 팝업창 띄우기
 
             }
         });
-
-        smart_root_no = findViewById(R.id.smart_root_no); // 취소하기 버튼
-        smart_root_no.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        //adapter.addItem(RouteModel);
 
 
     }
     class SingerAdapter extends BaseAdapter {
-        ArrayList<SingerItem1> items = new ArrayList<SingerItem1>();
+        ArrayList<RouteModel> items = new ArrayList<RouteModel>();
 
 
         // Generate > implement methods
@@ -57,8 +92,8 @@ public class smart_root extends AppCompatActivity {
             return items.size();
         }
 
-        public void addItem(SingerItem1 item) {
-            items.add(item);
+        public void addItem(ArrayList<RouteModel> item) {
+            items.addAll(item);
         }
 
         @Override
@@ -84,13 +119,9 @@ public class smart_root extends AppCompatActivity {
                 view = (SingerItemView1) convertView;
             }
 
-            SingerItem1 item = items.get(position);
-            ImageView check = (ImageView) view.findViewById(R.id.smart_check); //하트
-            check.setImageResource(R.drawable.check_off);
-            check.setColorFilter(view.getResources().getColor(R.color.gray));
+            RouteModel item = items.get(position);
+            view.setmodel(item);
 
-            view.setName(item.getName());
-            view.setMobile(item.getMobile());
 
 
 
