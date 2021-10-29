@@ -31,7 +31,7 @@
             android:value="@string/kakao_app_key" />
 
 
-
+        <activity android:name="com.kw.opal.routeinfo" android:label="route_inform"></activity>
         <activity android:name="com.kw.opal.login" android:label="login"></activity>
         <activity android:name="com.kw.opal.MainActivity" android:label="activity_main"></activity>
         <activity android:name="com.kw.opal.MainActivity_2" android:label="activity_main_2"></activity>

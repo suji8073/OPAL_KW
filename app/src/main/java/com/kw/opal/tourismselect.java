@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,8 +33,9 @@ public class tourismselect extends AppCompatActivity {
 
     ImageView back_main,mainimage;
     TextView theme_name, address, url;
-    TextView text0_theme,text1_theme;
+    TextView text1_theme,text2_theme;
     String tourism_url;
+    Button random_intent_yes, random_intent_no;
     final Tourinterface networkService = RetrofitHelper2.create();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,12 +77,12 @@ public class tourismselect extends AppCompatActivity {
                                     Log.d("test","2");
                                     Detailrepeat D = response.body();
                                     inform=inform+D.response.body.items.getTextInfo();
-                                    setContentView(R.layout.tourism2);
+                                    setContentView(R.layout.random_2);
                                     AfterData();
                                 }
                                 @Override
                                 public void onFailure(Call<Detailrepeat> call, Throwable t) {
-                                    setContentView(R.layout.tourism2);
+                                    setContentView(R.layout.random_2);
                                     AfterData();
                                 }
                             });
@@ -107,12 +109,12 @@ public class tourismselect extends AppCompatActivity {
                                     Log.d("test","2");
                                     Detailrepeat D = response.body();
                                     inform=inform+D.response.body.items.getTextInfo();
-                                    setContentView(R.layout.tourism2);
+                                    setContentView(R.layout.random_2);
                                     AfterData();
                                 }
                                 @Override
                                 public void onFailure(Call<Detailrepeat> call, Throwable t) {
-                                    setContentView(R.layout.tourism2);
+                                    setContentView(R.layout.random_2);
                                     AfterData();
                                 }
                             });
@@ -139,12 +141,12 @@ public class tourismselect extends AppCompatActivity {
                                     Log.d("test","2");
                                     Detailrepeat D = response.body();
                                     inform=inform+D.response.body.items.getTextInfo();
-                                    setContentView(R.layout.tourism2);
+                                    setContentView(R.layout.random_2);
                                     AfterData();
                                 }
                                 @Override
                                 public void onFailure(Call<Detailrepeat> call, Throwable t) {
-                                    setContentView(R.layout.tourism2);
+                                    setContentView(R.layout.random_2);
                                     AfterData();
                                 }
                             });
@@ -171,12 +173,12 @@ public class tourismselect extends AppCompatActivity {
                                     Log.d("test","2");
                                     Detailrepeat D = response.body();
                                     inform=inform+D.response.body.items.getTextInfo();
-                                    setContentView(R.layout.tourism2);
+                                    setContentView(R.layout.random_2);
                                     AfterData();
                                 }
                                 @Override
                                 public void onFailure(Call<Detailrepeat> call, Throwable t) {
-                                    setContentView(R.layout.tourism2);
+                                    setContentView(R.layout.random_2);
                                     AfterData();
                                 }
                             });
@@ -206,16 +208,16 @@ public class tourismselect extends AppCompatActivity {
         mainimage = findViewById(R.id.mainimage);
         theme_name = findViewById(R.id.theme_name); //관광지 이름
         address = findViewById(R.id.address); // 관광지 주소
-        text0_theme = findViewById(R.id.text0_theme); // 관광지 소개
-        text1_theme = findViewById(R.id.text1_theme); //관광지 이용안내
+        text1_theme = findViewById(R.id.text1_theme); // 관광지 소개
+        text2_theme = findViewById(R.id.text2_theme); //관광지 이용안내
         url = findViewById(R.id.url); // 관광지 홈페이지 url 넣을 장소
         url.setPaintFlags(url.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG); // 밑줄
         if (!isBlank(MainimgURL))
             Glide.with(this).load(MainimgURL).into(mainimage);
         theme_name.setText(name);
         address.setText(addr);
-        text0_theme.setText(conv);
-        text1_theme.setText(inform);
+        text1_theme.setText(conv);
+        text2_theme.setText(inform);
 
 
         if (!isBlank(site)){
@@ -242,6 +244,23 @@ public class tourismselect extends AppCompatActivity {
 
         back_main = findViewById(R.id.back_main);
         back_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        random_intent_yes = findViewById(R.id.random_intent_yes); //TODO 장바구니에 넣고 좌표 인텐트 전달
+        random_intent_yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent start_intent = new Intent(getApplicationContext(), root_loading.class);
+                startActivity(start_intent);
+
+            }
+        });
+        random_intent_no = findViewById(R.id.random_intent_no); // 취소하기 버튼
+        random_intent_no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();

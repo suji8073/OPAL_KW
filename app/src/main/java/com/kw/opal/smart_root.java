@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,27 +49,7 @@ public class smart_root extends AppCompatActivity { //이게 걍 미리 제공�
                     ArrayList<RouteModel> array = new ArrayList<>();
                     array.addAll(point);
                     adapter.addItem(array);
-
-
                     listView.setAdapter(adapter);
-                    smart_root_check = findViewById(R.id.smart_root_check); // 선택하기 버튼
-                    smart_root_check.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-
-
-                        }
-                    });
-
-                    smart_root_no = findViewById(R.id.smart_root_no); // 취소하기 버튼
-                    smart_root_no.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            finish();
-                        }
-                    });
-
-
 
                 }
             }
@@ -110,6 +91,7 @@ public class smart_root extends AppCompatActivity { //이게 걍 미리 제공�
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             // 뷰 객체 재사용
+
 
             SingerItemView1 view = null;
             if (convertView == null) {
