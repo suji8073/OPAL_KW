@@ -39,39 +39,26 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/text_theme"
+                android:id="@+id/root_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
-                android:text="다채로운 관광코스"
+                android:text="루트 이름"
                 android:textColor="#000000"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintHorizontal_bias="0" />
-            </LinearLayout>
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/black" />
 
-        <TextView
-            android:id="@+id/root_place"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginBottom="8dp"
-            android:text="오팔청춘이 추천하는 오팔세대 코스!"
-            android:textColor="#3C3C3C"
-            android:textSize="18dp" />
-
-
-
         <ListView
-            android:id="@+id/smart_root"
+            android:id="@+id/userlistadapter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -102,25 +89,10 @@
                     android:background="@drawable/btn1"
                     android:gravity="center"
                     android:layout_marginRight="10dp"
-                    android:text="나의 경로에 선택"
+                    android:text="해당 루트 선택"
                     android:textColor="@color/white"
                     android:textSize="20dp"
                     android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/smart_root_no"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="60dp"
-                    android:layout_gravity="bottom"
-                    android:background="@drawable/btn4"
-                    android:gravity="center"
-                    android:text="뒤로"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-
 
 
             </LinearLayout>
