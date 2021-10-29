@@ -1,9 +1,13 @@
 package com.kw.opal;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,7 +21,7 @@ public class SingerItemView1 extends LinearLayout {
     TextView textView;
     ImageView imageview;
     RouteModel rm;
-
+    LinearLayout RouteB;
 
 
     // Generate > Constructor
@@ -41,6 +45,7 @@ public class SingerItemView1 extends LinearLayout {
 
         textView = (TextView) findViewById(R.id.smart_title);
         imageview =(ImageView) findViewById(R.id.smart_image);
+        RouteB = (LinearLayout)findViewById(R.id.routeB);
 
 
     }
@@ -53,6 +58,15 @@ public class SingerItemView1 extends LinearLayout {
         else{
             imageview.setImageResource(R.drawable.no_camera);
         }
+        RouteB.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent start_intent = new Intent(getContext(), routeinfo.class);
+                start_intent.putExtra("Id",rm.getId());
+                start_intent.putExtra("Name",rm.getName());
+                getContext().startActivity(start_intent.addFlags(FLAG_ACTIVITY_NEW_TASK));
+            }
+        });
     }
 
 

@@ -57,16 +57,16 @@
             android:layout_height="1dp"
             android:background="@color/black" />
 
+
         <ListView
             android:id="@+id/userlistadapter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:layout_weight="1">
 
 
         </ListView>
-
 
         <LinearLayout
             android:layout_width="match_parent"

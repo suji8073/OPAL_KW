@@ -19,6 +19,7 @@
             android:layout_weight="0.5" />
 
         <LinearLayout
+            android:id="@+id/routeB"
             android:layout_width="0dp"
             android:layout_height="63dp"
             android:layout_weight="12"

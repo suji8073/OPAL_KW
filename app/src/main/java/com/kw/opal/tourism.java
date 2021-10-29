@@ -188,6 +188,11 @@ public class tourism extends AppCompatActivity {
                         }
                     });
                 }
+                else{//TODO 레포츠 문화시설 추가
+                    inform=inform+"\n 현재 레포츠와 문화시설의 추가정보는 제공되고 있지 않습니다. 죄송합니다.\n 추후 업데이트로 추가될 예정입니다.";
+                    setContentView(R.layout.tourism);
+                    AfterData();
+                }
 
             }
             @Override
