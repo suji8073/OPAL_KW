@@ -2,6 +2,7 @@ package com.kw.opal;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -38,20 +39,8 @@ public class routeinfo extends AppCompatActivity {
     TextView title;
     Button fin;
     int position;
-    public routeinfo(Context context, List<PointModel> pointList) {
-        this.context = context;
-        this.point = pointList;
-
-    }
-    public List getList(){
-        return this.point;
-    }
 
 
-    public int getCount() {
-        //현재사용자의 개수 반환
-        return point.size();
-    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,29 +69,26 @@ public class routeinfo extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             position=0;
-                            helper.open();
+                            helper = new DbOpenHelper(getApplicationContext());
+
                             System.out.println("db가 열렸어");
-                            while (position<point.size())
-                                sroot = context.getSharedPreferences("root", Activity.MODE_PRIVATE);
+                            for(int i=0;i<array.size();i++){
+                                sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
                                 area_name = sroot.getString("area_name", "");
                                 //TODO 주현아 여기다가 array(타입 ArrayList<PointModel>) 안에 있는거 전부 장바구니에 넣고 intent로 파이널로 바로 넘어가면 댐
-                                helper = new DbOpenHelper(context);
-                                id1=Integer.valueOf(point.get(position).getId());
-                                one = String.valueOf(point.get(position).getName());
-                                two = String.valueOf(point.get(position).getAddr());
-                                three = String.valueOf(point.get(position).getImage());
-                                Float x = Float.valueOf(point.get(position).getMap_x());
-                                Float y = Float.valueOf(point.get(position).getMap_y());
-                                String typeid=String.valueOf(point.get(position).getContentTypeId());
-                                System.out.println("끝ㅌㅌㅌ");
-                                //set.addAll(Collections.singleton(String.valueOf(position)));
-
-
-
+                                id1=Integer.valueOf(array.get(i).getId());
+                                one = String.valueOf(array.get(i).getName());
+                                two = String.valueOf(array.get(i).getAddr());
+                                three = String.valueOf(array.get(i).getImage());
+                                Float x = Float.valueOf(array.get(i).getMap_x());
+                                Float y = Float.valueOf(array.get(i).getMap_y());
+                                String typeid=String.valueOf(point.get(i).getContentTypeId());
+                                helper.open();
                                 helper.insertColumn(id1, one, three,two,x,y,area_name,typeid);//area name 추가
-                                position+=1;
-
-
+                            }
+                            Intent finish_root = new Intent(getApplicationContext(), final_route_2.class);
+                            finish_root.putExtra("check", 1);
+                            startActivity(finish_root);
 
                         }
                     });
