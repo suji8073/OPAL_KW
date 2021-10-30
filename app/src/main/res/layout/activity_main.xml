@@ -24,10 +24,10 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
                 app:srcCompat="@drawable/logo1_" />
 
         </RelativeLayout>
@@ -91,7 +91,7 @@
             android:id="@+id/smart_root"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:background="@drawable/btn2"
+            android:background="@drawable/btn1_"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:orientation="vertical">
@@ -143,7 +143,7 @@
             android:id="@+id/random_root"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:background="@drawable/btn1_"
+            android:background="@drawable/btn1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:orientation="vertical">
@@ -195,7 +195,7 @@
             android:id="@+id/want_root"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:background="@drawable/btn1"
+            android:background="@drawable/btn2"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:orientation="vertical">

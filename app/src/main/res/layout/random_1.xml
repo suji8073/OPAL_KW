@@ -44,7 +44,7 @@
                 android:layout_marginTop="10dp"
                 android:id="@+id/text_theme"
                 android:layout_width="0dp"
-                android:layout_weight="5"
+                android:layout_weight="6"
                 android:layout_height="wrap_content"
                 android:text="최초 관광지 선택하기"
                 android:textColor="#000000"
@@ -56,7 +56,7 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_weight="3" />
+                android:layout_weight="2" />
 
             <LinearLayout
                 android:layout_marginLeft="20dp"
@@ -152,12 +152,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left|center_horizontal"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="3dp"
             android:lineSpacingExtra="3dp"
             android:text="특별히 찾는 장소가 있으시다면 하단의 검색을 이용해 주세요"
             android:textColor="@color/main"
-            android:textSize="14dp" />
+            android:textSize="12dp" />
 
 
         <View

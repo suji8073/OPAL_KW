@@ -89,7 +89,7 @@ public class MainActivity_2 extends AppCompatActivity {
         // root_num에 root가 저장되어 있는 개수를 넣어줘! ex) 경로를 2개 생성하면 2개로!
         more = findViewById(R.id.more);
         mCur = helper.sortColumn();
-        cnt = mCur.getCount();
+        cnt = mCur.getCount()/3  ;
 
         if (cnt > 0) {
             set();//첫페이지 보여주기
