@@ -1,6 +1,8 @@
 package com.kw.opal;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ public class random_2 extends AppCompatActivity {
     TextView text1_theme, text2_theme;
     String tourism_url;
     Button random_intent_yes, random_intent_no;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +61,6 @@ public class random_2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent start_intent = new Intent(getApplicationContext(), root_loading.class);
-                startActivity(start_intent);
 
             }
         });

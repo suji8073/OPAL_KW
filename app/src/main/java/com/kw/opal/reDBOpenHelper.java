@@ -116,7 +116,7 @@ public class reDBOpenHelper {
 
 
     }
-    public Cursor selectC (Integer str){
+    public Cursor selectC (String str){
 
         Cursor c = mDB.rawQuery("SELECT * FROM recommend WHERE code="+str+";", null);
         return c;

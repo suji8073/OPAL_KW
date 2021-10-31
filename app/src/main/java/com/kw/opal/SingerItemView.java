@@ -16,6 +16,8 @@ import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
 
+import java.util.Arrays;
+
 public class SingerItemView extends LinearLayout {
 
     TextView textView;
@@ -49,6 +51,9 @@ public class SingerItemView extends LinearLayout {
                 Intent start_intent = new Intent(context, tourismselect.class);
                 start_intent.putExtra("Id",pm.getId());
                 start_intent.putExtra("TypeId",pm.getContentTypeId());
+                start_intent.putExtra("x", String.valueOf(pm.getMap_x()));
+                start_intent.putExtra("y",String.valueOf(pm.getMap_y()));
+
                 context.startActivity(start_intent.addFlags(FLAG_ACTIVITY_NEW_TASK));
             }
         });

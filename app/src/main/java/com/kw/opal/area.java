@@ -125,6 +125,11 @@ public class area extends AppCompatActivity {
                     }
                 }
                 if (click_check == 1) {
+                    if (area_num!=sroot.getInt("area",0)){
+                        DbOpenHelper helper1=new DbOpenHelper(getApplicationContext());
+                        helper1.deleteAllColumns();
+
+                    }
                     SharedPreferences.Editor editor = sroot.edit();
                     editor.putString("area_name", text[string_area_index].getText().toString());
                     editor.putInt("area", area_num);

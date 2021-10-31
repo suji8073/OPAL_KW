@@ -2,7 +2,9 @@ package com.kw.opal;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,6 +32,11 @@ public class tourismselect extends AppCompatActivity {
     String site;
     String MainimgURL;
     String phone;
+    SharedPreferences sroot;
+    Integer id1;
+    String one, two, three, area_name,x,y;
+    String contentId;
+    String contentTypeId;
 
     ImageView back_main,mainimage;
     TextView theme_name, address, url;
@@ -41,8 +48,10 @@ public class tourismselect extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String contentId = getIntent().getStringExtra("Id");
-        String contentTypeId = getIntent().getStringExtra("TypeId");
+        contentId = getIntent().getStringExtra("Id");
+        contentTypeId = getIntent().getStringExtra("TypeId");
+        x =getIntent().getStringExtra("x");
+        y =getIntent().getStringExtra("y");
         Log.d("test",contentId+" "+contentTypeId);
         informClass inform1 = new informClass(contentId,contentTypeId);
         inform2Class inform2 = new inform2Class(contentId,contentTypeId);
@@ -253,9 +262,32 @@ public class tourismselect extends AppCompatActivity {
         random_intent_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DbOpenHelper helper1=new DbOpenHelper(getApplicationContext());
+                sroot = getSharedPreferences("root", Activity.MODE_PRIVATE);
+                area_name = sroot.getString("area_name", "");
+                id1=Integer.valueOf(contentId);
+                one = String.valueOf(name);
+                two = String.valueOf(addr);
+                if (!isBlank(MainimgURL))
+                    three = String.valueOf(MainimgURL);
+                else
+                    three=null;
+                Float x1 = Float.valueOf(x);
+                Float y1 = Float.valueOf(y);
+                String typeid=String.valueOf(contentTypeId);
+                helper1.open();
+                helper1.insertColumn(id1, one, three,two,x1,y1,area_name,typeid);//area name 추가
 
-                Intent start_intent = new Intent(getApplicationContext(), root_loading.class);
+                Intent start_intent = new Intent(getApplicationContext(), random_3.class);
+                start_intent.putExtra("Id",id1);
+                start_intent.putExtra("TypeId",typeid);
+                start_intent.putExtra("x",String.valueOf(x1));
+                start_intent.putExtra("y",String.valueOf(y1));
+                start_intent.putExtra("image",three);
+                start_intent.putExtra("name",name);
+                start_intent.putExtra("addr",addr);
                 startActivity(start_intent);
+
 
             }
         });

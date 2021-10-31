@@ -112,7 +112,7 @@
                 android:layout_gravity="bottom"
                 android:background="@drawable/btn1"
                 android:gravity="center"
-                android:text="다 음"
+                android:text="메인메뉴로 넘어가기"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
