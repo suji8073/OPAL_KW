@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -91,31 +92,30 @@ public class final_route_3 extends AppCompatActivity {
                 Cursor mCur=helper1.selectColumns();
 
                 if( mCur != null && mCur.moveToFirst() ) {
-                    while(mCur.moveToNext()){
 
-                    id=mCur.getString(1);
-                    name=mCur.getString(2);
-                    image = mCur.getString(3);
-                    addr=mCur.getString(4);
-                    x=mCur.getFloat(5);
-                    y=mCur.getFloat(6);
-                    area=mCur.getString(7);
+                    for(int k=0;k<mCur.getCount();k++){
+                        id=mCur.getString(1);
+                        name=mCur.getString(2);
+                        image = mCur.getString(3);
+                        addr=mCur.getString(4);
+                        x=mCur.getFloat(5);
+                        y=mCur.getFloat(6);
+                        area=mCur.getString(7);
 
-
-                    System.out.println(mCur.getString(2));
-                    helper.insertColumn(id,name,image,addr,x,y,code,area);
-
-
+                        System.out.println(mCur.getString(2));
+                        helper.insertColumn(id,name,image,addr,x,y,code,area);
+                        Log.d("test", "들가는거"+String.valueOf(k));
+                        mCur.moveToNext();
                     }
 
                     helper1.deleteAllColumns();
 
                     i[0]++;
-                    System.out.println(i);
+
                     SharedPreferences.Editor editor = sroot1.edit();
                     editor.putInt("code", ++code);
                     editor.commit();
-                Intent start_intent = new Intent(final_route_3.this, MainActivity.class);
+                Intent start_intent = new Intent(final_route_3.this, final_route_1.class);
                 startActivity(start_intent);
 
             }

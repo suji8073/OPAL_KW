@@ -25,7 +25,7 @@ public class root_loading extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent start_intent = new Intent(getApplicationContext(), random_3_play.class);
+                Intent start_intent = new Intent(getApplicationContext(), random_3.class);
                 startActivity(start_intent);
                 finish();
             }

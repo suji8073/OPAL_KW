@@ -105,7 +105,9 @@ public class MainActivity_2 extends AppCompatActivity {
                         check_btn(cnt, next_page);
                         list.clear();
                         code+=1;
-                        mCur=helper.selectC(code);
+                        if (code==1)
+                            code+=1;
+                        mCur=helper.selectC(String.valueOf(code));
                         System.out.println(mCur);
                         mCur.moveToFirst();
                         int id = R.drawable.no_camera;
@@ -145,7 +147,9 @@ public class MainActivity_2 extends AppCompatActivity {
                         check_btn(cnt, next_page);
                         list.clear();
                         code-=1;
-                        mCur=helper.selectC(code);
+                        if (code==1)
+                            code-=1;
+                        mCur=helper.selectC(String.valueOf(code));
                         System.out.println(mCur);
                         mCur.moveToFirst();
                         int id = R.drawable.no_camera;
@@ -236,7 +240,7 @@ public class MainActivity_2 extends AppCompatActivity {
     public void set() {
         // 데이터베이스에 저장되어 있는 루트를 꺼내서 넣어야 함!
 
-        mCur=helper.selectC(code);
+        mCur=helper.selectC(String.valueOf(code));
         System.out.println(mCur);
         mCur.moveToFirst();
         int id = R.drawable.no_camera;

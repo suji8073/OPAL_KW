@@ -59,6 +59,13 @@ public class DbOpenHelper {
     // Insert DB
 
 
+    public int Count(){
+        int cnt=0;
+        Cursor cursor=mDB.rawQuery("SELECT * FROM usertable",null);
+        cnt=cursor.getCount();
+        return cnt;
+
+    }
     public void insertColumn(Integer userid, String name,String image, String addr2, Float x, Float y, String area,String typeid) {
         // 중복 검사
 
@@ -102,6 +109,13 @@ public class DbOpenHelper {
             return mDB.update(DataBases.CreateDB._TABLENAME0, values, "_id=" + id, null) > 0;
         }
 
+        public int count(){
+            int cnt=0;
+            Cursor cursor =mDB.rawQuery("select * FROM usertable",null);
+            cnt =cursor.getCount();
+            return cnt;
+
+        }
         // Delete All
         public void deleteAllColumns () {
             mDB.delete(DataBases.CreateDB._TABLENAME0, null, null);

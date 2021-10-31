@@ -18,7 +18,7 @@ public interface RSinterface {
     Call<PointList> getRouteInfo(@Body RouteinfoClass routeinfoClass);
 
     @POST("/checkarea")
-    Call<PointList> checkPoint(@Body CircleClass Circleclass);
+    Call<PointList> checkPoint(@Body CheckClass checkClass);
 
     @POST("/searcharea")
     Call<PointList> searchPoint(@Body SearchClass Searchclass);

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -26,6 +27,10 @@ public class final_route_1 extends AppCompatActivity {
     reDBOpenHelper helper;
     Cursor mCur;
     Cursor mCur1;
+    MapView mapView1;
+    ViewGroup mapViewContainer;
+
+    int sfs=0;
     ArrayList<String> Name = new ArrayList<String>();
 
     double[][] Location ;
@@ -37,30 +42,39 @@ public class final_route_1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         setContentView(R.layout.final_route_1);
         helper = new reDBOpenHelper(final_route_1.this);
-
-        mCur1=helper.sortColumn();
-        if (mCur1 != null&& mCur1.moveToFirst() ) {
+        mCur1 = helper.sortColumn();
+        if (mCur1 != null && mCur1.moveToLast()) {
             System.out.println(mCur1.getString(4));
-            code=mCur1.getInt(7);
-            System.out.println("코드는"+code);}
+            code = mCur1.getInt(7);
+            System.out.println("코드는" + code);
+        }
 
 
-        mCur=helper.selectC(code);
-        if (mCur != null&& mCur.moveToFirst() ) {
+        mCur = helper.selectC(String.valueOf(code));
+        if (mCur != null && mCur.moveToFirst()) {
 
             System.out.println(mCur.getString(2));
-            int sfs = mCur.getCount();
+            sfs = mCur.getCount();
             Location = new double[sfs][2];
-            int j = 0;
-            while (mCur.moveToNext()) {
+
+            for(int j=0;j<mCur.getCount();j++) {
                 Name.add(mCur.getString(2));
                 one = mCur.getDouble(5);
                 two = mCur.getDouble(6);
-                Location[j][0] = one;
-                Location[j][1] = two;
-                j++;
+                Log.d("test", String.valueOf(one));
+                Log.d("test", String.valueOf(two));
+                Location[j][0] = two;
+                Location[j][1] = one;
+                mCur.moveToNext();
 
             }
         }
@@ -71,16 +85,11 @@ public class final_route_1 extends AppCompatActivity {
         circle2.setColorFilter(getApplication().getResources().getColor(R.color.gray));
         circle3.setColorFilter(getApplication().getResources().getColor(R.color.gray));
         next = findViewById(R.id.next);
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_intent = new Intent(final_route_1.this, final_route_2.class);
-                start_intent.putExtra("check", 1);
-                startActivity(start_intent);
-            }
-        });
-        MapView mapView1 = new MapView(this);
-        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
+
+        mapView1 = new MapView(this);
+
+        mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
+
 
         MapPOIItem marker = new MapPOIItem();
 
@@ -88,26 +97,28 @@ public class final_route_1 extends AppCompatActivity {
         mapView1.setZoomLevel(1, true);
         marker.setTag(0);
 
-        MapPoint[] MARKER_POINT = new MapPoint[4];//TODO 장바구니 개수에 따라 유동적으로 생성
+
+        MapPoint[] MARKER_POINT = new MapPoint[sfs];//TODO 장바구니 개수에 따라 유동적으로 생성
+
+        MapPolyline polyline = new MapPolyline();
+        polyline.setTag(1000);
+        polyline.setLineColor(Color.argb(100, 255, 51, 0)); // Polyline 컬러 지정.
 
 
-        for (int i=0; i<Location.length; i++){
-            MARKER_POINT[i] = MapPoint.mapPointWithGeoCoord(Location[i][0], Location[i][1]);
+        for (int i = 0; i < Location.length; i++) {
+            double lat = Location[i][0];
+            double lon = Location[i][1];
+            Log.d("test", String.valueOf(lat)+" 그리고 "+String.valueOf(lon));
+            MARKER_POINT[i] = MapPoint.mapPointWithGeoCoord(lat, lon);
+            polyline.addPoint(MapPoint.mapPointWithGeoCoord(lat, lon));
             marker.setItemName(Name.get(i));
             marker.setMapPoint(MARKER_POINT[i]);
             marker.setMarkerType(MapPOIItem.MarkerType.YellowPin); // 기본으로 제공하는 BluePin 마커 모양.
             marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
             mapView1.addPOIItem(marker);
         }
-        MapPolyline polyline = new MapPolyline();
-        polyline.setTag(1000);
-        polyline.setLineColor(Color.argb(100, 255, 51, 0)); // Polyline 컬러 지정.
 
-        // Polyline 좌표 지정.
 
-        for (int m=0;m<Location.length;m++){
-            polyline.addPoint(MapPoint.mapPointWithGeoCoord(Location[m][0], Location[m][1]));
-        }
         // Polyline 지도에 올리기.
         mapView1.addPolyline(polyline);
 
@@ -116,5 +127,23 @@ public class final_route_1 extends AppCompatActivity {
         int padding = 100;
         mapView1.moveCamera(CameraUpdateFactory.newMapPointBounds(mapPointBounds, padding));
         mapViewContainer.addView(mapView1);
-        }
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_intent = new Intent(final_route_1.this, MainActivity.class);
+                start_intent.putExtra("check", 1);
+                startActivity(start_intent);
+            }
+        });
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mapView1.removeAllPOIItems();
+        mapView1.removeAllPolylines();
+        mapViewContainer.invalidate();
+        mapView1.invalidate();
+    }
+}
