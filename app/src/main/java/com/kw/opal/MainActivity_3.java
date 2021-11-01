@@ -76,7 +76,7 @@ public class MainActivity_3 extends AppCompatActivity {
         place.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent main_1 = new Intent(MainActivity_3.this, MainActivity_2.class);
+                Intent main_1 = new Intent(MainActivity_3.this, new_MainActivity_2.class);
                 main_1.putExtra("login_check", 3);
                 startActivity(main_1);
             }

@@ -100,6 +100,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
+                        android:layout_margin="7dp"
                         android:id="@+id/poster1"
                         android:layout_width="0dp"
                         android:layout_height="60dp"
@@ -136,16 +137,18 @@
                             android:text="TextView" />
                     </LinearLayout>
                     <Button
-
+                        android:layout_margin="3dp"
                         android:id="@+id/info1"
                         android:layout_weight="0.1"
                         android:layout_width="49dp"
                         android:layout_height="match_parent"
+
                         android:text="상세\n정보"
                         android:padding="3dp">
 
                     </Button>
                     <Button
+                        android:layout_margin="3dp"
                         android:id="@+id/cho1"
                         android:layout_weight="0.1"
                         android:layout_width="49dp"
@@ -157,7 +160,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-
+                    android:background="@drawable/btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -166,6 +169,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
+                        android:layout_margin="7dp"
                         android:id="@+id/poster2"
                         android:layout_width="0dp"
                         android:layout_height="60dp"
@@ -203,6 +207,7 @@
                             android:text="TextView" />
                     </LinearLayout>
                     <Button
+                        android:layout_margin="3dp"
                         android:id="@+id/info2"
                         android:layout_weight="0.1"
                         android:layout_width="49dp"
@@ -212,6 +217,7 @@
 
                     </Button>
                     <Button
+                        android:layout_margin="3dp"
                         android:id="@+id/cho2"
                         android:layout_weight="0.1"
                         android:layout_width="49dp"
@@ -224,7 +230,7 @@
 
 
                 <LinearLayout
-
+                    android:background="@drawable/btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -233,6 +239,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
+                        android:layout_margin="7dp"
                         android:id="@+id/poster3"
                         android:layout_width="0dp"
                         android:layout_height="60dp"
@@ -270,6 +277,7 @@
                             android:text="TextView" />
                     </LinearLayout>
                     <Button
+                        android:layout_margin="3dp"
                         android:id="@+id/info3"
                         android:layout_weight="0.1"
                         android:layout_width="49dp"
@@ -279,6 +287,7 @@
 
                     </Button>
                     <Button
+                        android:layout_margin="3dp"
                         android:id="@+id/cho3"
                         android:layout_weight="0.1"
                         android:layout_width="49dp"
@@ -291,7 +300,7 @@
 
 
                 <LinearLayout
-
+                    android:background="@drawable/btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -300,6 +309,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
+                        android:layout_margin="7dp"
                         android:id="@+id/poster4"
                         android:layout_width="0dp"
                         android:layout_height="60dp"
@@ -337,6 +347,7 @@
                             android:text="TextView" />
                     </LinearLayout>
                     <Button
+                        android:layout_margin="3dp"
                         android:id="@+id/info4"
                         android:layout_weight="0.1"
                         android:layout_width="49dp"
@@ -346,6 +357,7 @@
 
                     </Button>
                     <Button
+                        android:layout_margin="3dp"
                         android:id="@+id/cho4"
                         android:layout_weight="0.1"
                         android:layout_width="49dp"
@@ -358,7 +370,7 @@
 
 
                 <LinearLayout
-
+                    android:background="@drawable/btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -367,6 +379,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
+                        android:layout_margin="7dp"
                         android:id="@+id/poster5"
                         android:layout_width="0dp"
                         android:layout_height="60dp"
@@ -404,6 +417,7 @@
                             android:text="TextView" />
                     </LinearLayout>
                     <Button
+                        android:layout_margin="3dp"
                         android:id="@+id/info5"
                         android:layout_weight="0.1"
                         android:layout_width="49dp"
@@ -413,6 +427,7 @@
 
                     </Button>
                     <Button
+                        android:layout_margin="3dp"
                         android:id="@+id/cho5"
                         android:layout_weight="0.1"
                         android:layout_width="49dp"

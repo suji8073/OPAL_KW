@@ -53,6 +53,8 @@
         <activity android:name="com.kw.opal.random_3_sleep" android:label="random_3_sleep"></activity>
         <activity android:name="com.kw.opal.random_3_shop" android:label="random_3_shop"></activity>
         <activity android:name="com.kw.opal.smart_root" android:label="smart_root"></activity>
+        <activity android:name="com.kw.opal.new_MainActivity_2" android:label="newmain2"></activity>
+        <activity android:name="com.kw.opal.SaveRouteList" android:label="saveroutelist"></activity>
 
 
 

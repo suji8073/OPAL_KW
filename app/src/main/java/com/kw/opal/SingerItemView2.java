@@ -2,10 +2,10 @@ package com.kw.opal;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static org.apache.commons.lang3.StringUtils.isBlank;
+
 import android.content.Context;
 import android.content.Intent;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,7 +16,7 @@ import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
 
-public class SingerItemView1 extends LinearLayout {
+public class SingerItemView2 extends LinearLayout {
 
     TextView textView;
     ImageView imageview;
@@ -26,13 +26,13 @@ public class SingerItemView1 extends LinearLayout {
 
     // Generate > Constructor
 
-    public SingerItemView1(Context context) {
+    public SingerItemView2(Context context) {
         super(context);
 
         init(context);
     }
 
-    public SingerItemView1(Context context, @Nullable AttributeSet attrs) {
+    public SingerItemView2(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         init(context);
@@ -61,9 +61,8 @@ public class SingerItemView1 extends LinearLayout {
         RouteB.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent start_intent = new Intent(getContext(), routeinfo.class);
-                start_intent.putExtra("Id",rm.getId());
-                start_intent.putExtra("Name",rm.getName());
+                Intent start_intent = new Intent(getContext(), SaveRouteList.class);
+                start_intent.putExtra("Id",Integer.parseInt(rm.getId()));
                 getContext().startActivity(start_intent.addFlags(FLAG_ACTIVITY_NEW_TASK));
             }
         });
