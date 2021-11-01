@@ -237,7 +237,7 @@ public class random_3 extends AppCompatActivity {
                     circle1.setTag(1234);
                     mapView.addCircle(circle1);
                     next=findViewById(R.id.next);
-                    back=findViewById(R.id.back);
+                    /*back=findViewById(R.id.back);
                     back.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -255,7 +255,7 @@ public class random_3 extends AppCompatActivity {
                             }
 
                         }
-                    });
+                    });*/
 
                     next.setOnClickListener(new View.OnClickListener() {
                         @Override

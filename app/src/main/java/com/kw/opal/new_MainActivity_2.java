@@ -78,8 +78,8 @@ public class new_MainActivity_2 extends AppCompatActivity {
         person = findViewById(R.id.person);
         if (incurcode>0){
             for(int i=0;i<incurcode;i++){
-                if (i==1)
-                    continue;
+                /*if (i==1)
+                    continue;*/
 
                 mCur=helper.selectC(String.valueOf(i));
                 System.out.println(mCur);
