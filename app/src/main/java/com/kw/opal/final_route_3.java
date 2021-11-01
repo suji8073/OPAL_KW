@@ -38,7 +38,7 @@ public class final_route_3 extends AppCompatActivity {
 
     Cursor mCur;
 
-    Button next, more;
+    Button next;
     ImageView circle1, circle2, circle3;
     reDBOpenHelper helper;
     DbOpenHelper helper1;
@@ -122,14 +122,6 @@ public class final_route_3 extends AppCompatActivity {
 
         }});
 
-        more = findViewById(R.id.more);
-        more.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_intent = new Intent(getApplicationContext(), tourism.class);
-                startActivity(start_intent);
-            }
-        });
 
 
 

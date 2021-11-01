@@ -271,7 +271,7 @@ public class tourismselect extends AppCompatActivity {
                 if (!isBlank(MainimgURL))
                     three = String.valueOf(MainimgURL);
                 else
-                    three=null;
+                    three="";
                 Float x1 = Float.valueOf(x);
                 Float y1 = Float.valueOf(y);
                 String typeid=String.valueOf(contentTypeId);

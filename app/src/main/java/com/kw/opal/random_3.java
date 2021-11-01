@@ -24,9 +24,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
+import net.daum.mf.map.api.CameraUpdate;
+import net.daum.mf.map.api.CameraUpdateFactory;
 import net.daum.mf.map.api.MapCircle;
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
+import net.daum.mf.map.api.MapPointBounds;
 import net.daum.mf.map.api.MapPolyline;
 import net.daum.mf.map.api.MapView;
 
@@ -88,6 +91,8 @@ public class random_3 extends AppCompatActivity {
     Button next;
     Button back;
 
+    MapPOIItem[] listmarker=new MapPOIItem[5];
+    MapPoint[] listpoint=new MapPoint[5];
 
 
 
@@ -151,9 +156,10 @@ public class random_3 extends AppCompatActivity {
 
     private void drawRoutePolyline(double x, double y) //추가된 폴리라인이 있으면 날리기. 저장된 어레이리스트 갯수랑 폴리라인 갯수 같으면(간선이니깐)
     {
-        if (!polinelist.isEmpty()){
-            if (polinelist.size()==xlist.size())
-                mapView.removePolyline(polinelist.get(polinelist.size()-1));
+        mapView.removeAllPolylines();
+        for (int j=0;j< polinelist.size();j++)
+        {
+            mapView.addPolyline(polinelist.get(j));
         }
         MapPolyline polyline = new MapPolyline(); /* MapPolyline 객체 생성 */
         polyline.setTag(8278); /* polyline Tag 번호 지정 */
@@ -161,7 +167,7 @@ public class random_3 extends AppCompatActivity {
 
         polyline.addPoint(MapPoint.mapPointWithGeoCoord(MAINLOCATION[1], MAINLOCATION[0])); // 대표관광지
         polyline.addPoint(MapPoint.mapPointWithGeoCoord(y, x));
-        polinelist.add(polyline);
+
         mapView.addPolyline(polyline); /* polyline 지도에 그리기 */
 
 
@@ -178,9 +184,12 @@ public class random_3 extends AppCompatActivity {
             marker.setTag(0);
             MapPoint MARKER_POINT = MapPoint.mapPointWithGeoCoord(ylist.get(i), xlist.get(i)); // 대표관광지 좌표
             marker.setMapPoint(MARKER_POINT);
-            marker.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+            marker.setMarkerType(MapPOIItem.MarkerType.YellowPin); //
             marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
             mapView.addPOIItem(marker);
+        }
+        for (int j=0;j<polinelist.size();j++){
+            mapView.addPolyline(polinelist.get(j));
         }
         MAINLOCATION[0]=xlist.get(xlist.size()-1);
         MAINLOCATION[1]=ylist.get(ylist.size()-1);
@@ -202,7 +211,7 @@ public class random_3 extends AppCompatActivity {
                     MapPOIItem marker = new MapPOIItem();
 
                     mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(MAINLOCATION[1], MAINLOCATION[0]), true); // 중심점 변경
-                    mapView.setZoomLevel(6, true); // 줌레벨 변경
+                    mapView.setZoomLevel(7, true); // 줌레벨 변경
                     // 줌 인
                     mapView.zoomIn(true);
                     // 줌 아웃
@@ -214,21 +223,21 @@ public class random_3 extends AppCompatActivity {
                     marker.setTag(0);
                     MapPoint MARKER_POINT = MapPoint.mapPointWithGeoCoord(MAINLOCATION[1], MAINLOCATION[0]); // 대표관광지 좌표
                     marker.setMapPoint(MARKER_POINT);
-                    marker.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+                    marker.setMarkerType(MapPOIItem.MarkerType.YellowPin); // 기본으로 제공하는 BluePin 마커 모양.
                     marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
 
                     mapView.addPOIItem(marker);
 
                     MapCircle circle1 = new MapCircle(
                             MapPoint.mapPointWithGeoCoord(MAINLOCATION[1], MAINLOCATION[0]), // center
-                            1000, // radius
+                            10000, // radius
                             Color.argb(128, 255, 0, 0), // strokeColor
                             Color.argb(128, 0, 255, 0) // fillColor
                     );
                     circle1.setTag(1234);
                     mapView.addCircle(circle1);
                     next=findViewById(R.id.next);
-                    back=findViewById(R.id.back);
+                    /*back=findViewById(R.id.back);
                     back.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -246,11 +255,14 @@ public class random_3 extends AppCompatActivity {
                             }
 
                         }
-                    });
+                    });*/
 
                     next.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            if (mapView.getParent() !=null) {
+                                ((ViewGroup) mapView.getParent()).removeView(mapView);
+                            }
                             Intent finish_root = new Intent(getApplicationContext(),final_route_2.class);
                             finish_root.putExtra("check", 1);
                             startActivity(finish_root);
@@ -261,6 +273,13 @@ public class random_3 extends AppCompatActivity {
                     for (int i=0; i<array.size(); i++) {
                         final int INDEX;
                         INDEX = i;
+                        listpoint[INDEX]=MapPoint.mapPointWithGeoCoord(array.get(INDEX).getMap_y(), array.get(INDEX).getMap_x());
+                        MapPOIItem item = new MapPOIItem();
+                        listmarker[INDEX]=item;
+                        listmarker[INDEX].setItemName(array.get(INDEX).getName()); // 클릭한 관광지 이름
+                        listmarker[INDEX].setMapPoint(listpoint[INDEX]);
+
+                        mapView.addPOIItem(listmarker[INDEX]);
                         Name[INDEX].setText(array.get(INDEX).getName());
                         juso[INDEX].setText(array.get(INDEX).getAddr());
                         if (array.get(INDEX).getImage() == null){
@@ -275,24 +294,13 @@ public class random_3 extends AppCompatActivity {
                         layout[INDEX].setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                mapView.removeAllPOIItems();
-
                                 MapPOIItem marker1 = new MapPOIItem();
-                                MapPOIItem marker2 = new MapPOIItem();
                                 marker1.setItemName(MAINNAME); // 대표 관광지 이름
-                                marker2.setItemName(array.get(INDEX).getName()); // 클릭한 관광지 이름
+
                                 marker1.setTag(0);
 
-
-                                MapPoint MARKER_POINT1 = MapPoint.mapPointWithGeoCoord(MAINLOCATION[1], MAINLOCATION[0]); // 대표관광지 좌표
-                                MapPoint MARKER_POINT2 = MapPoint.mapPointWithGeoCoord(array.get(INDEX).getMap_x(), array.get(INDEX).getMap_y());
-
                                 drawRoutePolyline(array.get(INDEX).getMap_x(),array.get(INDEX).getMap_y());
-                                marker1.setMapPoint(MARKER_POINT1);
-                                marker2.setMapPoint(MARKER_POINT2);
 
-                                mapView.addPOIItem(marker1);
-                                mapView.addPOIItem(marker2);
 
                             }
                         });
@@ -334,19 +342,16 @@ public class random_3 extends AppCompatActivity {
                                 xlist.add(Double.valueOf(array.get(INDEX).getMap_x()));
                                 ylist.add(Double.valueOf(array.get(INDEX).getMap_y()));
                                 namelist.add(array.get(INDEX).getName());
-                                if (!polinelist.isEmpty()){
-                                    if (polinelist.size()!=xlist.size()){
-                                        MapPolyline polyline = new MapPolyline(); /* MapPolyline 객체 생성 */
-                                        polyline.setTag(8278); /* polyline Tag 번호 지정 */
-                                        polyline.setLineColor(Color.argb(128, 255, 51, 0)); /* polyline 색 지정 */
 
-                                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(MAINLOCATION[1], MAINLOCATION[0])); // 대표관광지
-                                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(Double.valueOf(array.get(INDEX).getMap_y()), Double.valueOf(array.get(INDEX).getMap_x())));
-                                        polinelist.add(polyline);
-                                        mapView.addPolyline(polyline); /* polyline 지도에 그리기 */
-                                    }
+                                MapPolyline polyline = new MapPolyline(); /* MapPolyline 객체 생성 */
+                                polyline.setTag(8278); /* polyline Tag 번호 지정 */
+                                polyline.setLineColor(Color.argb(128, 255, 51, 0)); /* polyline 색 지정 */
 
-                                }
+                                polyline.addPoint(MapPoint.mapPointWithGeoCoord(MAINLOCATION[1], MAINLOCATION[0])); // 대표관광지
+                                polyline.addPoint(MapPoint.mapPointWithGeoCoord(Double.valueOf(array.get(INDEX).getMap_y()), Double.valueOf(array.get(INDEX).getMap_x())));
+                                polinelist.add(polyline);
+                                mapView.addPolyline(polyline); /* polyline 지도에 그리기 */
+
                                 count+=count;
                                 mapView.removeAllPOIItems();
                                 Settinglist();

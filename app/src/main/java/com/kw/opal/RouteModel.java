@@ -9,6 +9,13 @@ public class RouteModel implements Serializable {
     private String name;
     private  String contentTypeId;
 
+    public RouteModel(String id,String name,String image){
+        this.id=id;
+        this.name=name;
+        this.image=image;
+    }
+
+
 
     public String getContentTypeId(){return contentTypeId;}
 

@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         place.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent main_1 = new Intent(MainActivity.this, MainActivity_2.class);
+                Intent main_1 = new Intent(MainActivity.this, new_MainActivity_2.class);
                 if (login_check == 0){
                     main_1.putExtra("name", "");
                     main_1.putExtra("profile", "");

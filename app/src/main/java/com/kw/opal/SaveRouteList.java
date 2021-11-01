@@ -9,7 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import net.daum.mf.map.api.CameraUpdateFactory;
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
@@ -19,17 +23,18 @@ import net.daum.mf.map.api.MapView;
 
 import java.util.ArrayList;
 
-
-public class final_route_1 extends AppCompatActivity {
-
+public class SaveRouteList extends AppCompatActivity {
     Button next;
+    LinearLayout home, place, person;
+    ListView listView;
     ImageView circle1, circle2, circle3;
     reDBOpenHelper helper;
     Cursor mCur;
     Cursor mCur1;
     MapView mapView1;
     ViewGroup mapViewContainer;
-
+    ArrayList<PointModel> modellist=new ArrayList<>();
+    UserListAdapter3 adapter;
     int sfs=0;
     ArrayList<String> Name = new ArrayList<String>();
 
@@ -39,25 +44,16 @@ public class final_route_1 extends AppCompatActivity {
     double one;
     double two;
     int code;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.saveroutelist);
+        Intent secondIntent = getIntent();
 
-
-        }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        setContentView(R.layout.final_route_1);
-        helper = new reDBOpenHelper(final_route_1.this);
+        code=secondIntent.getIntExtra("Id", 0);
+        helper = new reDBOpenHelper(SaveRouteList.this);
         mCur1 = helper.sortColumn();
-        if (mCur1 != null && mCur1.moveToLast()) {
-            System.out.println(mCur1.getString(4));
-            code = mCur1.getInt(7);
-            System.out.println("코드는" + code);
-        }
-
 
         mCur = helper.selectC(String.valueOf(code));
         if (mCur != null && mCur.moveToFirst()) {
@@ -67,32 +63,27 @@ public class final_route_1 extends AppCompatActivity {
             Location = new double[sfs][2];
 
             for(int j=0;j<mCur.getCount();j++) {
+                String userid=mCur.getString(1);
+                String title=mCur.getString(2);
                 Name.add(mCur.getString(2));
+                String img=mCur.getString(3);
+                String add=mCur.getString(4);
                 one = mCur.getDouble(5);
                 two = mCur.getDouble(6);
                 Log.d("test", String.valueOf(one));
                 Log.d("test", String.valueOf(two));
                 Location[j][0] = two;
                 Location[j][1] = one;
+                PointModel model=new PointModel(add,userid,img,title,"0",(float)one,(float) two);
+                modellist.add(model);
                 mCur.moveToNext();
 
             }
         }
-        circle1 = findViewById(R.id.circle1);
-        circle2 = findViewById(R.id.circle2);
-        circle3 = findViewById(R.id.circle3);
-        circle1.setColorFilter(getApplication().getResources().getColor(R.color.main2));
-        circle2.setColorFilter(getApplication().getResources().getColor(R.color.gray));
-        circle3.setColorFilter(getApplication().getResources().getColor(R.color.gray));
-        next = findViewById(R.id.next);
-
-
 
         mapView1 = new MapView(this);
 
-
         mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
-
 
         MapPOIItem marker = new MapPOIItem();
 
@@ -130,23 +121,37 @@ public class final_route_1 extends AppCompatActivity {
         int padding = 100;
         mapView1.moveCamera(CameraUpdateFactory.newMapPointBounds(mapPointBounds, padding));
         mapViewContainer.addView(mapView1);
+        home = findViewById(R.id.home);
+        place = findViewById(R.id.place);
+        person = findViewById(R.id.person);
 
-        next.setOnClickListener(new View.OnClickListener() {
+        listView=findViewById(R.id.userListTextView1);
+        adapter = new UserListAdapter3(getApplicationContext(), modellist);
+        listView.setAdapter(adapter);
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(final_route_1.this, MainActivity.class);
-                start_intent.putExtra("check", 1);
-                startActivity(start_intent);
+                Intent main_1 = new Intent(SaveRouteList.this, com.kw.opal.MainActivity.class);
+                startActivity(main_1);
             }
         });
-    }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mapView1.removeAllPOIItems();
-        mapView1.removeAllPolylines();
-        mapViewContainer.invalidate();
-        mapView1.invalidate();
+        place.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent main_1 = new Intent(SaveRouteList.this, com.kw.opal.new_MainActivity_2.class);
+                startActivity(main_1);
+            }
+        });
+
+        person.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent main_1 = new Intent(SaveRouteList.this, com.kw.opal.MainActivity_3.class);
+                startActivity(main_1);
+            }
+        });
+
+
     }
 }

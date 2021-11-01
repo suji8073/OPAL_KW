@@ -16,6 +16,18 @@ public class PointModel implements Serializable {
 
     int count = 0; //??? 이거 필요?
 
+    public PointModel(String addr,String id,String image,String name,String contentTypeId,float mapx,float mapy){
+        this.addr=addr;
+        this.id=id;
+        this.image=image;
+        this.name=name;
+        this.contentTypeId=contentTypeId;
+        this.mapx=mapx;
+        this.mapy=mapy;
+
+    }
+
+
     @Override
     public String toString(){
         String str = super.toString();
