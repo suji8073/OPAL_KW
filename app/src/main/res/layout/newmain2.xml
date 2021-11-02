@@ -71,7 +71,7 @@
 
 
         <ListView
-            android:id="@+id/smart_root"
+            android:id="@+id/smart_root1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

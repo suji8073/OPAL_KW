@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import net.daum.mf.map.api.CameraUpdateFactory;
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
@@ -134,9 +136,11 @@ public class final_route_1 extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(final_route_1.this, MainActivity.class);
+                Intent start_intent = new Intent(final_route_1.this, MainActivityAll.class);
                 start_intent.putExtra("check", 1);
+                finishAffinity();
                 startActivity(start_intent);
+
             }
         });
     }

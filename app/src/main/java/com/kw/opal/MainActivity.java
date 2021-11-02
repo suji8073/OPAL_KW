@@ -51,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
         rDbOpenHelper.create();
 
         setContentView(R.layout.activity_main);
-        i = true;
-        j = true;
+
 
         sp = getSharedPreferences("myFile", Activity.MODE_PRIVATE);
 

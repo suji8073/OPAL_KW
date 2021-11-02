@@ -72,7 +72,7 @@ public class login extends AppCompatActivity {
         login_non.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent start_intent = new Intent(login.this, com.kw.opal.MainActivity.class);
+                Intent start_intent = new Intent(login.this, com.kw.opal.MainActivityAll.class);
                 start_intent.putExtra("login_check", 0);
                 start_intent.putExtra("name", "0");
                 startActivity(start_intent);
@@ -180,7 +180,7 @@ public class login extends AppCompatActivity {
                                 } else {
                                     // 프로필 획득 불가
                                 }
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), MainActivityAll.class);
                                 intent.putExtra("login_check", 1);
                                 intent.putExtra("name", profile.getNickname());
                                 intent.putExtra("profile", profile.getThumbnailImageUrl());
