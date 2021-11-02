@@ -131,7 +131,9 @@ public class SaveRouteList extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent main_1 = new Intent(SaveRouteList.this, com.kw.opal.MainActivity.class);
+                Intent main_1 = new Intent(SaveRouteList.this, com.kw.opal.MainActivityAll.class);
+                main_1.putExtra("to", 0);
+                finishAffinity();
                 startActivity(main_1);
             }
         });
@@ -139,7 +141,9 @@ public class SaveRouteList extends AppCompatActivity {
         place.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent main_1 = new Intent(SaveRouteList.this, com.kw.opal.new_MainActivity_2.class);
+                Intent main_1 = new Intent(SaveRouteList.this, com.kw.opal.MainActivityAll.class);
+                main_1.putExtra("to", 1);
+                finishAffinity();
                 startActivity(main_1);
             }
         });
@@ -147,7 +151,9 @@ public class SaveRouteList extends AppCompatActivity {
         person.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent main_1 = new Intent(SaveRouteList.this, com.kw.opal.MainActivity_3.class);
+                Intent main_1 = new Intent(SaveRouteList.this, com.kw.opal.MainActivityAll.class);
+                main_1.putExtra("to", 2);
+                finishAffinity();
                 startActivity(main_1);
             }
         });
