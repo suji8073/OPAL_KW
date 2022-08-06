@@ -2,18 +2,19 @@ package com.kw.opal;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Commonintro {
     response response;
-    class response{
+    static class response{
         body body;
-        class body{
+        static class body{
             items items;
-            class items{
-                item item;
-                class item{
+            static class items{
+                ArrayList<item> item = new ArrayList<>();
+                static class item{
                     private String addr1;
                     private Integer areacode;
                     private Integer booktour;

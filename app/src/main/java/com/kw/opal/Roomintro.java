@@ -1,6 +1,7 @@
 package com.kw.opal;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +12,7 @@ public class Roomintro {
         class body {
             items items;
             class items {
-                item item;
+                ArrayList<item> item = new ArrayList<>();
                 class item {
                     private Integer barbecue;
                     private Integer beauty;
