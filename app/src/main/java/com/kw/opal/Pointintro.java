@@ -2,6 +2,7 @@ package com.kw.opal;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +14,7 @@ public class Pointintro {
         class body {
             items items;
             class items {
-                item item;
+                ArrayList<item> item = new ArrayList<>();
                 class item {
                     private String chkbabycarriage;
                     private String chkcreditcard;

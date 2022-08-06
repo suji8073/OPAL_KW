@@ -65,12 +65,12 @@ public class tourismselect extends AppCompatActivity {
             public void onResponse(Call<Commonintro> call, Response<Commonintro> response) {
                 Log.d("test","0");
                 Commonintro C = response.body();
-                name=C.response.body.items.item.getTitle();
-                MainimgURL=C.response.body.items.item.getFirstimage();
-                addr=C.response.body.items.item.getaddr1();
-                conv=C.response.body.items.item.getOverview();
-                site=C.response.body.items.item.getHomepage();
-                phone=C.response.body.items.item.getTel();
+                name=C.response.body.items.item.get(0).getTitle();
+                MainimgURL=C.response.body.items.item.get(0).getFirstimage();
+                addr=C.response.body.items.item.get(0).getaddr1();
+                conv=C.response.body.items.item.get(0).getOverview();
+                site=C.response.body.items.item.get(0).getHomepage();
+                phone=C.response.body.items.item.get(0).getTel();
                 if (contentTypeId.equals("12")){
                     Call<Pointintro> call2 = networkService.pointintro(data2);
                     call2.enqueue(new Callback<Pointintro>() {
@@ -78,7 +78,7 @@ public class tourismselect extends AppCompatActivity {
                         public void onResponse(Call<Pointintro> call, Response<Pointintro> response) {
                             Log.d("test","1");
                             Pointintro I =response.body();
-                            inform=inform+I.response.body.items.item.getTextInfo();
+                            inform=inform+I.response.body.items.item.get(0).getTextInfo();
                             Call<Detailrepeat> call3 = networkService.DetailPoint(data3);
                             call3.enqueue(new Callback<Detailrepeat>() {
                                 @Override
@@ -110,7 +110,7 @@ public class tourismselect extends AppCompatActivity {
                         public void onResponse(Call<Roomintro> call, Response<Roomintro> response) {
                             Log.d("test","1");
                             Roomintro I =response.body();
-                            inform=inform+I.response.body.items.item.getTextInfo();
+                            inform=inform+I.response.body.items.item.get(0).getTextInfo();
                             Call<Detailrepeat> call3 = networkService.DetailPoint(data3);
                             call3.enqueue(new Callback<Detailrepeat>() {
                                 @Override
@@ -142,7 +142,7 @@ public class tourismselect extends AppCompatActivity {
                         public void onResponse(Call<ShopIntro> call, Response<ShopIntro> response) {
                             Log.d("test","1");
                             ShopIntro I =response.body();
-                            inform=inform+I.response.body.items.item.getTextInfo();
+                            inform=inform+I.response.body.items.item.get(0).getTextInfo();
                             Call<Detailrepeat> call3 = networkService.DetailPoint(data3);
                             call3.enqueue(new Callback<Detailrepeat>() {
                                 @Override
@@ -174,7 +174,7 @@ public class tourismselect extends AppCompatActivity {
                         public void onResponse(Call<Foodintro> call, Response<Foodintro> response) {
                             Log.d("test","1");
                             Foodintro I =response.body();
-                            inform=inform+I.response.body.items.item.getTextInfo();
+                            inform=inform+I.response.body.items.item.get(0).getTextInfo();
                             Call<Detailrepeat> call3 = networkService.DetailPoint(data3);
                             call3.enqueue(new Callback<Detailrepeat>() {
                                 @Override

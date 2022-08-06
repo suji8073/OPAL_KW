@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitHelper2 {
     private static RetrofitHelper2 instance;
-    public static String BASE_URL="http://api.visitkorea.or.kr/";
+    public static String BASE_URL="https://api.visitkorea.or.kr/";
     public static Tourinterface create(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
