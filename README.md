@@ -1,15 +1,11 @@
-<h1 align="center">😎 삶을 즐길 줄 아는 시니어, 58세대를 위한<br />여행 관광 어플리케이션 '오팔청춘'</h1>
+<br />
+<h1 align="center">😎 삶을 즐길 줄 아는 시니어, 58세대를 위한<br />여행 관광 어플리케이션 '오팔청춘' ✈ </h1>
 <h3> 한국관광공사 2021 관광 데이터 활용 공모전 우수상 🏆 </h3>
 <br />
-<p align="center">
-    <img src="https://github.com/suji8073/OPAL_KW/blob/master/app/src/main/ic_launcher-playstore.png" height="150"/>
-</p>
-<br />
 
-- 개발 기간: 2021.05 ~ 2021.11
-- 주요 스택
-<br />
-- <img src="https://img.shields.io/badge/Android Studio-3DDC84?style=for-the-badge&logo=appveyor&logo=Android Studio&logoColor=white" /> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=appveyor&logo=Python&logoColor=white" /> <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=appveyor&logo=Flask&logoColor=white" /> <img src="https://img.shields.io/badge/Java-2C2255?style=for-the-badge&logo=appveyor&logo=Eclipse IDE&logoColor=white" /> <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=appveyor&logo=MariaDB&logoColor=white" /> <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=appveyor&logo=NGINX&logoColor=white" />
+- 개발 기간 : 2021.05 ~ 2021.11
+- 주요 스택 : 
+<img src="https://img.shields.io/badge/Android Studio-3DDC84?style=for-the-badge&logo=appveyor&logo=Android Studio&logoColor=white" /> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=appveyor&logo=Python&logoColor=white" /> <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=appveyor&logo=Flask&logoColor=white" /> <img src="https://img.shields.io/badge/Java-2C2255?style=for-the-badge&logo=appveyor&logo=Eclipse IDE&logoColor=white" /> <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=appveyor&logo=MariaDB&logoColor=white" /> <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=appveyor&logo=NGINX&logoColor=white" />
 
 <br />
 <br />
