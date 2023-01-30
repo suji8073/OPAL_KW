@@ -1,21 +1,18 @@
-# OPAL_KW
-
-<h1 align="center">😎 삶을 즐길 줄 아는 시니어, 58세대를 위한 여행 관광 어플리케이션 '오팔청춘'</h1>
-> 한국관광공사 2021 관광 데이터 활용 공모전 우수상 🏆
-
+<h1 align="center">😎 삶을 즐길 줄 아는 시니어, 58세대를 위한<br />여행 관광 어플리케이션 '오팔청춘'</h1>
+<h3> 한국관광공사 2021 관광 데이터 활용 공모전 우수상 🏆 </h3>
+<br />
 <p align="center">
     <img src="https://github.com/suji8073/OPAL_KW/blob/master/app/src/main/ic_launcher-playstore.png" height="150"/>
 </p>
+<br />
 
 - 개발 기간: 2021.05 ~ 2021.11
 - 주요 스택
-![Android Studio](https://img.shields.io/badge/Android Studio-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%3DDC84)
-![Python](https://img.shields.io/badge/Python-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%3776AB)
-![Flask](https://img.shields.io/badge/Flask-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%000000)
-![Java](https://img.shields.io/badge/Eclipse IDE-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2C2255)
-![MariaDB](https://img.shields.io/badge/MariaDB-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%003545)
-![NGINX](https://img.shields.io/badge/NGINX-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%009639)
+<br />
+- <img src="https://img.shields.io/badge/Android Studio-3DDC84?style=for-the-badge&logo=appveyor&logo=Android Studio&logoColor=white" /> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=appveyor&logo=Python&logoColor=white" /> <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=appveyor&logo=Flask&logoColor=white" /> <img src="https://img.shields.io/badge/Java-2C2255?style=for-the-badge&logo=appveyor&logo=Eclipse IDE&logoColor=white" /> <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=appveyor&logo=MariaDB&logoColor=white" /> <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=appveyor&logo=NGINX&logoColor=white" />
 
+<br />
+<br />
 
 ## 서비스 개발 배경
 - 오팔세대의 자산 보유액은 전체 인구의 81%를 차지하고 있으며, 그들의 소비 패턴이 점차 온라인으로 유입되면서 어플리케이션의 수요가 급격하게 증가하고 있는 추세입니다. <br /> 그러나, 그들을 타겟으로 한 관광 어플리케이션의 수요는 많이 부족한 실정입니다. <br /> 따라서 저희는 경제적으로 안정적이고 여유로운 소비층인 오팔세대를 타겟으로 한 여행 관광 어플리케이션을 제작하여 사용자가 보다 더 편리하게 관광지를 검색하고 관광 코스를 제작할 수 있도록 도움을 주는 "오팔청춘"을 개발하였습니다.
