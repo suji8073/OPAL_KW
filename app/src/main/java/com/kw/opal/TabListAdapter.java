@@ -15,7 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kakao.usermgmt.response.model.User;
+
 
 import java.io.IOException;
 import java.net.MalformedURLException;

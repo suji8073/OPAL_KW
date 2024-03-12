@@ -43,10 +43,12 @@
             android:layout_gravity="center"
             app:srcCompat="@drawable/main_logo" />
 
-        <com.kakao.usermgmt.LoginButton
+        <ImageButton
+            android:src="@drawable/kakao_login_medium_wide"
             android:id="@+id/btn_kakao_login"
             android:layout_width="wrap_content"
             android:layout_margin="20dp"
+            android:background="@android:color/transparent"
             android:padding="5dp"
             android:layout_gravity="center"
             android:layout_height="wrap_content"/>

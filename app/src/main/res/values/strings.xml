@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">오팔청춘</string>
 
-    <string name="kakao_app_key">0d7711dcbd2c930e730025a73b4c1830</string>
+    <string name="kakao_app_key">kakao0d7711dcbd2c930e730025a73b4c1830</string>
     <string name="recommend1">세월이 만든 멋과 정취의 도시/ 대구수목원- 선교사스윗즈주택- 녹동서원- 김광석 길</string>
 
     <string name="recommend2">안산으로 떠나는 미술관, 전시관 여행/유리섬박물관- 경기도미술관- 성호기념관- 안산갈대습지공원</string>
