@@ -12,11 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="#F8F8F8"
         android:layout_marginTop="10dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
         <RelativeLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -25,24 +27,64 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:layout_centerInParent="true"
                 app:srcCompat="@drawable/logo1_" />
 
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/text_theme"
+        <LinearLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
-            android:text="대표관광지 선택하기"
-            android:textColor="#000000"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintHorizontal_bias="0" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/text_theme"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:text="최초 관광지 선택하기"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:layout_gravity="bottom"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
+
+            <LinearLayout
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/reset"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="50dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/reset" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="다 시"
+                    android:textColor="@color/text"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    app:layout_constraintHorizontal_bias="0" />
+            </LinearLayout>
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -52,239 +94,85 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:lineSpacingExtra="3dp"
-                android:text="아래의 사진들 중 가고 싶은 관광지를 선택하세요!\n만약 원하는 관광지가 없다면 \'다시\' 버튼을 눌러주세요"
-                android:textColor="@color/purple_700"
-                android:textSize="15dp" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
 
             <ImageView
-                android:id="@+id/reset"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:id="@+id/imageView4"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/reset" />
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_search" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="250dp"
+                android:layout_weight="5"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:ems="5"
+                android:inputType="textPersonName"
+                android:textSize="12dp"
+                android:textColorHint="@color/gray"
+                android:hint ="관광지를 입력하세요" />
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn4"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:text="검색" />
         </LinearLayout>
 
 
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_gravity="left|center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:lineSpacingExtra="3dp"
+            android:text="가고 싶은 관광지를 골라보세요! \n마음에 드시는 장소가 없으시면 &quot;다시&quot; 버튼을,"
+            android:textColor="@color/text"
+            android:textSize="14dp" />
 
-            <FrameLayout
-                android:id="@+id/random_1"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="140dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp">
-
-                <ImageView
-                    android:id="@+id/random_1_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/food" />
-
-
-                <TextView
-                    android:id="@+id/random_1_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:background="@drawable/button_"
-                    android:gravity="center"
-                    android:text="음식점"
-                    android:textColor="@color/text"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/random_2"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="140dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp">
-
-                <ImageView
-                    android:id="@+id/random_2_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@drawable/play"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:id="@+id/random_2_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:background="@drawable/button_"
-                    android:gravity="center"
-                    android:text="음식점"
-                    android:textColor="@color/text"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-            </FrameLayout>
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <FrameLayout
-                android:id="@+id/random_3"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="140dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp">
-
-                <ImageView
-                    android:id="@+id/random_3_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/food" />
+            android:layout_gravity="left|center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:lineSpacingExtra="3dp"
+            android:text="특별히 찾는 장소가 있으시다면 하단의 검색을 이용해 주세요"
+            android:textColor="@color/main"
+            android:textSize="12dp" />
 
 
-                <TextView
-                    android:id="@+id/random_3_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:background="@drawable/button_"
-                    android:gravity="center"
-                    android:text="음식점"
-                    android:textColor="@color/text"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/random_4"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="140dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp">
-
-                <ImageView
-                    android:id="@+id/random_4_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@drawable/play"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:id="@+id/random_4_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:background="@drawable/button_"
-                    android:gravity="center"
-                    android:text="음식점"
-                    android:textColor="@color/text"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-            </FrameLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <FrameLayout
-                android:id="@+id/random_5"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="140dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp">
-
-                <ImageView
-                    android:id="@+id/random_5_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/food" />
-
-
-                <TextView
-                    android:id="@+id/random_5_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:background="@drawable/button_"
-                    android:gravity="center"
-                    android:text="음식점"
-                    android:textColor="@color/text"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/random_6"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="140dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp">
-
-                <ImageView
-                    android:id="@+id/random_6_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@drawable/play"
-                    android:scaleType="centerCrop" />
-
-                <TextView
-                    android:id="@+id/random_6_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center"
-                    android:background="@drawable/button_"
-                    android:gravity="center"
-                    android:text="음식점"
-                    android:textColor="@color/text"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-            </FrameLayout>
-        </LinearLayout>
-
+        <GridView
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="20dp"
+            android:numColumns="2" />
 
 
     </LinearLayout>

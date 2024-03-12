@@ -11,7 +11,11 @@
     <color name="main2">#18A8F1</color>
     <color name="text">#090A0A</color>
     <color name ="gray">#B8B8B8</color>
-    <color name ="yellow">#F1B312</color>
+    <color name ="yellow">#FFAC07</color>
     <color name ="heart">#FF5858</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
 
 </resources>

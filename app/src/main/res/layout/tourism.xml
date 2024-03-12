@@ -11,12 +11,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F8F8F8"
         android:orientation="vertical"
         android:layout_marginTop="10dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
         <RelativeLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -25,22 +27,21 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:layout_centerInParent="true"
                 app:srcCompat="@drawable/logo1_" />
 
         </RelativeLayout>
 
         <LinearLayout
+            android:background="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
                 android:id="@+id/back_main"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -50,7 +51,10 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
+
             <TextView
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
                 android:id="@+id/theme_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,7 +67,10 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
+
             <View
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
 
@@ -71,9 +78,9 @@
         </LinearLayout>
 
         <View
+            android:background="#BBBBBB"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/black" />
+            android:layout_height="2dp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -107,7 +114,6 @@
                             android:id="@+id/address"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:text="제주특별자치도 서귀포시 안덕면 병악로 166"
                             android:textColor="@color/black"
                             android:textSize="14dp" />
@@ -121,37 +127,64 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:textSize="14dp"
-                            android:text="홈페이지 : " />
-
-                        <TextView
                             android:id="@+id/url"
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="http://www.camelliahill.co.kr"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
                             android:textColor="@color/main2"
-                            android:textSize="14dp" />
+                            android:text="홈페이지로 이동하기" />
+
                     </LinearLayout>
 
                 </LinearLayout>
 
                 <ImageView
+                    android:id="@+id/mainimage"
                     android:layout_width="wrap_content"
                     android:layout_height="250dp"
                     android:layout_margin="10dp"
-                    app:srcCompat="@drawable/logo" />
+                    app:srcCompat="@drawable/no_camera" />
+
+                <TextView
+                    android:id="@+id/main_text0_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="소개" />
 
 
+                <View
+                    android:background="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/text0_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="14dp"
+                    android:textColor="@color/text"
+                    android:text="가천박물관은 인천 문화에 보탬이 되고자 지난 1995년 10월 문을 열었다. 국내 사립박물관 가운데 77번째로 등록된 본 박물관은 인천유일의 국보로 고려시대 대표적인 불교문화재 가운데 하나로 불력(佛力)을 이용해 거란군의 침입을 물리치려했던 조상들의 정성이 가득 담긴 《초조본유가사지론 권 제53(국보 제276호)》을 비롯해 우리나라에 자생하는 약초를 집대성한 향약집성방의 기초가 되는 《향약제집성방 (보물 제1178호)》, 중국에서 전해오는 한의학서를 우리나라 실정에 맞게 편찬한 전문 의학서인 《태산요록(보물 제1179호)》등 귀중한 보물 13점을 소장하고 있다. 이밖에도 의학 전문 박물관으로서 면모를 갖추기 위해 일반고서 5,200여 점과 의료·생활유물 1,000여 점, 근대정부기록외에 국내최다 소장 창간호 등 20,000여 점의 귀중한 자료를 소중하게 간직하고 있다." />
                 <TextView
                     android:id="@+id/main_text1_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:text="이용안내" />
@@ -164,50 +197,20 @@
 
                 <TextView
                     android:id="@+id/text1_theme"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:lineSpacingExtra="3dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textColor="@color/text"
                     android:text="문의 및 안내 : 064-792-0088\n쉬는 날 : 연중무휴\n이용시간 : 동 절 기 (12월~2월) 08:30 ~ 18:00\n
                 간 절 기 (3월~5월, 9~11월) 08:30 ~ 18:30\n
                 하 절 기 (6월~8월) 08:30 ~ 19:00\n\n※ 마감 1시간 전까지 입장 가능 ※\n수목원 내부에는 별도의 조명시설이 없는 관계로 일몰시간과 날씨 상황에 따라 입장 제한\n주차시설 : 있음\n유모차 대여 여부 : 없음\n애완동물 동반 가능 여부 : 불가\n신용카드 가능 여부 : 가능" />
 
-                <TextView
-                    android:id="@+id/main_text2_theme"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="14dp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:text="상세정보" />
 
-
-                <View
-                    android:background="@color/black"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp" />
-
-                <TextView
-                    android:id="@+id/text2_theme"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="12dp"
-                    android:textColor="@color/text"
-                    android:text="입 장 료 : [개 인]\n
-        성 인 (19 ~ 64세) 8,000원\n
-        청소년 (13 ~ 18세) 6,000원\n
-        어린이 (만 3세 ~ 12세) 5,000원\n
-        경로 (만 65세 이상) / 군인 6,000원\n
-        장애인 (1~3급) /국가유공자 5,000원\n" />
             </LinearLayout>
         </ScrollView>
 

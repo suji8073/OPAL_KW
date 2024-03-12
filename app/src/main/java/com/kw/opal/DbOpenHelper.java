@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DbOpenHelper {
+    private DbOpenHelper helper;
+
 
     private static final String DATABASE_NAME = "InnerDatabase(SQLite).db";
     private static final int DATABASE_VERSION = 1;
@@ -18,6 +20,7 @@ public class DbOpenHelper {
     private Context mCtx;
 
     private class DatabaseHelper extends SQLiteOpenHelper{
+
 
         public DatabaseHelper(Context context, String name, CursorFactory factory, int version) {
             super(context, name, factory, version);
@@ -54,42 +57,100 @@ public class DbOpenHelper {
     }
 
     // Insert DB
-    public long insertColumn(int userid, String name, String image){
-        ContentValues values = new ContentValues();
-        values.put(DataBases.CreateDB.USERID, userid);
 
-        values.put(DataBases.CreateDB.NAME, name);
-        values.put(DataBases.CreateDB.IMAGE, image);
-        return mDB.insert(DataBases.CreateDB._TABLENAME0, null, values);
+
+    public int Count(){
+        int cnt=0;
+        Cursor cursor=mDB.rawQuery("SELECT * FROM usertable",null);
+        cnt=cursor.getCount();
+        return cnt;
+
     }
+    public void insertColumn(Integer userid, String name,String image, String addr2, Float x, Float y, String area,String typeid) {
+        // 중복 검사
 
-    // Update DB
-    public boolean updateColumn(long id,String name, String image){
-        ContentValues values = new ContentValues();
-        values.put(DataBases.CreateDB.USERID, id);
 
-        values.put(DataBases.CreateDB.NAME, name);
-        values.put(DataBases.CreateDB.IMAGE, image);
-        return mDB.update(DataBases.CreateDB._TABLENAME0, values, "_id=" + id, null) > 0;
-    }
+        Cursor curChk = mDB.rawQuery("SELECT * FROM usertable WHERE USERID="+"'" + userid +"'"+ ";", null);
 
-    // Delete All
-    public void deleteAllColumns() {
-        mDB.delete(DataBases.CreateDB._TABLENAME0, null, null);
-    }
+        if (curChk.moveToFirst()) {
+            System.out.println("out");
 
-    // Delete DB
-    public boolean deleteColumn(Integer _id){
-        return mDB.delete(DataBases.CreateDB._TABLENAME0, "_id="+_id, null) > 0;
-    }
-    // Select DB
-    public Cursor selectColumns(){
-        return mDB.query(DataBases.CreateDB._TABLENAME0, null, null, null, null, null, null);
-    }
+        }
+        else{
+            ContentValues values = new ContentValues();
+            values.put(DataBases.CreateDB.USERID, userid);
 
-    // sort by column
-    public Cursor sortColumn(String sort){
-        Cursor c = mDB.rawQuery( "SELECT * FROM usertable ORDER BY " + sort + ";", null);
+            values.put(DataBases.CreateDB.NAME, name);
+
+            values.put(DataBases.CreateDB.IMAGE, image);
+            values.put(DataBases.CreateDB.ADDR, addr2);
+            values.put(DataBases.CreateDB.MAP_X, x);
+            values.put(DataBases.CreateDB.MAP_Y, y);
+            values.put(DataBases.CreateDB.AREA, area);
+            values.put(DataBases.CreateDB.TYPEID, typeid);
+
+
+            mDB.insertWithOnConflict(DataBases.CreateDB._TABLENAME0, null, values, SQLiteDatabase.CONFLICT_REPLACE);
+        }}
+        // Update DB
+        public boolean updateColumn ( long id,String name, String image, String addr2,float x,
+        float y, String area,String typeid){
+            ContentValues values = new ContentValues();
+            values.put(DataBases.CreateDB.USERID, id);
+            values.put(DataBases.CreateDB.NAME, name);
+            values.put(DataBases.CreateDB.IMAGE, image);
+
+            values.put(DataBases.CreateDB.ADDR, addr2);
+            values.put(DataBases.CreateDB.MAP_X, x);
+            values.put(DataBases.CreateDB.MAP_Y, y);
+            values.put(DataBases.CreateDB.AREA, area);
+            values.put(DataBases.CreateDB.TYPEID, typeid);
+
+            return mDB.update(DataBases.CreateDB._TABLENAME0, values, "_id=" + id, null) > 0;
+        }
+
+        public int count(){
+            int cnt=0;
+            Cursor cursor =mDB.rawQuery("select * FROM usertable",null);
+            cnt =cursor.getCount();
+            return cnt;
+
+        }
+        // Delete All
+        public void deleteAllColumns () {
+            mDB.delete(DataBases.CreateDB._TABLENAME0, null, null);
+        }
+
+        // Delete DB
+        public boolean deleteColumn (String name){
+            return mDB.delete(DataBases.CreateDB._TABLENAME0, "name=" + "'" + name + "'", null) > 0;
+        }
+        // Select DB
+        public Cursor selectColumns () {
+            return mDB.query(DataBases.CreateDB._TABLENAME0, null, null, null, null, null, null);
+        }
+
+        // sort by column
+        public Cursor sortColumn (String sort){
+
+            Cursor c = mDB.rawQuery("SELECT * FROM usertable ORDER BY " + sort + ";", null);
+            return c;
+
+
+        }
+    public Cursor sortColumn2 (){
+
+        Cursor c = mDB.rawQuery("SELECT * FROM usertable ;", null);
         return c;
+
+
     }
-}
+        public Cursor sortColumn1 (String sort){
+
+            Cursor c = mDB.rawQuery("SELECT "+sort+" FROM usertable ;", null);
+            return c;
+
+
+        }
+
+    }

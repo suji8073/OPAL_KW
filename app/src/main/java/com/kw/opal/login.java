@@ -1,6 +1,9 @@
 package com.kw.opal;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -8,9 +11,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import com.kakao.sdk.common.util.Utility;
 import com.kakao.sdk.user.UserApiClient;
 import java.util.ArrayList;
+
 
 import java.util.HashMap;
 import java.util.List;
@@ -41,6 +46,7 @@ public class login extends AppCompatActivity {
             start_intent.putExtra("login_check", 0);
             start_intent.putExtra("name", "0");
             startActivity(start_intent);
+
 
         });
 
@@ -109,6 +115,27 @@ public class login extends AppCompatActivity {
                     return null;
                 }
         );
+    }
+    public static String getKeyHash(final Context context) {
+        PackageManager pm = context.getPackageManager();
+        try {
+            PackageInfo packageInfo = pm.getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES);
+            if (packageInfo == null)
+                return null;
+
+            for (Signature signature : packageInfo.signatures) {
+                try {
+                    MessageDigest md = MessageDigest.getInstance("SHA");
+                    md.update(signature.toByteArray());
+                    return android.util.Base64.encodeToString(md.digest(), android.util.Base64.NO_WRAP);
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     protected void getKakaoInfo(){

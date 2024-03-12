@@ -64,10 +64,12 @@ public class MainActivity_3 extends AppCompatActivity {
             startActivity(main_1);
         });
 
+
         place.setOnClickListener(view -> {
             Intent main_1 = new Intent(MainActivity_3.this, MainActivity_2.class);
             main_1.putExtra("login_check", 3);
             startActivity(main_1);
+
         });
 
 

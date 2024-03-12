@@ -10,36 +10,46 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
+        android:background="#F8F8F8"
         android:layout_marginBottom="10dp"
         android:orientation="vertical">
 
         <RelativeLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
             tools:ignore="MissingConstraints">
 
+
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
                 android:layout_centerInParent="true"
                 app:srcCompat="@drawable/logo1_" />
 
         </RelativeLayout>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
-            android:textAlignment="textStart"
-            android:textSize="20dp"
-            android:textColor="@color/text"
-            android:textStyle="bold"
-            android:text="나의 경로 확인하기" />
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:text="나의 경로 확인하기" />
+
+        </LinearLayout>
 
 
         <View
@@ -78,7 +88,7 @@
                 android:textSize="22dp"
                 android:textColor="@color/text"
                 android:textStyle="bold"
-                android:text="[ 제주 ]" />
+                android:text="" />
 
             <View
                 android:layout_width="0dp"
@@ -107,7 +117,7 @@
                 android:id="@+id/root_picture"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/logo"
+                app:srcCompat="@drawable/no_camera"
                 android:layout_gravity="center"/>
 
 
@@ -128,33 +138,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
-            android:text="죽녹원 - 관방제림 - 숭일식당 - 숙소(담양한옥민박)"
+            android:layout_marginRight="20dp"
             android:lineSpacingExtra="3dp"
             android:textColor="@color/text"
             android:textSize="16dp"
+            android:text="루트를 생성해주세요!"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/root_2"
-            android:layout_margin="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:gravity="right"
-            android:textSize="14dp"
-            android:textColor="@color/main2"
-            android:textStyle="bold"
-            android:lineSpacingExtra="3dp"
-            android:text="100km\n총 비용 : 30,000원(1인당)\n총 소요 시간 : 약 5시간" />
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
 
         <LinearLayout
             android:id="@+id/bar"
+            android:background="@color/white"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:gravity="bottom"
             android:orientation="horizontal">
@@ -178,7 +181,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="홈 화면"
-                    android:textSize="12dp"
+                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -202,7 +206,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="나의 경로"
-                    android:textSize="12dp"
+                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -224,7 +229,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="나의 페이지"
-                    android:textSize="12dp"
+                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
                     android:textStyle="bold" />
             </LinearLayout>
 

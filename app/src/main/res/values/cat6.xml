@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cat6Array">
+
+        <item> 전체 </item>
+        <item> 펜션 </item>
+        <item> 한옥 </item>
+        <item> 모텔 </item>
+        <item> 관광호텔 </item>
+        <item> 게스트하우스 </item>
+        <item> 콘도 </item>
+        <item> 민박 </item>
+        <item> 유스호스텔 </item>
+        <item> 가족호텔 </item>
+
+
+    </string-array>
+
+</resources>

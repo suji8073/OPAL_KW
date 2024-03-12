@@ -1,14 +1,11 @@
 package com.kw.opal;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,29 +17,40 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout home, place, person;
-    ImageView home1, heart_1, heart_2;
+    LinearLayout home, place, person, random_root, want_root, smart_root;
+    ImageView home1;
     TextView home2;
-    Button play;
     TextView user_name_main, main_1_name, main_2_name, main_1_root, main_2_root;
 
     String strNickname, strProfile;
     int login_check;
-    boolean i, j = true;
+    boolean i, j;
 
     private SharedPreferences sp;
 
-
-
+    DbOpenHelper mDbOpenHelper;
+    rootDBOpenHelper rmDbOpenHelper;
+    reDBOpenHelper rDbOpenHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DbOpenHelper mDbOpenHelper;
         mDbOpenHelper = new DbOpenHelper(this);
         mDbOpenHelper.open();
         mDbOpenHelper.create();
+
+
+        rmDbOpenHelper = new rootDBOpenHelper(this);
+        rmDbOpenHelper.open();
+        rmDbOpenHelper.create();
+
+
+        rDbOpenHelper = new reDBOpenHelper(this);
+        rDbOpenHelper.open();
+        rDbOpenHelper.create();
+
+        setContentView(R.layout.activity_main);
 
 
         sp = getSharedPreferences("myFile", Activity.MODE_PRIVATE);
@@ -58,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d("API 확인", "profile image: " + sp.getString("strProfile", ""));
 
         user_name_main = findViewById(R.id.user_name_main);
-
-
 
         if (login_check == 0){
             Toast.makeText(getApplicationContext(), "비회원으로 로그인하셨습니다!",
@@ -78,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        play = findViewById(R.id.play);
 
         home = findViewById(R.id.home);
         place = findViewById(R.id.place);
@@ -86,6 +91,37 @@ public class MainActivity extends AppCompatActivity {
 
         home1 = findViewById(R.id.home1);
         home2 = findViewById(R.id.home2);
+
+        random_root = findViewById(R.id.random_root);
+        want_root = findViewById(R.id.want_root);
+        smart_root = findViewById(R.id.smart_root);
+
+        smart_root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_intent = new Intent(MainActivity.this, com.kw.opal.area.class);
+                start_intent.putExtra("where_check", 4);
+                startActivity(start_intent);
+            }
+        });
+
+        random_root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_intent = new Intent(MainActivity.this, com.kw.opal.area.class);
+                start_intent.putExtra("where_check", 2);
+                startActivity(start_intent);
+            }
+        });
+
+        want_root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent start_i = new Intent(MainActivity.this, com.kw.opal.area.class);
+                start_i.putExtra("where_check", 3);
+                startActivity(start_i);
+            }
+        });
 
         final String strNickname = sp.getString("strNickname", "");
         if (strNickname != "") user_name_main.setText("\"" + strNickname+ "\" 님");
@@ -95,11 +131,14 @@ public class MainActivity extends AppCompatActivity {
         home1.setColorFilter(getApplication().getResources().getColor(R.color.main));
         home2.setTextColor(getApplication().getResources().getColor(R.color.main));
 
+        /*
         heart_1 = findViewById(R.id.heart_1);
         heart_2 = findViewById(R.id.heart_2);
 
         heart_1.setColorFilter(getApplication().getResources().getColor(R.color.heart));
         heart_2.setColorFilter(getApplication().getResources().getColor(R.color.heart));
+
+        */
 
 
         main_1_name = findViewById(R.id.main_1_name);
@@ -109,11 +148,11 @@ public class MainActivity extends AppCompatActivity {
 
        //추천코스 넣기
 
-        this.InitializeView();
-        this.setTextView();
+        //this.InitializeView();
+        //this.setTextView();
 
 
-
+        /*
         heart_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     heart_1.setColorFilter(getApplication().getResources().getColor(R.color.heart));
                     i = false;
+
                     editor.putString("main_1_name", String.valueOf(main_1_name));
                     editor.putString("main_1_root", String.valueOf(main_1_root));
 
@@ -157,13 +197,13 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
-        });
+        }); */
 
 
         place.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent main_1 = new Intent(MainActivity.this, MainActivity_2.class);
+                Intent main_1 = new Intent(MainActivity.this, new_MainActivity_2.class);
                 if (login_check == 0){
                     main_1.putExtra("name", "");
                     main_1.putExtra("profile", "");
@@ -194,13 +234,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent start_intent = new Intent(MainActivity.this, area.class);
-                startActivity(start_intent);
-            }
-        });
+
+
+
+
 
 
     }

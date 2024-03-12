@@ -69,7 +69,8 @@ public class TabListAdapter extends RecyclerView.Adapter<TabListAdapter.ItemView
         helper = new DbOpenHelper(context);
 
         items.remove(position);
-        helper.deleteColumn(position);
+        System.out.println(items.get(position).getName());
+        helper.deleteColumn(items.get(position).getName());
         notifyItemRemoved(position);
     }
 

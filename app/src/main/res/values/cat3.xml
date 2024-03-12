@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cat3Array">
+
+        <item> 전체 </item>
+        <item> 육상레포츠 </item>//A0303
+        <item> 수상레포츠 </item>//A0302
+        <item> 복합레포츠 </item>//A0305
+        <item> 항공레포츠 </item>//A0304
+
+
+
+    </string-array>
+
+</resources>

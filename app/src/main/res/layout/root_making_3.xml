@@ -34,7 +34,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
@@ -47,7 +47,7 @@
                 android:text="숙소 선택하기"
                 android:layout_gravity="center"
                 android:textColor="#000000"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <View
@@ -80,6 +80,8 @@
 
             <ImageView
                 android:id="@+id/imageView4"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -91,81 +93,168 @@
                 android:layout_width="250dp"
                 android:layout_weight="5"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginRight="20dp"
                 android:ems="5"
                 android:inputType="textPersonName"
                 android:textSize="12dp"
                 android:textColorHint="@color/gray"
-                android:hint ="숙소를 입력하세요"
+                android:hint ="  숙소를 입력하세요"
                 />
             <Button
                 android:id="@+id/search_button"
-                android:layout_width="74dp"
+                android:layout_width="70dp"
                 android:layout_height="match_parent"
+                android:background="@drawable/btn4"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:textStyle="bold"
                 android:text="검색" />
         </LinearLayout>
 
-        <HorizontalScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <HorizontalScrollView
+                android:layout_width="283dp"
+                android:scrollbarFadeDuration = "0"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:padding="5dp"
+                android:layout_gravity="left">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="left">
+
+                    <Button
+                        android:id="@+id/one_1"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn_"
+                        android:text="전체"
+                        android:textColor="@color/main"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/one_2"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="펜션"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/one_3"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="한옥"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/one_4"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="모텔"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/one_5"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="관광호텔"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/one_6"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="게스트"
+                        android:textColor="@color/text"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/one_7"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="콘도"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/one_8"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="민막"
+                        android:textColor="@color/text"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/one_9"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="유스호스텔"
+                        android:textColor="@color/text"
+                        android:textSize="9dp"
+                        android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/one_10"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn"
+                        android:text="가족호텔"
+                        android:textColor="@color/text"
+                        android:textSize="9dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="127dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:layout_marginRight="5dp"
                 android:layout_marginBottom="3dp"
-                android:layout_height="match_parent"
-                android:orientation="horizontal" >
-
-                <Button
-                    android:id="@+id/one_1"
-                    android:background="@drawable/btn_"
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:textColor="@color/main"
-                    android:textStyle="bold"
-                    android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="전체" />
-
-                <Button
-                    android:id="@+id/one_2"
-                    android:background="@drawable/btn"
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:textColor="@color/text"
-                    android:textStyle="bold"
-                    android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="한식" />
-
-                <Button
-                    android:id="@+id/one_3"
-                    android:background="@drawable/btn"
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:textColor="@color/text"
-                    android:textStyle="bold"
-                    android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="중식" />
-
-                <Button
-                    android:id="@+id/one_4"
-                    android:background="@drawable/btn"
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:textColor="@color/text"
-                    android:textStyle="bold"
-                    android:layout_marginRight="10dp"
-                    android:textSize="14dp"
-                    android:text="양식" />
-
-
-            </LinearLayout>
-        </HorizontalScrollView>
+                android:layout_weight="1"
+                android:background="@drawable/editbox"
+                android:padding="5dp" />
+        </LinearLayout>
 
         <ListView
             android:id="@+id/userListTextView3"

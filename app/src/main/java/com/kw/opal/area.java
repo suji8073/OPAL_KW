@@ -15,9 +15,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class area extends AppCompatActivity {
 
     Button next;
@@ -42,6 +39,8 @@ public class area extends AppCompatActivity {
 
     public int[] on_off = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public SharedPreferences sroot;
+    int where_from;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +50,7 @@ public class area extends AppCompatActivity {
 
         for (int i=0; i<check_num.length; i++){ // board 형변환
             check[i] = findViewById(check_num[i]);
+            check[i].setColorFilter(getApplication().getResources().getColor(R.color.black));
         }
         for (int i= 0; i<text_num.length; i++){ // 숫자 형변환
             text[i] = findViewById(text_num[i]);
@@ -59,6 +59,10 @@ public class area extends AppCompatActivity {
             layout[i] = findViewById(layout_num[i]);
         }
 
+
+
+        Intent intent = getIntent();
+        where_from = intent.getIntExtra("where_check", 0);
 
 
         for (int i=0; i<text_num.length; i++){
@@ -71,11 +75,13 @@ public class area extends AppCompatActivity {
                     int re = check_on_off(INDEX); // 체크 되었는지 표시
                     if (re == 0){ // 이미 체크된 것임
                         check[INDEX].setImageResource(R.drawable.check_off);
+                        check[INDEX].setColorFilter(getApplication().getResources().getColor(R.color.black));
                         text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.black));
                         layout[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
                     }
                     else if (re == 1){ // 전에 체크 되지 않은 것
                         check[INDEX].setImageResource(R.drawable.check_on);
+                        check[INDEX].setColorFilter(getApplication().getResources().getColor(R.color.main));
                         text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
                         layout[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_));
                     }
@@ -83,6 +89,7 @@ public class area extends AppCompatActivity {
                         for (int i=0; i<on_off.length; i++){
                             if (on_off[i] == 1){
                                 check[i].setImageResource(R.drawable.check_off);
+                                check[i].setColorFilter(getApplication().getResources().getColor(R.color.black));
                                 text[i].setTextColor(getApplication().getResources().getColor(R.color.black));
                                 layout[i].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn));
                                 on_off[i] = 0;
@@ -90,6 +97,7 @@ public class area extends AppCompatActivity {
                             }
                         }
                         check[INDEX].setImageResource(R.drawable.check_on);
+                        check[INDEX].setColorFilter(getApplication().getResources().getColor(R.color.main));
                         text[INDEX].setTextColor(getApplication().getResources().getColor(R.color.main));
                         layout[INDEX].setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.btn_));
                         on_off[INDEX] = 1;
@@ -98,6 +106,7 @@ public class area extends AppCompatActivity {
 
 
                 }
+
             });
         }
 
@@ -107,21 +116,28 @@ public class area extends AppCompatActivity {
             public void onClick(View view) {
                 int click_check = 0;
                 int area_num = 0;
+                int string_area_index = -1;
                 for (int i = 0; i<on_off.length; i++){
                     if (on_off[i] == 1) {
                         click_check = 1;
                         area_num = area_all[i];
+                        string_area_index = i;
                     }
                 }
                 if (click_check == 1) {
+                    if (area_num!=sroot.getInt("area",0)){
+                        DbOpenHelper helper1=new DbOpenHelper(getApplicationContext());
+                        helper1.deleteAllColumns();
+
+                    }
                     SharedPreferences.Editor editor = sroot.edit();
+                    editor.putString("area_name", text[string_area_index].getText().toString());
                     editor.putInt("area", area_num);
                     editor.commit();
 
 
                     Log.d("배열 확인", "배열: " + on_off);
-                    Intent start_intent = new Intent(area.this, com.kw.opal.select1.class);
-                    startActivity(start_intent);
+                    where_from_move(where_from);
                 }
 
                 else {
@@ -132,7 +148,23 @@ public class area extends AppCompatActivity {
         });
 
 
+    }
 
+    private void where_from_move(int where_from) {
+
+        if (where_from == 2){
+            Intent start_1 = new Intent(getApplicationContext(), com.kw.opal.random_1.class);
+            startActivity(start_1);
+        }
+
+        else if (where_from == 3){
+            Intent start_2 = new Intent(getApplicationContext(), com.kw.opal.root_making.class);
+            startActivity(start_2);
+        }
+        else if (where_from == 4){
+            Intent start_3 = new Intent(getApplicationContext(), com.kw.opal.smart_root.class);
+            startActivity(start_3);
+        }
     }
 
     public int check_on_off(int index) { // 체크 되었는지 확인

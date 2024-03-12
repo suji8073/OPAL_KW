@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".tourism"
+    tools:ignore="MissingDefaultResource">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F8F8F8"
+        android:layout_marginTop="10dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                app:srcCompat="@drawable/logo1_" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="여행지 선택하기"
+                android:layout_gravity="center"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/cart"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/cart" />
+        </LinearLayout>
+
+        <View
+            android:background="#BBBBBB"
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/button_p"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="2dp"
+                android:background="@drawable/btn_"
+                android:textColor="@color/main"
+                android:textSize="15dp"
+                android:layout_marginRight="10dp"
+                android:text="관광지"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.05"/>
+
+            <Button
+                android:id="@+id/button_f"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="2dp"
+                android:text="음식점"
+                android:textSize="15dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.05"/>
+            <Button
+                android:id="@+id/button_r"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn"
+                android:textColor="@color/text"
+                android:textSize="15dp"
+                android:layout_marginHorizontal="2dp"
+                android:text="레포츠"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_sh"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn"
+                android:textColor="@color/text"
+                android:textSize="15dp"
+                android:layout_marginHorizontal="2dp"
+                android:text="쇼핑"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.05"/>
+
+            <Button
+                android:id="@+id/button_cu"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn"
+                android:textColor="@color/text"
+                android:textSize="15dp"
+                android:layout_marginHorizontal="2dp"
+                android:text="문화"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.05"/>
+
+            <Button
+                android:id="@+id/button_ho"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn"
+                android:textColor="@color/text"
+                android:textSize="15dp"
+                android:layout_marginHorizontal="2dp"
+                android:text="숙박"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:padding="5dp">
+
+            <Spinner
+                android:id="@+id/spinner_cat"
+                android:layout_width="127dp"
+                android:layout_height="48dp"
+                android:layout_gravity="left|center"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="5"
+                android:background="@drawable/editbox"
+                android:padding="5dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Spinner
+                android:id="@+id/spinner_order"
+                android:layout_width="70dp"
+                android:layout_height="48dp"
+                android:layout_gravity="right|center"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="3"
+                android:background="@drawable/editbox"
+                android:gravity="right"
+                android:padding="5dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button_s"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn4"
+                android:textSize="16dp"
+                android:text="검 색"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_gravity="left"
+                 />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/userListTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp">
+
+
+        </ListView>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/finish"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/btn1"
+                android:gravity="center"
+                android:text="선택완료"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

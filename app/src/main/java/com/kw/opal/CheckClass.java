@@ -9,13 +9,13 @@ import com.google.gson.annotations.SerializedName;
 public class CheckClass {
     @SerializedName("table") private String table;
     @SerializedName("areacode") private int areacode;
-    @SerializedName("mapx") private float mapx;
-    @SerializedName("mapy") private float mapy;
+    @SerializedName("mapx") private double mapx;
+    @SerializedName("mapy") private double mapy;
 
     public CheckClass(){
 //test
     }
-    public CheckClass(String table, int areacode, float mapx,float mapy) {
+    public CheckClass(String table, int areacode, double mapx,double mapy) {
         this.table=table;
         this.areacode=areacode;
         this.mapx=mapx;

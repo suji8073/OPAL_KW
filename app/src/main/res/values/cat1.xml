@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cat1Array">
+
+        <item> 전체 </item>
+        <item> 자연 </item>
+        <item> 희귀경관 </item>
+        <item> 역사 </item>
+        <item> 휴양지 </item>
+        <item> 체험 </item>
+        <item> 건축물 </item>
+        <item> 산업 </item>
+
+
+    </string-array>
+
+</resources>

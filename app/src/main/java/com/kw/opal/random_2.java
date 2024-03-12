@@ -1,17 +1,15 @@
 package com.kw.opal;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +19,8 @@ public class random_2 extends AppCompatActivity {
     TextView theme_name, address, url;
     TextView text1_theme, text2_theme;
     String tourism_url;
-    Button random_intent_next;
+    Button random_intent_yes, random_intent_no;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,35 +55,28 @@ public class random_2 extends AppCompatActivity {
             }
         });
 
-    }
-    public void OnClickHandler(View view)
-    {
 
-        ContextThemeWrapper cw = new ContextThemeWrapper( this, R.style.AlertDialogTheme );
-        AlertDialog.Builder builder = new AlertDialog.Builder(cw);
-        builder.setMessage("선택하고 싶으면 '선택' 버튼을,\n취소하고 싶으시면 '취소' 버튼을 눌러주세요.\n");
-
-
-
-        builder.setPositiveButton("선 택", new DialogInterface.OnClickListener(){
+        random_intent_yes = findViewById(R.id.random_intent_yes); // 선택하기 버튼
+        random_intent_yes.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int id)
-            {
-                Intent start_intent = new Intent(getApplicationContext(), com.kw.opal.random_3.class);
-                startActivity(start_intent);
+            public void onClick(View view) {
+
+
             }
         });
 
-        builder.setNegativeButton("취 소", new DialogInterface.OnClickListener(){
+        random_intent_no = findViewById(R.id.random_intent_no); // 취소하기 버튼
+        random_intent_no.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int id)
-            {
+            public void onClick(View view) {
                 finish();
             }
         });
 
 
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+
+
     }
+
+
 }

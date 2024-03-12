@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cat4Array">
+
+        <item> 전체 </item>
+        <item> 상설시장 </item>
+        <item> 5일장 </item>
+        <item> 특산물 </item>
+        <item> 공예공방 </item>
+        <item> 관광기념품 </item>
+        <item> 전문상가 </item>
+        <item> 백화점 </item>
+        <item> 면세점 </item>
+
+    </string-array>
+
+</resources>

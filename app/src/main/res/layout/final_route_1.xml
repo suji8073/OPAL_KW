@@ -25,7 +25,7 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:layout_centerInParent="true"
                 app:srcCompat="@drawable/logo1_" />
 
@@ -75,7 +75,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/main"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0" />
 
@@ -112,7 +112,7 @@
                 android:layout_gravity="bottom"
                 android:background="@drawable/btn1"
                 android:gravity="center"
-                android:text="다 음"
+                android:text="메인메뉴로 넘어가기"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />

@@ -3,6 +3,7 @@ package com.kw.opal;
 import android.app.Application;
 import android.content.Context;
 
+
 import com.kakao.sdk.common.KakaoSdk;
 
 
@@ -22,6 +23,7 @@ public class GlobalApplication extends Application {
         super.onCreate();
         instance = this;
         KakaoSdk.init(this,BuildConfig.KAKAO_KEY);
+
 
     }
 

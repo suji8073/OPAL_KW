@@ -17,10 +17,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        >
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/network_security_config" />
+
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
@@ -29,27 +33,39 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
+
                 <data android:host="oauth"
                     android:scheme="@string/kakao_app_key" />
             </intent-filter>
         </activity>
 
-
+        <activity android:name="com.kw.opal.routeinfo" android:label="route_inform"></activity>
         <activity android:name="com.kw.opal.login" android:label="login"></activity>
         <activity android:name="com.kw.opal.MainActivity" android:label="activity_main"></activity>
         <activity android:name="com.kw.opal.MainActivity_2" android:label="activity_main_2"></activity>
         <activity android:name="com.kw.opal.MainActivity_3" android:label="activity_main_3"></activity>
-        <activity android:name="com.kw.opal.select" android:label="select"></activity>
         <activity android:name="com.kw.opal.select1" android:label="select1"></activity>
         <activity android:name="com.kw.opal.area" android:label="area"></activity>
         <activity android:name="com.kw.opal.final_route_1" android:label="final_route_1"></activity>
         <activity android:name="com.kw.opal.final_route_2" android:label="final_route_2"></activity>
         <activity android:name="com.kw.opal.final_route_3" android:label="final_route_3"></activity>
         <activity android:name="com.kw.opal.tourism" android:label="tourism"></activity>
+        <activity android:name="com.kw.opal.tourismselect" android:label="tourism2"></activity>
         <activity android:name="com.kw.opal.root_loading" android:label="root_loading"></activity>
         <activity android:name="com.kw.opal.random_1" android:label="random_1"></activity>
         <activity android:name="com.kw.opal.random_2" android:label="random_2"></activity>
+        <activity android:name="com.kw.opal.root_making" android:label="root_making"></activity>
         <activity android:name="com.kw.opal.random_3" android:label="random_3"></activity>
+        <activity android:name="com.kw.opal.random_3_play" android:label="random_3_play"></activity>
+        <activity android:name="com.kw.opal.random_3_food" android:label="random_3_food"></activity>
+        <activity android:name="com.kw.opal.random_3_sleep" android:label="random_3_sleep"></activity>
+        <activity android:name="com.kw.opal.random_3_shop" android:label="random_3_shop"></activity>
+        <activity android:name="com.kw.opal.smart_root" android:label="smart_root"></activity>
+        <activity android:name="com.kw.opal.new_MainActivity_2" android:label="newmain2"></activity>
+        <activity android:name="com.kw.opal.SaveRouteList" android:label="saveroutelist"></activity>
+        <activity android:name="com.kw.opal.MainActivityAll" android:label="all_activity_main"></activity>
+
+
 
 
         <activity android:name="com.kw.opal.loading" android:exported="true">
@@ -61,17 +77,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".root_choice" android:label="root_choice" />
-        <activity
-            android:name=".root_make" android:label="root_make" />
-        <activity
-
-            android:name=".root_making_1" android:label="root_making_1" />
-        <activity
-            android:name=".root_making_2" android:label="root_making_2" />
-        <activity
-            android:name=".root_making_3" android:label="root_making_3" />
     </application>
 
 </manifest>

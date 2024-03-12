@@ -99,7 +99,12 @@ public class final_route_2 extends AppCompatActivity {
         circle1.setColorFilter(getApplication().getResources().getColor(R.color.gray));
         circle2.setColorFilter(getApplication().getResources().getColor(R.color.main2));
         circle3.setColorFilter(getApplication().getResources().getColor(R.color.gray));
-        showDatabase();
+        if(helper!=null){
+            System.out.println(helper!=null);
+            showDatabase();
+
+        }
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,7 +126,7 @@ public class final_route_2 extends AppCompatActivity {
     public void showDatabase(){
 
 
-        Cursor mCur = helper.sortColumn("_id");
+        Cursor mCur = helper.sortColumn("name");
         System.out.println(mCur);
         Log.d("showDatabase", "DB Size: " + mCur.getCount());
         arrayData.clear();
@@ -143,7 +148,6 @@ public class final_route_2 extends AppCompatActivity {
 
             // 리스트에 넣기
             System.out.println(mCur.getString(2));
-
             System.out.println(mCur.getString(3));
 
             items.add(user);
