@@ -1,7 +1,6 @@
 <?xml version="1.1" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     tools:remove="android:appComponentFactory"
-    tools:targetApi="p"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.kw.opal">
 
@@ -26,10 +25,19 @@
             android:name="com.google.android.actions"
             android:resource="@xml/network_security_config" />
 
-        <meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="@string/kakao_app_key" />
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
+
+                <data android:host="oauth"
+                    android:scheme="@string/kakao_app_key" />
+            </intent-filter>
+        </activity>
 
         <activity android:name="com.kw.opal.routeinfo" android:label="route_inform"></activity>
         <activity android:name="com.kw.opal.login" android:label="login"></activity>
